@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         foreach($roles as $key => $val) {
             $userData = config("core-config.users.$key");
             $user = User::factory()->create($userData);
-            $user->assignRoles($val);
+            $user->assignRole($val);
         }
     }
 }
