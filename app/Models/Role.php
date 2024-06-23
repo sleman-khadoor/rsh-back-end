@@ -12,4 +12,18 @@ class Role extends Model
     public $timestamps = false;
     protected $fillable = ['name'];
 
+    public static function getSuperAdminRole(): string {
+
+        return config('core-config.roles.super_admin');
+    }
+
+    public static function getServicesAdminRole(): string {
+
+        return config('core-config.roles.services_admin');
+    }
+
+    public static function getBooksAdminRole(): string {
+
+        return config('core-config.roles.books_admin');
+    }
 }
