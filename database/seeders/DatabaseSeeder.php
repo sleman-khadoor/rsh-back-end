@@ -18,5 +18,8 @@ class DatabaseSeeder extends Seeder
 
         // seed users
         (new UserSeeder)->run();
+
+        // seed books
+        (new BookSeeder)->run();
     }
 }

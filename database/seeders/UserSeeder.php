@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class UserSeeder extends Seeder
 {
     /**
@@ -27,6 +28,15 @@ class UserSeeder extends Seeder
             $userData = config("core-config.users.$key");
             $user = User::factory()->create($userData);
             $user->assignRole($val);
+        }
+
+
+        // Generate a user to simulate authenticated routes for scribe docs.
+        if(app()->isLocal()) {
+
+            User::factory()->create([
+                'username' => 'scribe',
+            ]);
         }
     }
 }

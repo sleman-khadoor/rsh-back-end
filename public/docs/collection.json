@@ -1,0 +1,394 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "f74bcf52-b63b-4c98-add2-db90d0de0d99",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Admin Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Book Management",
+                    "description": "APIs for managing Book Categories",
+                    "item": [
+                        {
+                            "name": "Get all Book Categories.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/admin\/book-categories",
+                                    "query": [
+                                        {
+                                            "key": "filter%5Btitle%5D",
+                                            "value": "nihil",
+                                            "description": "filter Book Categroies by title.",
+                                            "disabled": false
+                                        }
+                                    ],
+                                    "raw": "{{baseUrl}}\/api\/admin\/book-categories?filter%5Btitle%5D=nihil",
+                                    "variable": [
+                                        {
+                                            "id": "page",
+                                            "key": "page",
+                                            "value": "1",
+                                            "description": "The page number"
+                                        },
+                                        {
+                                            "id": "perPage",
+                                            "key": "perPage",
+                                            "value": "3",
+                                            "description": "Number of items pre page"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"data\":[{\"id\":20,\"title\":{\"ar\":\"Enim non.\",\"en\":\"Saepe est.\"}},{\"id\":19,\"title\":{\"ar\":\"Quasi.\",\"en\":\"Vitae eum.\"}},{\"id\":18,\"title\":{\"ar\":\"Ut maxime.\",\"en\":\"Velit.\"}},{\"id\":17,\"title\":{\"ar\":\"Sit.\",\"en\":\"Illum.\"}},{\"id\":16,\"title\":{\"ar\":\"Totam sed.\",\"en\":\"Molestiae.\"}},{\"id\":15,\"title\":{\"ar\":\"Sunt.\",\"en\":\"In.\"}},{\"id\":14,\"title\":{\"ar\":\"Deleniti.\",\"en\":\"Ab et.\"}},{\"id\":13,\"title\":{\"ar\":\"Sint.\",\"en\":\"Sunt.\"}},{\"id\":12,\"title\":{\"ar\":\"Quam.\",\"en\":\"Nisi sunt.\"}},{\"id\":11,\"title\":{\"ar\":\"Vel aut.\",\"en\":\"Quod.\"}},{\"id\":10,\"title\":{\"ar\":\"Totam.\",\"en\":\"Doloribus.\"}},{\"id\":9,\"title\":{\"ar\":\"Unde et.\",\"en\":\"Est.\"}},{\"id\":8,\"title\":{\"ar\":\"Deserunt.\",\"en\":\"Error.\"}},{\"id\":7,\"title\":{\"ar\":\"Et ut et.\",\"en\":\"Rerum quo.\"}},{\"id\":6,\"title\":{\"ar\":\"Maxime.\",\"en\":\"Ut maxime.\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories?page=2\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":2,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/admin\\\/book-categories\",\"per_page\":15,\"to\":15,\"total\":20}}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Store Book Category.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/admin\/book-categories",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/admin\/book-categories"
+                                },
+                                "method": "POST",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"title\":{\"en\":\"Historical\",\"ar\":\"\u062a\u0627\u0631\u064a\u062e\u064a\"}}"
+                                },
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Get Book Category by id.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/admin\/book-categories\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/admin\/book-categories\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "14",
+                                            "description": "The ID of the book category"
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"data\":{\"id\":14,\"title\":{\"ar\":\"Deleniti.\",\"en\":\"Ab et.\"}}}",
+                                    "name": ""
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Update Book Category.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/admin\/book-categories\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/admin\/book-categories\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "11",
+                                            "description": "The ID of the book category"
+                                        }
+                                    ]
+                                },
+                                "method": "PUT",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": {
+                                    "mode": "raw",
+                                    "raw": "{\"title\":{\"en\":\"Historical\",\"ar\":\"\u062a\u0627\u0631\u064a\u062e\u064a\"}}"
+                                },
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": []
+                        },
+                        {
+                            "name": "Delete Book Category.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/admin\/book-categories\/:id",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/admin\/book-categories\/:id",
+                                    "variable": [
+                                        {
+                                            "id": "id",
+                                            "key": "id",
+                                            "value": "12",
+                                            "description": "The ID of the book category"
+                                        }
+                                    ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "POST api\/auth\/login",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/login",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"qui\",\"password\":\"-0QKN2[\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "POST api\/auth\/logout",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/auth\/logout",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/auth\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Public Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Book Categories",
+                    "description": "API for detching Book Categories.",
+                    "item": [
+                        {
+                            "name": "Get all Book Categories.",
+                            "request": {
+                                "url": {
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/book-categories",
+                                    "query": [],
+                                    "raw": "{{baseUrl}}\/api\/book-categories"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "lang",
+                                        "value": "ar"
+                                    },
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "response": [
+                                {
+                                    "header": [
+                                        {
+                                            "key": "cache-control",
+                                            "value": "no-cache, private"
+                                        },
+                                        {
+                                            "key": "content-type",
+                                            "value": "application\/json"
+                                        },
+                                        {
+                                            "key": "access-control-allow-origin",
+                                            "value": "*"
+                                        }
+                                    ],
+                                    "code": 200,
+                                    "body": "{\"data\":[{\"id\":20,\"title\":\"Enim non.\"},{\"id\":19,\"title\":\"Quasi.\"},{\"id\":18,\"title\":\"Ut maxime.\"},{\"id\":17,\"title\":\"Sit.\"},{\"id\":16,\"title\":\"Totam sed.\"},{\"id\":15,\"title\":\"Sunt.\"},{\"id\":14,\"title\":\"Deleniti.\"},{\"id\":13,\"title\":\"Sint.\"},{\"id\":12,\"title\":\"Quam.\"},{\"id\":11,\"title\":\"Vel aut.\"},{\"id\":10,\"title\":\"Totam.\"},{\"id\":9,\"title\":\"Unde et.\"},{\"id\":8,\"title\":\"Deserunt.\"},{\"id\":7,\"title\":\"Et ut et.\"},{\"id\":6,\"title\":\"Maxime.\"},{\"id\":5,\"title\":\"Nam sit.\"},{\"id\":4,\"title\":\"Saepe.\"},{\"id\":3,\"title\":\"Vel.\"},{\"id\":2,\"title\":\"Possimus.\"},{\"id\":1,\"title\":\"Molestiae.\"}]}",
+                                    "name": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
