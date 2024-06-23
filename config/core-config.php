@@ -45,6 +45,10 @@ return [
             'password' => 'password',
             'is_deletable' => true
         ],
+    ],
+    'langs' => [
+        'arabic' => 'ar',
+        'english' => 'en'
     ]
 ];
 
