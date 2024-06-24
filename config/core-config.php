@@ -8,6 +8,7 @@ return [
         'contacts_admin' => 'contacts admin',
         'authors_admin' => 'authors admin',
         'blogs_admin' => 'blogs admin',
+        'books_admin' => 'books admin',
     ],
     'users' => [
         'super_admin' => [
@@ -42,6 +43,13 @@ return [
             'first_name' => 'blogs admin',
             'last_name' => 'blogs admin',
             'username' => 'blogs_admin',
+            'password' => 'password',
+            'is_deletable' => true
+        ],
+        'books_admin' => [
+            'first_name' => 'books admin',
+            'last_name' => 'books admin',
+            'username' => 'books admin',
             'password' => 'password',
             'is_deletable' => true
         ],

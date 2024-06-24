@@ -7,6 +7,7 @@ use App\Http\Requests\Book\StoreBookCategoryRequest;
 use App\Http\Requests\Book\UpdateBookCategoryRequest;
 use App\Http\Resources\Book\BookCategory\AdminBookCategoryResource;
 use App\Models\BookCategory;
+use App\Traits\HasChildRecords;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,6 +24,8 @@ use Knuckles\Scribe\Attributes\BodyParam;
 
 class BookCategoryController extends Controller
 {
+
+    use HasChildRecords;
 
     #[Endpoint('Get all Book Categories.')]
     #[QueryParam('filter[title]', 'string', 'filter Book Categroies by title.', false)]
@@ -78,10 +81,12 @@ class BookCategoryController extends Controller
     #[UrlParam('id', 'integer', 'The ID of the book category', true)]
     public function destroy(BookCategory $bookCategory) {
 
+        if($this->hasChildRecords($bookCategory)) {
 
-        if($bookCategory->books()->count() > 0) {
-
-            return $this->error(Response::HTTP_CONFLICT, str_replace('{childs}', 'books', config('response-messages.crud.record_has_childs')), []);
+            return $this->error(
+                    Response::HTTP_CONFLICT,
+                    config('response-messages.crud.record_has_childs')
+                );
         }
 
         $bookCategory->delete();
