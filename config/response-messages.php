@@ -8,7 +8,7 @@ return [
         'unauthorized' => 'You are not authorized to perform this action.'
     ],
     'crud' => [
-        'record_has_childs' => 'You can\'t delete this record, it has active {childs}.',
+        'record_has_childs' => 'You can\'t delete this record, it has related data.',
         'delete_success' => 'deleted successfully.'
     ]
 ];

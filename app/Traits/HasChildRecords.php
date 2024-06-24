@@ -2,29 +2,26 @@
 
 namespace App\Traits;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
+use App\Models\Abstracts\RelationsAware;
+use Exception;
 
 trait HasChildRecords {
 
-    protected function hasChildRecords(Model $model, string ...$relations): ?JsonResponse {
+    protected function hasChildRecords(RelationsAware $model): bool {
 
-        foreach($relations as $relation) {
+        foreach($model->relations() as $relation) {
 
             if(!method_exists($model, $relation)) {
-                throw InvalidArgumentException("The relation $relation does not exists on the model.");
+
+                throw new Exception("The relation $relation does not exist on " . class_basename($model));
             }
 
             if($model->$relation()->count()) {
 
-                return $this->error(
-                    Response::HTTP_CONFLICT,
-                    str_replace('{childs}', $relation, config('response-messages.crud.record_has_childs'))
-                );
+                return true;
             }
         }
 
-        return null;
+        return false;
     }
 }

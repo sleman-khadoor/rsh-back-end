@@ -81,9 +81,12 @@ class BookCategoryController extends Controller
     #[UrlParam('id', 'integer', 'The ID of the book category', true)]
     public function destroy(BookCategory $bookCategory) {
 
-        if($childRecordsCheck = $this->hasChildRecords($bookCategory, 'books')) {
+        if($this->hasChildRecords($bookCategory)) {
 
-            return $childRecordsCheck;
+            return $this->error(
+                    Response::HTTP_CONFLICT,
+                    config('response-messages.crud.record_has_childs')
+                );
         }
 
         $bookCategory->delete();

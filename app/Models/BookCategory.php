@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\Abstracts\RelationsAware;
 use Spatie\Translatable\HasTranslations;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class BookCategory extends Model
+class BookCategory extends Model implements RelationsAware
 {
     use HasFactory, HasTranslations;
 
@@ -19,5 +20,10 @@ class BookCategory extends Model
     public function books(): BelongsToMany {
 
         return $this->belongsToMany(Book::class, 'book_category');
+    }
+
+    public function relations(): array
+    {
+        return ['books'];
     }
 }
