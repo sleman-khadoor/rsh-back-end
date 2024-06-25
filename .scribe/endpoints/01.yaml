@@ -8,7 +8,7 @@ endpoints:
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
-      subgroup: 'Book Management'
+      subgroup: 'Book Category Management'
       subgroupDescription: 'APIs for managing Book Categories'
       title: 'Get all Book Categories.'
       description: ''
@@ -44,20 +44,20 @@ endpoints:
         name: 'filter[title]'
         description: 'filter Book Categroies by title.'
         required: false
-        example: nihil
+        example: quos
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      'filter[title]': nihil
+      'filter[title]': quos
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":20,"title":{"ar":"Enim non.","en":"Saepe est."}},{"id":19,"title":{"ar":"Quasi.","en":"Vitae eum."}},{"id":18,"title":{"ar":"Ut maxime.","en":"Velit."}},{"id":17,"title":{"ar":"Sit.","en":"Illum."}},{"id":16,"title":{"ar":"Totam sed.","en":"Molestiae."}},{"id":15,"title":{"ar":"Sunt.","en":"In."}},{"id":14,"title":{"ar":"Deleniti.","en":"Ab et."}},{"id":13,"title":{"ar":"Sint.","en":"Sunt."}},{"id":12,"title":{"ar":"Quam.","en":"Nisi sunt."}},{"id":11,"title":{"ar":"Vel aut.","en":"Quod."}},{"id":10,"title":{"ar":"Totam.","en":"Doloribus."}},{"id":9,"title":{"ar":"Unde et.","en":"Est."}},{"id":8,"title":{"ar":"Deserunt.","en":"Error."}},{"id":7,"title":{"ar":"Et ut et.","en":"Rerum quo."}},{"id":6,"title":{"ar":"Maxime.","en":"Ut maxime."}}],"links":{"first":"http:\/\/localhost\/api\/admin\/book-categories?page=1","last":"http:\/\/localhost\/api\/admin\/book-categories?page=2","prev":null,"next":"http:\/\/localhost\/api\/admin\/book-categories?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/book-categories","per_page":15,"to":15,"total":20}}'
+        content: '{"data":[{"id":20,"title":{"ar":"Odit.","en":"Vero."}},{"id":19,"title":{"ar":"Officiis.","en":"Adipisci."}},{"id":18,"title":{"ar":"Velit qui.","en":"Itaque."}},{"id":17,"title":{"ar":"Sunt nemo.","en":"Harum."}},{"id":16,"title":{"ar":"A totam.","en":"Aliquid."}},{"id":15,"title":{"ar":"Beatae.","en":"Omnis."}},{"id":14,"title":{"ar":"Eius.","en":"Facere."}},{"id":13,"title":{"ar":"Nesciunt.","en":"Dolorem."}},{"id":12,"title":{"ar":"Earum ea.","en":"Explicabo."}},{"id":11,"title":{"ar":"Eum.","en":"Expedita."}},{"id":10,"title":{"ar":"Harum.","en":"Alias."}},{"id":9,"title":{"ar":"Aut sunt.","en":"Rerum id."}},{"id":8,"title":{"ar":"Culpa.","en":"Ut omnis."}},{"id":7,"title":{"ar":"Vitae qui.","en":"Modi."}},{"id":6,"title":{"ar":"Aliquid.","en":"Sequi aut."}}],"links":{"first":"http:\/\/localhost\/api\/admin\/book-categories?page=1","last":"http:\/\/localhost\/api\/admin\/book-categories?page=2","prev":null,"next":"http:\/\/localhost\/api\/admin\/book-categories?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/book-categories","per_page":15,"to":15,"total":20}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -77,7 +77,7 @@ endpoints:
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
-      subgroup: 'Book Management'
+      subgroup: 'Book Category Management'
       subgroupDescription: 'APIs for managing Book Categories'
       title: 'Store Book Category.'
       description: ''
@@ -121,7 +121,7 @@ endpoints:
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
-      subgroup: 'Book Management'
+      subgroup: 'Book Category Management'
       subgroupDescription: 'APIs for managing Book Categories'
       title: 'Get Book Category by id.'
       description: ''
@@ -135,13 +135,13 @@ endpoints:
         name: id
         description: 'The ID of the book category'
         required: true
-        example: 14
+        example: 15
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 14
+      id: 15
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -150,7 +150,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":14,"title":{"ar":"Deleniti.","en":"Ab et."}}}'
+        content: '{"data":{"id":15,"title":{"ar":"Beatae.","en":"Omnis."}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -171,7 +171,7 @@ endpoints:
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
-      subgroup: 'Book Management'
+      subgroup: 'Book Category Management'
       subgroupDescription: 'APIs for managing Book Categories'
       title: 'Update Book Category.'
       description: ''
@@ -185,13 +185,13 @@ endpoints:
         name: id
         description: 'The ID of the book category'
         required: true
-        example: 11
+        example: 19
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 11
+      id: 19
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -225,7 +225,7 @@ endpoints:
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
-      subgroup: 'Book Management'
+      subgroup: 'Book Category Management'
       subgroupDescription: 'APIs for managing Book Categories'
       title: 'Delete Book Category.'
       description: ''
@@ -239,13 +239,318 @@ endpoints:
         name: id
         description: 'The ID of the book category'
         required: true
-        example: 12
+        example: 7
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 12
+      id: 7
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/admin/authors
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Author Management'
+      subgroupDescription: 'APIs for managing Authors'
+      title: 'Get all Authors.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      page: 1
+      perPage: 3
+    queryParameters:
+      'filter[name]':
+        name: 'filter[name]'
+        description: 'filter Authors by name.'
+        required: false
+        example: optio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[name]': optio
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":20,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/0055ee?text=impedit","name":{"ar":"Omnis.","en":"Eum iste."},"about":{"ar":"Sint iusto nihil est. Eligendi dolore quibusdam rem dolor eum. Nulla quisquam velit unde et eaque.","en":"Sit dolorum quos labore. Quia repudiandae nihil voluptas est. Aut in est quasi dicta."}},{"id":19,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/0099bb?text=voluptatum","name":{"ar":"Est.","en":"Quod."},"about":{"ar":"Molestiae quia hic et doloremque est sint facere. Culpa cum tenetur quidem dignissimos natus.","en":"Aut ab tempora facere ut modi ipsum consequatur. Eligendi rerum ipsum eum animi et et doloremque."}},{"id":18,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=nostrum","name":{"ar":"Ut quia.","en":"Ipsum."},"about":{"ar":"Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.","en":"Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel."}},{"id":17,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00aaff?text=illo","name":{"ar":"Rem porro.","en":"Nihil."},"about":{"ar":"Nam illum quo quidem. Sed cumque occaecati in aperiam ut odio odit. Eos sit molestiae dolor rerum.","en":"Suscipit culpa sunt vitae et occaecati. Sint qui rem libero. Rerum eum quasi explicabo."}},{"id":16,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/005500?text=hic","name":{"ar":"Nulla sit.","en":"Et iure."},"about":{"ar":"Atque aspernatur beatae tempora dolorem aut. Quia fugit vel id et inventore repellendus error.","en":"Neque ex sit eum. Reprehenderit fugiat repudiandae vel quis. Ut ullam est voluptatum debitis."}},{"id":15,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/001166?text=qui","name":{"ar":"Eum amet.","en":"Autem aut."},"about":{"ar":"Qui corporis deleniti at qui nobis atque. Voluptates quo animi adipisci occaecati ut.","en":"Voluptates fugiat voluptas distinctio adipisci earum aliquid. Sed reiciendis dicta qui saepe."}},{"id":14,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00eeff?text=pariatur","name":{"ar":"Vero.","en":"Error."},"about":{"ar":"Et ab perferendis cumque est rerum fuga. Deserunt unde aut itaque vero quisquam et.","en":"Optio excepturi dolor ea doloremque. Ab quas eum id minus. Quia sint officiis ipsum ea at facere."}},{"id":13,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/009955?text=sunt","name":{"ar":"Dolore.","en":"Aut et ut."},"about":{"ar":"Alias qui quaerat incidunt qui totam nisi quia. Est unde sed itaque quia inventore.","en":"Voluptate at et in ut et provident non ratione. Est architecto repellat nam tempora enim ut vitae."}},{"id":12,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/0033cc?text=inventore","name":{"ar":"Illum.","en":"Totam."},"about":{"ar":"Magni nostrum nulla aut nihil sequi maiores tenetur nemo. Vel corporis fugiat consequatur vitae.","en":"Blanditiis blanditiis et quisquam inventore tenetur. Quaerat quisquam officia dolor minima ad nam."}},{"id":11,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee22?text=ut","name":{"ar":"Sunt.","en":"Enim."},"about":{"ar":"Quos qui nulla unde impedit. Animi quam praesentium qui hic cum. Et dolorum non quia dolor magni.","en":"Sequi perspiciatis iusto deleniti delectus. Aliquam quam nam quia officia."}},{"id":10,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00eeff?text=mollitia","name":{"ar":"Nesciunt.","en":"Dolor."},"about":{"ar":"Commodi et et impedit. Sit aut sed unde officiis. Magni qui natus nesciunt beatae.","en":"Rem numquam qui tenetur adipisci sed. Accusantium in veritatis temporibus. Rerum et quidem et aut."}},{"id":9,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/006600?text=id","name":{"ar":"Nostrum.","en":"Delectus."},"about":{"ar":"Et quia provident qui voluptas et eius. Distinctio et asperiores et veniam.","en":"Aut sit et omnis porro accusamus dolor. Odit totam magni in aperiam. Adipisci quis dolorem et cum."}},{"id":8,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ddbb?text=itaque","name":{"ar":"Cumque.","en":"Occaecati."},"about":{"ar":"Maxime porro neque illum omnis. Aliquid quia qui cum dignissimos quisquam.","en":"Qui dolorum sit quasi sunt. Facilis nihil dolore aut aut. Ab in inventore molestiae dolores eius."}},{"id":7,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00dddd?text=expedita","name":{"ar":"Tenetur.","en":"Quo."},"about":{"ar":"Temporibus expedita sint molestiae minima placeat. Omnis qui dolores consectetur natus dicta enim.","en":"Quidem adipisci expedita doloremque harum ut. Aut minima aliquam est odit ratione asperiores."}},{"id":6,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/005500?text=iusto","name":{"ar":"Hic.","en":"Non quia."},"about":{"ar":"Vel aliquam qui omnis amet. Quam ut ut provident. Temporibus repellendus pariatur quaerat ut vel.","en":"Ratione qui ut quisquam praesentium quia nemo et voluptate. Aut repellendus nihil quisquam ipsum."}}],"links":{"first":"http:\/\/localhost\/api\/admin\/authors?page=1","last":"http:\/\/localhost\/api\/admin\/authors?page=2","prev":null,"next":"http:\/\/localhost\/api\/admin\/authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/authors","per_page":15,"to":15,"total":20}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/admin/authors
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Author Management'
+      subgroupDescription: 'APIs for managing Authors'
+      title: 'Store Author.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the Author.'
+        required: true
+        example:
+          en: Ahmad
+          ar: أحمد
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      about:
+        name: about
+        description: 'The about of the Author.'
+        required: true
+        example:
+          en: 'about the author'
+          ar: 'حول المؤلف'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      avatar:
+        name: avatar
+        description: 'The avatar of the Author.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name:
+        en: Ahmad
+        ar: أحمد
+      about:
+        en: 'about the author'
+        ar: 'حول المؤلف'
+    fileParameters:
+      avatar: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/admin/authors/{id}'
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Author Management'
+      subgroupDescription: 'APIs for managing Authors'
+      title: 'Get Author by id.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the Author'
+        required: true
+        example: 18
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 18
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":18,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=nostrum","name":{"ar":"Ut quia.","en":"Ipsum."},"about":{"ar":"Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.","en":"Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel."}}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/admin/authors/{id}'
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Author Management'
+      subgroupDescription: 'APIs for managing Authors'
+      title: 'Update Author.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the Author'
+        required: true
+        example: 18
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 18
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the Author.'
+        required: true
+        example:
+          en: Ahmad
+          ar: أحمد
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      about:
+        name: about
+        description: 'The about of the Author.'
+        required: true
+        example:
+          en: 'about the author'
+          ar: 'حول المؤلف'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      avatar:
+        name: avatar
+        description: 'The avatar of the Author.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name:
+        en: Ahmad
+        ar: أحمد
+      about:
+        en: 'about the author'
+        ar: 'حول المؤلف'
+    fileParameters:
+      avatar: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/admin/authors/{id}'
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Author Management'
+      subgroupDescription: 'APIs for managing Authors'
+      title: 'Delete Author.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the Author.'
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 11
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

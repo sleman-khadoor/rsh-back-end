@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\Book\BookCategory;
+namespace App\Http\Resources\BookCategory;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -15,7 +15,6 @@ class AdminBookCategoryResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id'=> $this->id,
             ...$this->getTranslations()
         ];
     }

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Book\BookCategory;
+namespace App\Http\Resources\Author;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PublicBookCategoryResource extends JsonResource
+class AdminAuthorResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,7 +15,8 @@ class PublicBookCategoryResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'title' => $this->title
+            ...$this->getTranslations(),
+            'avatar' => $this->avatar,
         ];
     }
 }

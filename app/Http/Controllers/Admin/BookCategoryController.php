@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Book;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Book\StoreBookCategoryRequest;
-use App\Http\Requests\Book\UpdateBookCategoryRequest;
-use App\Http\Resources\Book\BookCategory\AdminBookCategoryResource;
 use App\Models\BookCategory;
-use App\Traits\HasChildRecords;
 use Illuminate\Http\Request;
-use Spatie\QueryBuilder\QueryBuilder;
-use Symfony\Component\HttpFoundation\Response;
+use App\Traits\HasChildRecords;
+use App\Http\Controllers\Controller;
 use Knuckles\Scribe\Attributes\Group;
+use Spatie\QueryBuilder\QueryBuilder;
 use Knuckles\Scribe\Attributes\Endpoint;
-use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\Subgroup;
 use Knuckles\Scribe\Attributes\UrlParam;
 use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\QueryParam;
+use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\BookCategory\StoreBookCategoryRequest;
+use App\Http\Requests\BookCategory\UpdateBookCategoryRequest;
+use App\Http\Resources\BookCategory\AdminBookCategoryResource;
 
 
 #[Group('Admin Endpoints')]
-#[Subgroup('Book Management', 'APIs for managing Book Categories')]
+#[Subgroup('Book Category Management', 'APIs for managing Book Categories')]
 
 class BookCategoryController extends Controller
 {

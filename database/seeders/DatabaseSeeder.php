@@ -13,13 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // seed app roles
-        (new RoleSeeder)->run();
 
-        // seed users
-        (new UserSeeder)->run();
-
-        // seed books
-        (new BookSeeder)->run();
+        $this->call([
+            BookSeeder::class
+        ]);
     }
 }

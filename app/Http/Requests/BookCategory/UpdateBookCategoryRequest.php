@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Book;
+namespace App\Http\Requests\BookCategory;
 
 use App\Traits\JsonErrors;
 use CodeZero\UniqueTranslation\UniqueTranslationRule;
@@ -25,7 +25,7 @@ class UpdateBookCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required'],
+            'title' => ['required', 'array'],
             'title.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('book_categories')->ignore($this->book_category?->id)],
         ];
     }
