@@ -71,10 +71,10 @@
                     <a href="#admin-endpoints">Admin Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-admin-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="admin-endpoints-book-management">
-                                <a href="#admin-endpoints-book-management">Book Management</a>
+                                                    <li class="tocify-item level-2" data-unique="admin-endpoints-book-category-management">
+                                <a href="#admin-endpoints-book-category-management">Book Category Management</a>
                             </li>
-                                                            <ul id="tocify-subheader-admin-endpoints-book-management" class="tocify-subheader">
+                                                            <ul id="tocify-subheader-admin-endpoints-book-category-management" class="tocify-subheader">
                                                                             <li class="tocify-item level-3" data-unique="admin-endpoints-GETapi-admin-book-categories">
                                             <a href="#admin-endpoints-GETapi-admin-book-categories">Get all Book Categories.</a>
                                         </li>
@@ -89,6 +89,26 @@
                                         </li>
                                                                             <li class="tocify-item level-3" data-unique="admin-endpoints-DELETEapi-admin-book-categories--id-">
                                             <a href="#admin-endpoints-DELETEapi-admin-book-categories--id-">Delete Book Category.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="admin-endpoints-author-management">
+                                <a href="#admin-endpoints-author-management">Author Management</a>
+                            </li>
+                                                            <ul id="tocify-subheader-admin-endpoints-author-management" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="admin-endpoints-GETapi-admin-authors">
+                                            <a href="#admin-endpoints-GETapi-admin-authors">Get all Authors.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-endpoints-POSTapi-admin-authors">
+                                            <a href="#admin-endpoints-POSTapi-admin-authors">Store Author.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-endpoints-GETapi-admin-authors--id-">
+                                            <a href="#admin-endpoints-GETapi-admin-authors--id-">Get Author by id.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-endpoints-PUTapi-admin-authors--id-">
+                                            <a href="#admin-endpoints-PUTapi-admin-authors--id-">Update Author.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-endpoints-DELETEapi-admin-authors--id-">
+                                            <a href="#admin-endpoints-DELETEapi-admin-authors--id-">Delete Author.</a>
                                         </li>
                                                                     </ul>
                                                                         </ul>
@@ -130,7 +150,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: June 23, 2024</li>
+        <li>Last updated: June 24, 2024</li>
     </ul>
 </div>
 
@@ -152,7 +172,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
     
 
-                        <h2 id="admin-endpoints-book-management">Book Management</h2>
+                        <h2 id="admin-endpoints-book-category-management">Book Category Management</h2>
                                         <p>
                     <p>APIs for managing Book Categories</p>
                 </p>
@@ -169,7 +189,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/admin/book-categories?filter%5Btitle%5D=nihil" \
+    --get "http://localhost/api/admin/book-categories?filter%5Btitle%5D=quos" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -180,7 +200,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 );
 
 const params = {
-    "filter[title]": "nihil",
+    "filter[title]": "quos",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -215,106 +235,106 @@ access-control-allow-origin: *
         {
             &quot;id&quot;: 20,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Enim non.&quot;,
-                &quot;en&quot;: &quot;Saepe est.&quot;
+                &quot;ar&quot;: &quot;Odit.&quot;,
+                &quot;en&quot;: &quot;Vero.&quot;
             }
         },
         {
             &quot;id&quot;: 19,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Quasi.&quot;,
-                &quot;en&quot;: &quot;Vitae eum.&quot;
+                &quot;ar&quot;: &quot;Officiis.&quot;,
+                &quot;en&quot;: &quot;Adipisci.&quot;
             }
         },
         {
             &quot;id&quot;: 18,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Ut maxime.&quot;,
-                &quot;en&quot;: &quot;Velit.&quot;
+                &quot;ar&quot;: &quot;Velit qui.&quot;,
+                &quot;en&quot;: &quot;Itaque.&quot;
             }
         },
         {
             &quot;id&quot;: 17,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Sit.&quot;,
-                &quot;en&quot;: &quot;Illum.&quot;
+                &quot;ar&quot;: &quot;Sunt nemo.&quot;,
+                &quot;en&quot;: &quot;Harum.&quot;
             }
         },
         {
             &quot;id&quot;: 16,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Totam sed.&quot;,
-                &quot;en&quot;: &quot;Molestiae.&quot;
+                &quot;ar&quot;: &quot;A totam.&quot;,
+                &quot;en&quot;: &quot;Aliquid.&quot;
             }
         },
         {
             &quot;id&quot;: 15,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Sunt.&quot;,
-                &quot;en&quot;: &quot;In.&quot;
+                &quot;ar&quot;: &quot;Beatae.&quot;,
+                &quot;en&quot;: &quot;Omnis.&quot;
             }
         },
         {
             &quot;id&quot;: 14,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Deleniti.&quot;,
-                &quot;en&quot;: &quot;Ab et.&quot;
+                &quot;ar&quot;: &quot;Eius.&quot;,
+                &quot;en&quot;: &quot;Facere.&quot;
             }
         },
         {
             &quot;id&quot;: 13,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Sint.&quot;,
-                &quot;en&quot;: &quot;Sunt.&quot;
+                &quot;ar&quot;: &quot;Nesciunt.&quot;,
+                &quot;en&quot;: &quot;Dolorem.&quot;
             }
         },
         {
             &quot;id&quot;: 12,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Quam.&quot;,
-                &quot;en&quot;: &quot;Nisi sunt.&quot;
+                &quot;ar&quot;: &quot;Earum ea.&quot;,
+                &quot;en&quot;: &quot;Explicabo.&quot;
             }
         },
         {
             &quot;id&quot;: 11,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Vel aut.&quot;,
-                &quot;en&quot;: &quot;Quod.&quot;
+                &quot;ar&quot;: &quot;Eum.&quot;,
+                &quot;en&quot;: &quot;Expedita.&quot;
             }
         },
         {
             &quot;id&quot;: 10,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Totam.&quot;,
-                &quot;en&quot;: &quot;Doloribus.&quot;
+                &quot;ar&quot;: &quot;Harum.&quot;,
+                &quot;en&quot;: &quot;Alias.&quot;
             }
         },
         {
             &quot;id&quot;: 9,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Unde et.&quot;,
-                &quot;en&quot;: &quot;Est.&quot;
+                &quot;ar&quot;: &quot;Aut sunt.&quot;,
+                &quot;en&quot;: &quot;Rerum id.&quot;
             }
         },
         {
             &quot;id&quot;: 8,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Deserunt.&quot;,
-                &quot;en&quot;: &quot;Error.&quot;
+                &quot;ar&quot;: &quot;Culpa.&quot;,
+                &quot;en&quot;: &quot;Ut omnis.&quot;
             }
         },
         {
             &quot;id&quot;: 7,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Et ut et.&quot;,
-                &quot;en&quot;: &quot;Rerum quo.&quot;
+                &quot;ar&quot;: &quot;Vitae qui.&quot;,
+                &quot;en&quot;: &quot;Modi.&quot;
             }
         },
         {
             &quot;id&quot;: 6,
             &quot;title&quot;: {
-                &quot;ar&quot;: &quot;Maxime.&quot;,
-                &quot;en&quot;: &quot;Ut maxime.&quot;
+                &quot;ar&quot;: &quot;Aliquid.&quot;,
+                &quot;en&quot;: &quot;Sequi aut.&quot;
             }
         }
     ],
@@ -457,10 +477,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="filter[title]"                data-endpoint="GETapi-admin-book-categories"
-               value="nihil"
+               value="quos"
                data-component="query">
     <br>
-<p>filter Book Categroies by title. Example: <code>nihil</code></p>
+<p>filter Book Categroies by title. Example: <code>quos</code></p>
             </div>
                 </form>
 
@@ -614,14 +634,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/admin/book-categories/14" \
+    --get "http://localhost/api/admin/book-categories/15" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/admin/book-categories/14"
+    "http://localhost/api/admin/book-categories/15"
 );
 
 const headers = {
@@ -651,10 +671,10 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 14,
+        &quot;id&quot;: 15,
         &quot;title&quot;: {
-            &quot;ar&quot;: &quot;Deleniti.&quot;,
-            &quot;en&quot;: &quot;Ab et.&quot;
+            &quot;ar&quot;: &quot;Beatae.&quot;,
+            &quot;en&quot;: &quot;Omnis.&quot;
         }
     }
 }</code>
@@ -736,10 +756,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-admin-book-categories--id-"
-               value="14"
+               value="15"
                data-component="url">
     <br>
-<p>The ID of the book category Example: <code>14</code></p>
+<p>The ID of the book category Example: <code>15</code></p>
             </div>
                     </form>
 
@@ -756,7 +776,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/admin/book-categories/11" \
+    "http://localhost/api/admin/book-categories/19" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
@@ -770,7 +790,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/admin/book-categories/11"
+    "http://localhost/api/admin/book-categories/19"
 );
 
 const headers = {
@@ -875,10 +895,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-admin-book-categories--id-"
-               value="11"
+               value="19"
                data-component="url">
     <br>
-<p>The ID of the book category Example: <code>11</code></p>
+<p>The ID of the book category Example: <code>19</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -909,14 +929,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/admin/book-categories/12" \
+    "http://localhost/api/admin/book-categories/7" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/admin/book-categories/12"
+    "http://localhost/api/admin/book-categories/7"
 );
 
 const headers = {
@@ -1009,10 +1029,998 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-admin-book-categories--id-"
-               value="12"
+               value="7"
                data-component="url">
     <br>
-<p>The ID of the book category Example: <code>12</code></p>
+<p>The ID of the book category Example: <code>7</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="admin-endpoints-author-management">Author Management</h2>
+                                        <p>
+                    <p>APIs for managing Authors</p>
+                </p>
+                                        <h2 id="admin-endpoints-GETapi-admin-authors">Get all Authors.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-authors">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/admin/authors?filter%5Bname%5D=optio" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/authors"
+);
+
+const params = {
+    "filter[name]": "optio",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-authors">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 20,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/0055ee?text=impedit&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Omnis.&quot;,
+                &quot;en&quot;: &quot;Eum iste.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Sint iusto nihil est. Eligendi dolore quibusdam rem dolor eum. Nulla quisquam velit unde et eaque.&quot;,
+                &quot;en&quot;: &quot;Sit dolorum quos labore. Quia repudiandae nihil voluptas est. Aut in est quasi dicta.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 19,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/0099bb?text=voluptatum&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Est.&quot;,
+                &quot;en&quot;: &quot;Quod.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Molestiae quia hic et doloremque est sint facere. Culpa cum tenetur quidem dignissimos natus.&quot;,
+                &quot;en&quot;: &quot;Aut ab tempora facere ut modi ipsum consequatur. Eligendi rerum ipsum eum animi et et doloremque.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 18,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=nostrum&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Ut quia.&quot;,
+                &quot;en&quot;: &quot;Ipsum.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.&quot;,
+                &quot;en&quot;: &quot;Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 17,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00aaff?text=illo&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Rem porro.&quot;,
+                &quot;en&quot;: &quot;Nihil.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Nam illum quo quidem. Sed cumque occaecati in aperiam ut odio odit. Eos sit molestiae dolor rerum.&quot;,
+                &quot;en&quot;: &quot;Suscipit culpa sunt vitae et occaecati. Sint qui rem libero. Rerum eum quasi explicabo.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 16,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/005500?text=hic&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Nulla sit.&quot;,
+                &quot;en&quot;: &quot;Et iure.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Atque aspernatur beatae tempora dolorem aut. Quia fugit vel id et inventore repellendus error.&quot;,
+                &quot;en&quot;: &quot;Neque ex sit eum. Reprehenderit fugiat repudiandae vel quis. Ut ullam est voluptatum debitis.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 15,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/001166?text=qui&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Eum amet.&quot;,
+                &quot;en&quot;: &quot;Autem aut.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Qui corporis deleniti at qui nobis atque. Voluptates quo animi adipisci occaecati ut.&quot;,
+                &quot;en&quot;: &quot;Voluptates fugiat voluptas distinctio adipisci earum aliquid. Sed reiciendis dicta qui saepe.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 14,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00eeff?text=pariatur&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Vero.&quot;,
+                &quot;en&quot;: &quot;Error.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Et ab perferendis cumque est rerum fuga. Deserunt unde aut itaque vero quisquam et.&quot;,
+                &quot;en&quot;: &quot;Optio excepturi dolor ea doloremque. Ab quas eum id minus. Quia sint officiis ipsum ea at facere.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 13,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/009955?text=sunt&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Dolore.&quot;,
+                &quot;en&quot;: &quot;Aut et ut.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Alias qui quaerat incidunt qui totam nisi quia. Est unde sed itaque quia inventore.&quot;,
+                &quot;en&quot;: &quot;Voluptate at et in ut et provident non ratione. Est architecto repellat nam tempora enim ut vitae.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 12,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/0033cc?text=inventore&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Illum.&quot;,
+                &quot;en&quot;: &quot;Totam.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Magni nostrum nulla aut nihil sequi maiores tenetur nemo. Vel corporis fugiat consequatur vitae.&quot;,
+                &quot;en&quot;: &quot;Blanditiis blanditiis et quisquam inventore tenetur. Quaerat quisquam officia dolor minima ad nam.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 11,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ee22?text=ut&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Sunt.&quot;,
+                &quot;en&quot;: &quot;Enim.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Quos qui nulla unde impedit. Animi quam praesentium qui hic cum. Et dolorum non quia dolor magni.&quot;,
+                &quot;en&quot;: &quot;Sequi perspiciatis iusto deleniti delectus. Aliquam quam nam quia officia.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 10,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00eeff?text=mollitia&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Nesciunt.&quot;,
+                &quot;en&quot;: &quot;Dolor.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Commodi et et impedit. Sit aut sed unde officiis. Magni qui natus nesciunt beatae.&quot;,
+                &quot;en&quot;: &quot;Rem numquam qui tenetur adipisci sed. Accusantium in veritatis temporibus. Rerum et quidem et aut.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 9,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/006600?text=id&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Nostrum.&quot;,
+                &quot;en&quot;: &quot;Delectus.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Et quia provident qui voluptas et eius. Distinctio et asperiores et veniam.&quot;,
+                &quot;en&quot;: &quot;Aut sit et omnis porro accusamus dolor. Odit totam magni in aperiam. Adipisci quis dolorem et cum.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 8,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ddbb?text=itaque&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Cumque.&quot;,
+                &quot;en&quot;: &quot;Occaecati.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Maxime porro neque illum omnis. Aliquid quia qui cum dignissimos quisquam.&quot;,
+                &quot;en&quot;: &quot;Qui dolorum sit quasi sunt. Facilis nihil dolore aut aut. Ab in inventore molestiae dolores eius.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 7,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00dddd?text=expedita&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Tenetur.&quot;,
+                &quot;en&quot;: &quot;Quo.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Temporibus expedita sint molestiae minima placeat. Omnis qui dolores consectetur natus dicta enim.&quot;,
+                &quot;en&quot;: &quot;Quidem adipisci expedita doloremque harum ut. Aut minima aliquam est odit ratione asperiores.&quot;
+            }
+        },
+        {
+            &quot;id&quot;: 6,
+            &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/005500?text=iusto&quot;,
+            &quot;name&quot;: {
+                &quot;ar&quot;: &quot;Hic.&quot;,
+                &quot;en&quot;: &quot;Non quia.&quot;
+            },
+            &quot;about&quot;: {
+                &quot;ar&quot;: &quot;Vel aliquam qui omnis amet. Quam ut ut provident. Temporibus repellendus pariatur quaerat ut vel.&quot;,
+                &quot;en&quot;: &quot;Ratione qui ut quisquam praesentium quia nemo et voluptate. Aut repellendus nihil quisquam ipsum.&quot;
+            }
+        }
+    ],
+    &quot;links&quot;: {
+        &quot;first&quot;: &quot;http://localhost/api/admin/authors?page=1&quot;,
+        &quot;last&quot;: &quot;http://localhost/api/admin/authors?page=2&quot;,
+        &quot;prev&quot;: null,
+        &quot;next&quot;: &quot;http://localhost/api/admin/authors?page=2&quot;
+    },
+    &quot;meta&quot;: {
+        &quot;current_page&quot;: 1,
+        &quot;from&quot;: 1,
+        &quot;last_page&quot;: 2,
+        &quot;links&quot;: [
+            {
+                &quot;url&quot;: null,
+                &quot;label&quot;: &quot;&amp;laquo; Previous&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/admin/authors?page=1&quot;,
+                &quot;label&quot;: &quot;1&quot;,
+                &quot;active&quot;: true
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/admin/authors?page=2&quot;,
+                &quot;label&quot;: &quot;2&quot;,
+                &quot;active&quot;: false
+            },
+            {
+                &quot;url&quot;: &quot;http://localhost/api/admin/authors?page=2&quot;,
+                &quot;label&quot;: &quot;Next &amp;raquo;&quot;,
+                &quot;active&quot;: false
+            }
+        ],
+        &quot;path&quot;: &quot;http://localhost/api/admin/authors&quot;,
+        &quot;per_page&quot;: 15,
+        &quot;to&quot;: 15,
+        &quot;total&quot;: 20
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-authors" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-authors"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-authors"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-authors" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-authors">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-authors" data-method="GET"
+      data-path="api/admin/authors"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-authors', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-authors"
+                    onclick="tryItOut('GETapi-admin-authors');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-authors"
+                    onclick="cancelTryOut('GETapi-admin-authors');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-authors"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/authors</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-authors"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-authors"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="page"                data-endpoint="GETapi-admin-authors"
+               value="1"
+               data-component="url">
+    <br>
+<p>The page number Example: <code>1</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>perPage</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="perPage"                data-endpoint="GETapi-admin-authors"
+               value="3"
+               data-component="url">
+    <br>
+<p>Number of items pre page Example: <code>3</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>filter[name]</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="filter[name]"                data-endpoint="GETapi-admin-authors"
+               value="optio"
+               data-component="query">
+    <br>
+<p>filter Authors by name. Example: <code>optio</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-endpoints-POSTapi-admin-authors">Store Author.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-admin-authors">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/admin/authors" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "name[en]=Ahmad"\
+    --form "name[ar]=أحمد"\
+    --form "about[en]=about the author"\
+    --form "about[ar]=حول المؤلف"\
+    --form "avatar=@C:\Users\obada alzidi\AppData\Local\Temp\php3B9F.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/authors"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('name[en]', 'Ahmad');
+body.append('name[ar]', 'أحمد');
+body.append('about[en]', 'about the author');
+body.append('about[ar]', 'حول المؤلف');
+body.append('avatar', document.querySelector('input[name="avatar"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-admin-authors">
+</span>
+<span id="execution-results-POSTapi-admin-authors" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-admin-authors"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-authors"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-admin-authors" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-admin-authors">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-admin-authors" data-method="POST"
+      data-path="api/admin/authors"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-authors', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-admin-authors"
+                    onclick="tryItOut('POSTapi-admin-authors');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-admin-authors"
+                    onclick="cancelTryOut('POSTapi-admin-authors');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-admin-authors"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/admin/authors</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-admin-authors"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-admin-authors"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name[0]"                data-endpoint="POSTapi-admin-authors"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="name[1]"                data-endpoint="POSTapi-admin-authors"
+               data-component="body">
+    <br>
+<p>The name of the Author.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>about</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="about[0]"                data-endpoint="POSTapi-admin-authors"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="about[1]"                data-endpoint="POSTapi-admin-authors"
+               data-component="body">
+    <br>
+<p>The about of the Author.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>avatar</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="avatar"                data-endpoint="POSTapi-admin-authors"
+               value=""
+               data-component="body">
+    <br>
+<p>The avatar of the Author. Example: <code>C:\Users\obada alzidi\AppData\Local\Temp\php3B9F.tmp</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-endpoints-GETapi-admin-authors--id-">Get Author by id.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/admin/authors/18" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/authors/18"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-authors--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 18,
+        &quot;avatar&quot;: &quot;https://via.placeholder.com/640x480.png/00ffdd?text=nostrum&quot;,
+        &quot;name&quot;: {
+            &quot;ar&quot;: &quot;Ut quia.&quot;,
+            &quot;en&quot;: &quot;Ipsum.&quot;
+        },
+        &quot;about&quot;: {
+            &quot;ar&quot;: &quot;Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.&quot;,
+            &quot;en&quot;: &quot;Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel.&quot;
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-authors--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-authors--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-authors--id-" data-method="GET"
+      data-path="api/admin/authors/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-authors--id-"
+                    onclick="tryItOut('GETapi-admin-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-authors--id-"
+                    onclick="cancelTryOut('GETapi-admin-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-authors--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/authors/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="GETapi-admin-authors--id-"
+               value="18"
+               data-component="url">
+    <br>
+<p>The ID of the Author Example: <code>18</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-endpoints-PUTapi-admin-authors--id-">Update Author.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-admin-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost/api/admin/authors/18" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "name[en]=Ahmad"\
+    --form "name[ar]=أحمد"\
+    --form "about[en]=about the author"\
+    --form "about[ar]=حول المؤلف"\
+    --form "avatar=@C:\Users\obada alzidi\AppData\Local\Temp\php3BB1.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/authors/18"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('name[en]', 'Ahmad');
+body.append('name[ar]', 'أحمد');
+body.append('about[en]', 'about the author');
+body.append('about[ar]', 'حول المؤلف');
+body.append('avatar', document.querySelector('input[name="avatar"]').files[0]);
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-admin-authors--id-">
+</span>
+<span id="execution-results-PUTapi-admin-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-admin-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-admin-authors--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-admin-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-admin-authors--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-admin-authors--id-" data-method="PUT"
+      data-path="api/admin/authors/{id}"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-admin-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-admin-authors--id-"
+                    onclick="tryItOut('PUTapi-admin-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-admin-authors--id-"
+                    onclick="cancelTryOut('PUTapi-admin-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-admin-authors--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/admin/authors/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/admin/authors/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-admin-authors--id-"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-admin-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-admin-authors--id-"
+               value="18"
+               data-component="url">
+    <br>
+<p>The ID of the Author Example: <code>18</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name[0]"                data-endpoint="PUTapi-admin-authors--id-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="name[1]"                data-endpoint="PUTapi-admin-authors--id-"
+               data-component="body">
+    <br>
+<p>The name of the Author.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>about</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="about[0]"                data-endpoint="PUTapi-admin-authors--id-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="about[1]"                data-endpoint="PUTapi-admin-authors--id-"
+               data-component="body">
+    <br>
+<p>The about of the Author.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>avatar</code></b>&nbsp;&nbsp;
+<small>file</small>&nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+                              name="avatar"                data-endpoint="PUTapi-admin-authors--id-"
+               value=""
+               data-component="body">
+    <br>
+<p>The avatar of the Author. Example: <code>C:\Users\obada alzidi\AppData\Local\Temp\php3BB1.tmp</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-endpoints-DELETEapi-admin-authors--id-">Delete Author.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-admin-authors--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost/api/admin/authors/11" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/admin/authors/11"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-admin-authors--id-">
+</span>
+<span id="execution-results-DELETEapi-admin-authors--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-admin-authors--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-admin-authors--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-admin-authors--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-admin-authors--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-admin-authors--id-" data-method="DELETE"
+      data-path="api/admin/authors/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-admin-authors--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-admin-authors--id-"
+                    onclick="tryItOut('DELETEapi-admin-authors--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-admin-authors--id-"
+                    onclick="cancelTryOut('DELETEapi-admin-authors--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-admin-authors--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/admin/authors/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-admin-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-admin-authors--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-admin-authors--id-"
+               value="11"
+               data-component="url">
+    <br>
+<p>The ID of the Author. Example: <code>11</code></p>
             </div>
                     </form>
 
@@ -1037,8 +2045,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"qui\",
-    \"password\": \"-0QKN2[\"
+    \"username\": \"omnis\",
+    \"password\": \"v)B4BhX8me\\\\ZO8vV%,\"
 }"
 </code></pre></div>
 
@@ -1054,8 +2062,8 @@ const headers = {
 };
 
 let body = {
-    "username": "qui",
-    "password": "-0QKN2["
+    "username": "omnis",
+    "password": "v)B4BhX8me\\ZO8vV%,"
 };
 
 fetch(url, {
@@ -1144,10 +2152,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="username"                data-endpoint="POSTapi-auth-login"
-               value="qui"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -1155,10 +2163,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-auth-login"
-               value="-0QKN2["
+               value="v)B4BhX8me\ZO8vV%,"
                data-component="body">
     <br>
-<p>Example: <code>-0QKN2[</code></p>
+<p>Example: <code>v)B4BhX8me\ZO8vV%,</code></p>
         </div>
         </form>
 
@@ -1331,84 +2339,64 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 20,
-            &quot;title&quot;: &quot;Enim non.&quot;
+            &quot;title&quot;: &quot;Odit.&quot;
         },
         {
-            &quot;id&quot;: 19,
-            &quot;title&quot;: &quot;Quasi.&quot;
+            &quot;title&quot;: &quot;Officiis.&quot;
         },
         {
-            &quot;id&quot;: 18,
-            &quot;title&quot;: &quot;Ut maxime.&quot;
+            &quot;title&quot;: &quot;Velit qui.&quot;
         },
         {
-            &quot;id&quot;: 17,
-            &quot;title&quot;: &quot;Sit.&quot;
+            &quot;title&quot;: &quot;Sunt nemo.&quot;
         },
         {
-            &quot;id&quot;: 16,
-            &quot;title&quot;: &quot;Totam sed.&quot;
+            &quot;title&quot;: &quot;A totam.&quot;
         },
         {
-            &quot;id&quot;: 15,
-            &quot;title&quot;: &quot;Sunt.&quot;
+            &quot;title&quot;: &quot;Beatae.&quot;
         },
         {
-            &quot;id&quot;: 14,
-            &quot;title&quot;: &quot;Deleniti.&quot;
+            &quot;title&quot;: &quot;Eius.&quot;
         },
         {
-            &quot;id&quot;: 13,
-            &quot;title&quot;: &quot;Sint.&quot;
+            &quot;title&quot;: &quot;Nesciunt.&quot;
         },
         {
-            &quot;id&quot;: 12,
-            &quot;title&quot;: &quot;Quam.&quot;
+            &quot;title&quot;: &quot;Earum ea.&quot;
         },
         {
-            &quot;id&quot;: 11,
-            &quot;title&quot;: &quot;Vel aut.&quot;
+            &quot;title&quot;: &quot;Eum.&quot;
         },
         {
-            &quot;id&quot;: 10,
-            &quot;title&quot;: &quot;Totam.&quot;
+            &quot;title&quot;: &quot;Harum.&quot;
         },
         {
-            &quot;id&quot;: 9,
-            &quot;title&quot;: &quot;Unde et.&quot;
+            &quot;title&quot;: &quot;Aut sunt.&quot;
         },
         {
-            &quot;id&quot;: 8,
-            &quot;title&quot;: &quot;Deserunt.&quot;
+            &quot;title&quot;: &quot;Culpa.&quot;
         },
         {
-            &quot;id&quot;: 7,
-            &quot;title&quot;: &quot;Et ut et.&quot;
+            &quot;title&quot;: &quot;Vitae qui.&quot;
         },
         {
-            &quot;id&quot;: 6,
-            &quot;title&quot;: &quot;Maxime.&quot;
+            &quot;title&quot;: &quot;Aliquid.&quot;
         },
         {
-            &quot;id&quot;: 5,
-            &quot;title&quot;: &quot;Nam sit.&quot;
+            &quot;title&quot;: &quot;Dolorem.&quot;
         },
         {
-            &quot;id&quot;: 4,
-            &quot;title&quot;: &quot;Saepe.&quot;
+            &quot;title&quot;: &quot;Officiis.&quot;
         },
         {
-            &quot;id&quot;: 3,
-            &quot;title&quot;: &quot;Vel.&quot;
+            &quot;title&quot;: &quot;Libero.&quot;
         },
         {
-            &quot;id&quot;: 2,
-            &quot;title&quot;: &quot;Possimus.&quot;
+            &quot;title&quot;: &quot;Aperiam.&quot;
         },
         {
-            &quot;id&quot;: 1,
-            &quot;title&quot;: &quot;Molestiae.&quot;
+            &quot;title&quot;: &quot;Qui.&quot;
         }
     ]
 }</code>

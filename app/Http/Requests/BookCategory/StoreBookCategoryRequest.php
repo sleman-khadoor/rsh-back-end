@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Book;
+namespace App\Http\Requests\BookCategory;
 
 use App\Traits\JsonErrors;
 use CodeZero\UniqueTranslation\UniqueTranslationRule;

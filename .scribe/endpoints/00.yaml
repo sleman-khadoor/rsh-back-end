@@ -26,7 +26,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: qui
+        example: omnis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: '-0QKN2['
+        example: 'v)B4BhX8me\ZO8vV%,'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      username: qui
-      password: '-0QKN2['
+      username: omnis
+      password: 'v)B4BhX8me\ZO8vV%,'
     fileParameters: []
     responses: []
     responseFields: []

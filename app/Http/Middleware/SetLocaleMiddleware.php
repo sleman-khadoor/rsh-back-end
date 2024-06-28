@@ -18,8 +18,14 @@ class SetLocaleMiddleware
         $supportedLocales = config('core-config.langs');
         $locale = $request->header('lang');
 
-        if(!in_array($locale, $supportedLocales)) {
+        if($request->is('api/admin/*')) {
+
             $locale = $supportedLocales['english'];
+        } else {
+
+            if(!in_array($locale, $supportedLocales)) {
+                $locale = $supportedLocales['english'];
+            }
         }
 
         app()->setLocale($locale);

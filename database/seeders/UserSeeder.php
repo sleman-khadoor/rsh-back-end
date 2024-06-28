@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
 
             User::factory()->create([
                 'username' => 'scribe',
-            ]);
+            ])->assignRole('super admin');
         }
     }
 }

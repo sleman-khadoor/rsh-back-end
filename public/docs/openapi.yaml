@@ -17,12 +17,12 @@ paths:
           in: query
           name: 'filter[title]'
           description: 'filter Book Categroies by title.'
-          example: nihil
+          example: quos
           required: false
           schema:
             type: string
             description: 'filter Book Categroies by title.'
-            example: nihil
+            example: quos
       responses:
         200:
           description: ''
@@ -35,78 +35,78 @@ paths:
                     -
                       id: 20
                       title:
-                        ar: 'Enim non.'
-                        en: 'Saepe est.'
+                        ar: Odit.
+                        en: Vero.
                     -
                       id: 19
                       title:
-                        ar: Quasi.
-                        en: 'Vitae eum.'
+                        ar: Officiis.
+                        en: Adipisci.
                     -
                       id: 18
                       title:
-                        ar: 'Ut maxime.'
-                        en: Velit.
+                        ar: 'Velit qui.'
+                        en: Itaque.
                     -
                       id: 17
                       title:
-                        ar: Sit.
-                        en: Illum.
+                        ar: 'Sunt nemo.'
+                        en: Harum.
                     -
                       id: 16
                       title:
-                        ar: 'Totam sed.'
-                        en: Molestiae.
+                        ar: 'A totam.'
+                        en: Aliquid.
                     -
                       id: 15
                       title:
-                        ar: Sunt.
-                        en: In.
+                        ar: Beatae.
+                        en: Omnis.
                     -
                       id: 14
                       title:
-                        ar: Deleniti.
-                        en: 'Ab et.'
+                        ar: Eius.
+                        en: Facere.
                     -
                       id: 13
                       title:
-                        ar: Sint.
-                        en: Sunt.
+                        ar: Nesciunt.
+                        en: Dolorem.
                     -
                       id: 12
                       title:
-                        ar: Quam.
-                        en: 'Nisi sunt.'
+                        ar: 'Earum ea.'
+                        en: Explicabo.
                     -
                       id: 11
                       title:
-                        ar: 'Vel aut.'
-                        en: Quod.
+                        ar: Eum.
+                        en: Expedita.
                     -
                       id: 10
                       title:
-                        ar: Totam.
-                        en: Doloribus.
+                        ar: Harum.
+                        en: Alias.
                     -
                       id: 9
                       title:
-                        ar: 'Unde et.'
-                        en: Est.
+                        ar: 'Aut sunt.'
+                        en: 'Rerum id.'
                     -
                       id: 8
                       title:
-                        ar: Deserunt.
-                        en: Error.
+                        ar: Culpa.
+                        en: 'Ut omnis.'
                     -
                       id: 7
                       title:
-                        ar: 'Et ut et.'
-                        en: 'Rerum quo.'
+                        ar: 'Vitae qui.'
+                        en: Modi.
                     -
                       id: 6
                       title:
-                        ar: Maxime.
-                        en: 'Ut maxime.'
+                        ar: Aliquid.
+                        en: 'Sequi aut.'
                   links:
                     first: 'http://localhost/api/admin/book-categories?page=1'
                     last: 'http://localhost/api/admin/book-categories?page=2'
@@ -144,78 +144,78 @@ paths:
                       -
                         id: 20
                         title:
-                          ar: 'Enim non.'
-                          en: 'Saepe est.'
+                          ar: Odit.
+                          en: Vero.
                       -
                         id: 19
                         title:
-                          ar: Quasi.
-                          en: 'Vitae eum.'
+                          ar: Officiis.
+                          en: Adipisci.
                       -
                         id: 18
                         title:
-                          ar: 'Ut maxime.'
-                          en: Velit.
+                          ar: 'Velit qui.'
+                          en: Itaque.
                       -
                         id: 17
                         title:
-                          ar: Sit.
-                          en: Illum.
+                          ar: 'Sunt nemo.'
+                          en: Harum.
                       -
                         id: 16
                         title:
-                          ar: 'Totam sed.'
-                          en: Molestiae.
+                          ar: 'A totam.'
+                          en: Aliquid.
                       -
                         id: 15
                         title:
-                          ar: Sunt.
-                          en: In.
+                          ar: Beatae.
+                          en: Omnis.
                       -
                         id: 14
                         title:
-                          ar: Deleniti.
-                          en: 'Ab et.'
+                          ar: Eius.
+                          en: Facere.
                       -
                         id: 13
                         title:
-                          ar: Sint.
-                          en: Sunt.
+                          ar: Nesciunt.
+                          en: Dolorem.
                       -
                         id: 12
                         title:
-                          ar: Quam.
-                          en: 'Nisi sunt.'
+                          ar: 'Earum ea.'
+                          en: Explicabo.
                       -
                         id: 11
                         title:
-                          ar: 'Vel aut.'
-                          en: Quod.
+                          ar: Eum.
+                          en: Expedita.
                       -
                         id: 10
                         title:
-                          ar: Totam.
-                          en: Doloribus.
+                          ar: Harum.
+                          en: Alias.
                       -
                         id: 9
                         title:
-                          ar: 'Unde et.'
-                          en: Est.
+                          ar: 'Aut sunt.'
+                          en: 'Rerum id.'
                       -
                         id: 8
                         title:
-                          ar: Deserunt.
-                          en: Error.
+                          ar: Culpa.
+                          en: 'Ut omnis.'
                       -
                         id: 7
                         title:
-                          ar: 'Et ut et.'
-                          en: 'Rerum quo.'
+                          ar: 'Vitae qui.'
+                          en: Modi.
                       -
                         id: 6
                         title:
-                          ar: Maxime.
-                          en: 'Ut maxime.'
+                          ar: Aliquid.
+                          en: 'Sequi aut.'
                     items:
                       type: object
                       properties:
@@ -227,10 +227,10 @@ paths:
                           properties:
                             ar:
                               type: string
-                              example: 'Enim non.'
+                              example: Odit.
                             en:
                               type: string
-                              example: 'Saepe est.'
+                              example: Vero.
                   links:
                     type: object
                     properties:
@@ -362,26 +362,26 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 14
+                    id: 15
                     title:
-                      ar: Deleniti.
-                      en: 'Ab et.'
+                      ar: Beatae.
+                      en: Omnis.
                 properties:
                   data:
                     type: object
                     properties:
                       id:
                         type: integer
-                        example: 14
+                        example: 15
                       title:
                         type: object
                         properties:
                           ar:
                             type: string
-                            example: Deleniti.
+                            example: Beatae.
                           en:
                             type: string
-                            example: 'Ab et.'
+                            example: Omnis.
       tags:
         - 'Admin Endpoints'
       security: []
@@ -425,7 +425,605 @@ paths:
         in: path
         name: id
         description: 'The ID of the book category'
-        example: 14
+        example: 15
+        required: true
+        schema:
+          type: integer
+  /api/admin/authors:
+    get:
+      summary: 'Get all Authors.'
+      operationId: getAllAuthors
+      description: ''
+      parameters:
+        -
+          in: query
+          name: 'filter[name]'
+          description: 'filter Authors by name.'
+          example: optio
+          required: false
+          schema:
+            type: string
+            description: 'filter Authors by name.'
+            example: optio
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 20
+                      avatar: 'https://via.placeholder.com/640x480.png/0055ee?text=impedit'
+                      name:
+                        ar: Omnis.
+                        en: 'Eum iste.'
+                      about:
+                        ar: 'Sint iusto nihil est. Eligendi dolore quibusdam rem dolor eum. Nulla quisquam velit unde et eaque.'
+                        en: 'Sit dolorum quos labore. Quia repudiandae nihil voluptas est. Aut in est quasi dicta.'
+                    -
+                      id: 19
+                      avatar: 'https://via.placeholder.com/640x480.png/0099bb?text=voluptatum'
+                      name:
+                        ar: Est.
+                        en: Quod.
+                      about:
+                        ar: 'Molestiae quia hic et doloremque est sint facere. Culpa cum tenetur quidem dignissimos natus.'
+                        en: 'Aut ab tempora facere ut modi ipsum consequatur. Eligendi rerum ipsum eum animi et et doloremque.'
+                    -
+                      id: 18
+                      avatar: 'https://via.placeholder.com/640x480.png/00ffdd?text=nostrum'
+                      name:
+                        ar: 'Ut quia.'
+                        en: Ipsum.
+                      about:
+                        ar: 'Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.'
+                        en: 'Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel.'
+                    -
+                      id: 17
+                      avatar: 'https://via.placeholder.com/640x480.png/00aaff?text=illo'
+                      name:
+                        ar: 'Rem porro.'
+                        en: Nihil.
+                      about:
+                        ar: 'Nam illum quo quidem. Sed cumque occaecati in aperiam ut odio odit. Eos sit molestiae dolor rerum.'
+                        en: 'Suscipit culpa sunt vitae et occaecati. Sint qui rem libero. Rerum eum quasi explicabo.'
+                    -
+                      id: 16
+                      avatar: 'https://via.placeholder.com/640x480.png/005500?text=hic'
+                      name:
+                        ar: 'Nulla sit.'
+                        en: 'Et iure.'
+                      about:
+                        ar: 'Atque aspernatur beatae tempora dolorem aut. Quia fugit vel id et inventore repellendus error.'
+                        en: 'Neque ex sit eum. Reprehenderit fugiat repudiandae vel quis. Ut ullam est voluptatum debitis.'
+                    -
+                      id: 15
+                      avatar: 'https://via.placeholder.com/640x480.png/001166?text=qui'
+                      name:
+                        ar: 'Eum amet.'
+                        en: 'Autem aut.'
+                      about:
+                        ar: 'Qui corporis deleniti at qui nobis atque. Voluptates quo animi adipisci occaecati ut.'
+                        en: 'Voluptates fugiat voluptas distinctio adipisci earum aliquid. Sed reiciendis dicta qui saepe.'
+                    -
+                      id: 14
+                      avatar: 'https://via.placeholder.com/640x480.png/00eeff?text=pariatur'
+                      name:
+                        ar: Vero.
+                        en: Error.
+                      about:
+                        ar: 'Et ab perferendis cumque est rerum fuga. Deserunt unde aut itaque vero quisquam et.'
+                        en: 'Optio excepturi dolor ea doloremque. Ab quas eum id minus. Quia sint officiis ipsum ea at facere.'
+                    -
+                      id: 13
+                      avatar: 'https://via.placeholder.com/640x480.png/009955?text=sunt'
+                      name:
+                        ar: Dolore.
+                        en: 'Aut et ut.'
+                      about:
+                        ar: 'Alias qui quaerat incidunt qui totam nisi quia. Est unde sed itaque quia inventore.'
+                        en: 'Voluptate at et in ut et provident non ratione. Est architecto repellat nam tempora enim ut vitae.'
+                    -
+                      id: 12
+                      avatar: 'https://via.placeholder.com/640x480.png/0033cc?text=inventore'
+                      name:
+                        ar: Illum.
+                        en: Totam.
+                      about:
+                        ar: 'Magni nostrum nulla aut nihil sequi maiores tenetur nemo. Vel corporis fugiat consequatur vitae.'
+                        en: 'Blanditiis blanditiis et quisquam inventore tenetur. Quaerat quisquam officia dolor minima ad nam.'
+                    -
+                      id: 11
+                      avatar: 'https://via.placeholder.com/640x480.png/00ee22?text=ut'
+                      name:
+                        ar: Sunt.
+                        en: Enim.
+                      about:
+                        ar: 'Quos qui nulla unde impedit. Animi quam praesentium qui hic cum. Et dolorum non quia dolor magni.'
+                        en: 'Sequi perspiciatis iusto deleniti delectus. Aliquam quam nam quia officia.'
+                    -
+                      id: 10
+                      avatar: 'https://via.placeholder.com/640x480.png/00eeff?text=mollitia'
+                      name:
+                        ar: Nesciunt.
+                        en: Dolor.
+                      about:
+                        ar: 'Commodi et et impedit. Sit aut sed unde officiis. Magni qui natus nesciunt beatae.'
+                        en: 'Rem numquam qui tenetur adipisci sed. Accusantium in veritatis temporibus. Rerum et quidem et aut.'
+                    -
+                      id: 9
+                      avatar: 'https://via.placeholder.com/640x480.png/006600?text=id'
+                      name:
+                        ar: Nostrum.
+                        en: Delectus.
+                      about:
+                        ar: 'Et quia provident qui voluptas et eius. Distinctio et asperiores et veniam.'
+                        en: 'Aut sit et omnis porro accusamus dolor. Odit totam magni in aperiam. Adipisci quis dolorem et cum.'
+                    -
+                      id: 8
+                      avatar: 'https://via.placeholder.com/640x480.png/00ddbb?text=itaque'
+                      name:
+                        ar: Cumque.
+                        en: Occaecati.
+                      about:
+                        ar: 'Maxime porro neque illum omnis. Aliquid quia qui cum dignissimos quisquam.'
+                        en: 'Qui dolorum sit quasi sunt. Facilis nihil dolore aut aut. Ab in inventore molestiae dolores eius.'
+                    -
+                      id: 7
+                      avatar: 'https://via.placeholder.com/640x480.png/00dddd?text=expedita'
+                      name:
+                        ar: Tenetur.
+                        en: Quo.
+                      about:
+                        ar: 'Temporibus expedita sint molestiae minima placeat. Omnis qui dolores consectetur natus dicta enim.'
+                        en: 'Quidem adipisci expedita doloremque harum ut. Aut minima aliquam est odit ratione asperiores.'
+                    -
+                      id: 6
+                      avatar: 'https://via.placeholder.com/640x480.png/005500?text=iusto'
+                      name:
+                        ar: Hic.
+                        en: 'Non quia.'
+                      about:
+                        ar: 'Vel aliquam qui omnis amet. Quam ut ut provident. Temporibus repellendus pariatur quaerat ut vel.'
+                        en: 'Ratione qui ut quisquam praesentium quia nemo et voluptate. Aut repellendus nihil quisquam ipsum.'
+                  links:
+                    first: 'http://localhost/api/admin/authors?page=1'
+                    last: 'http://localhost/api/admin/authors?page=2'
+                    prev: null
+                    next: 'http://localhost/api/admin/authors?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 2
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/admin/authors?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/admin/authors?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/admin/authors?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/admin/authors'
+                    per_page: 15
+                    to: 15
+                    total: 20
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 20
+                        avatar: 'https://via.placeholder.com/640x480.png/0055ee?text=impedit'
+                        name:
+                          ar: Omnis.
+                          en: 'Eum iste.'
+                        about:
+                          ar: 'Sint iusto nihil est. Eligendi dolore quibusdam rem dolor eum. Nulla quisquam velit unde et eaque.'
+                          en: 'Sit dolorum quos labore. Quia repudiandae nihil voluptas est. Aut in est quasi dicta.'
+                      -
+                        id: 19
+                        avatar: 'https://via.placeholder.com/640x480.png/0099bb?text=voluptatum'
+                        name:
+                          ar: Est.
+                          en: Quod.
+                        about:
+                          ar: 'Molestiae quia hic et doloremque est sint facere. Culpa cum tenetur quidem dignissimos natus.'
+                          en: 'Aut ab tempora facere ut modi ipsum consequatur. Eligendi rerum ipsum eum animi et et doloremque.'
+                      -
+                        id: 18
+                        avatar: 'https://via.placeholder.com/640x480.png/00ffdd?text=nostrum'
+                        name:
+                          ar: 'Ut quia.'
+                          en: Ipsum.
+                        about:
+                          ar: 'Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.'
+                          en: 'Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel.'
+                      -
+                        id: 17
+                        avatar: 'https://via.placeholder.com/640x480.png/00aaff?text=illo'
+                        name:
+                          ar: 'Rem porro.'
+                          en: Nihil.
+                        about:
+                          ar: 'Nam illum quo quidem. Sed cumque occaecati in aperiam ut odio odit. Eos sit molestiae dolor rerum.'
+                          en: 'Suscipit culpa sunt vitae et occaecati. Sint qui rem libero. Rerum eum quasi explicabo.'
+                      -
+                        id: 16
+                        avatar: 'https://via.placeholder.com/640x480.png/005500?text=hic'
+                        name:
+                          ar: 'Nulla sit.'
+                          en: 'Et iure.'
+                        about:
+                          ar: 'Atque aspernatur beatae tempora dolorem aut. Quia fugit vel id et inventore repellendus error.'
+                          en: 'Neque ex sit eum. Reprehenderit fugiat repudiandae vel quis. Ut ullam est voluptatum debitis.'
+                      -
+                        id: 15
+                        avatar: 'https://via.placeholder.com/640x480.png/001166?text=qui'
+                        name:
+                          ar: 'Eum amet.'
+                          en: 'Autem aut.'
+                        about:
+                          ar: 'Qui corporis deleniti at qui nobis atque. Voluptates quo animi adipisci occaecati ut.'
+                          en: 'Voluptates fugiat voluptas distinctio adipisci earum aliquid. Sed reiciendis dicta qui saepe.'
+                      -
+                        id: 14
+                        avatar: 'https://via.placeholder.com/640x480.png/00eeff?text=pariatur'
+                        name:
+                          ar: Vero.
+                          en: Error.
+                        about:
+                          ar: 'Et ab perferendis cumque est rerum fuga. Deserunt unde aut itaque vero quisquam et.'
+                          en: 'Optio excepturi dolor ea doloremque. Ab quas eum id minus. Quia sint officiis ipsum ea at facere.'
+                      -
+                        id: 13
+                        avatar: 'https://via.placeholder.com/640x480.png/009955?text=sunt'
+                        name:
+                          ar: Dolore.
+                          en: 'Aut et ut.'
+                        about:
+                          ar: 'Alias qui quaerat incidunt qui totam nisi quia. Est unde sed itaque quia inventore.'
+                          en: 'Voluptate at et in ut et provident non ratione. Est architecto repellat nam tempora enim ut vitae.'
+                      -
+                        id: 12
+                        avatar: 'https://via.placeholder.com/640x480.png/0033cc?text=inventore'
+                        name:
+                          ar: Illum.
+                          en: Totam.
+                        about:
+                          ar: 'Magni nostrum nulla aut nihil sequi maiores tenetur nemo. Vel corporis fugiat consequatur vitae.'
+                          en: 'Blanditiis blanditiis et quisquam inventore tenetur. Quaerat quisquam officia dolor minima ad nam.'
+                      -
+                        id: 11
+                        avatar: 'https://via.placeholder.com/640x480.png/00ee22?text=ut'
+                        name:
+                          ar: Sunt.
+                          en: Enim.
+                        about:
+                          ar: 'Quos qui nulla unde impedit. Animi quam praesentium qui hic cum. Et dolorum non quia dolor magni.'
+                          en: 'Sequi perspiciatis iusto deleniti delectus. Aliquam quam nam quia officia.'
+                      -
+                        id: 10
+                        avatar: 'https://via.placeholder.com/640x480.png/00eeff?text=mollitia'
+                        name:
+                          ar: Nesciunt.
+                          en: Dolor.
+                        about:
+                          ar: 'Commodi et et impedit. Sit aut sed unde officiis. Magni qui natus nesciunt beatae.'
+                          en: 'Rem numquam qui tenetur adipisci sed. Accusantium in veritatis temporibus. Rerum et quidem et aut.'
+                      -
+                        id: 9
+                        avatar: 'https://via.placeholder.com/640x480.png/006600?text=id'
+                        name:
+                          ar: Nostrum.
+                          en: Delectus.
+                        about:
+                          ar: 'Et quia provident qui voluptas et eius. Distinctio et asperiores et veniam.'
+                          en: 'Aut sit et omnis porro accusamus dolor. Odit totam magni in aperiam. Adipisci quis dolorem et cum.'
+                      -
+                        id: 8
+                        avatar: 'https://via.placeholder.com/640x480.png/00ddbb?text=itaque'
+                        name:
+                          ar: Cumque.
+                          en: Occaecati.
+                        about:
+                          ar: 'Maxime porro neque illum omnis. Aliquid quia qui cum dignissimos quisquam.'
+                          en: 'Qui dolorum sit quasi sunt. Facilis nihil dolore aut aut. Ab in inventore molestiae dolores eius.'
+                      -
+                        id: 7
+                        avatar: 'https://via.placeholder.com/640x480.png/00dddd?text=expedita'
+                        name:
+                          ar: Tenetur.
+                          en: Quo.
+                        about:
+                          ar: 'Temporibus expedita sint molestiae minima placeat. Omnis qui dolores consectetur natus dicta enim.'
+                          en: 'Quidem adipisci expedita doloremque harum ut. Aut minima aliquam est odit ratione asperiores.'
+                      -
+                        id: 6
+                        avatar: 'https://via.placeholder.com/640x480.png/005500?text=iusto'
+                        name:
+                          ar: Hic.
+                          en: 'Non quia.'
+                        about:
+                          ar: 'Vel aliquam qui omnis amet. Quam ut ut provident. Temporibus repellendus pariatur quaerat ut vel.'
+                          en: 'Ratione qui ut quisquam praesentium quia nemo et voluptate. Aut repellendus nihil quisquam ipsum.'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 20
+                        avatar:
+                          type: string
+                          example: 'https://via.placeholder.com/640x480.png/0055ee?text=impedit'
+                        name:
+                          type: object
+                          properties:
+                            ar:
+                              type: string
+                              example: Omnis.
+                            en:
+                              type: string
+                              example: 'Eum iste.'
+                        about:
+                          type: object
+                          properties:
+                            ar:
+                              type: string
+                              example: 'Sint iusto nihil est. Eligendi dolore quibusdam rem dolor eum. Nulla quisquam velit unde et eaque.'
+                            en:
+                              type: string
+                              example: 'Sit dolorum quos labore. Quia repudiandae nihil voluptas est. Aut in est quasi dicta.'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/admin/authors?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/admin/authors?page=2'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://localhost/api/admin/authors?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 2
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/admin/authors?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/admin/authors?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/admin/authors?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/admin/authors'
+                      per_page:
+                        type: integer
+                        example: 15
+                      to:
+                        type: integer
+                        example: 15
+                      total:
+                        type: integer
+                        example: 20
+      tags:
+        - 'Admin Endpoints'
+      security: []
+    post:
+      summary: 'Store Author.'
+      operationId: storeAuthor
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: array
+                  description: 'The name of the Author.'
+                  example:
+                    en: Ahmad
+                    ar: أحمد
+                  items:
+                    type: string
+                about:
+                  type: array
+                  description: 'The about of the Author.'
+                  example:
+                    en: 'about the author'
+                    ar: 'حول المؤلف'
+                  items:
+                    type: string
+                avatar:
+                  type: string
+                  format: binary
+                  description: 'The avatar of the Author.'
+              required:
+                - name
+                - about
+                - avatar
+      security: []
+    parameters:
+      -
+        in: path
+        name: page
+        description: 'The page number'
+        example: 1
+        required: true
+        schema:
+          type: integer
+      -
+        in: path
+        name: perPage
+        description: 'Number of items pre page'
+        example: 3
+        required: true
+        schema:
+          type: integer
+  '/api/admin/authors/{id}':
+    get:
+      summary: 'Get Author by id.'
+      operationId: getAuthorById
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 18
+                    avatar: 'https://via.placeholder.com/640x480.png/00ffdd?text=nostrum'
+                    name:
+                      ar: 'Ut quia.'
+                      en: Ipsum.
+                    about:
+                      ar: 'Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.'
+                      en: 'Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel.'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 18
+                      avatar:
+                        type: string
+                        example: 'https://via.placeholder.com/640x480.png/00ffdd?text=nostrum'
+                      name:
+                        type: object
+                        properties:
+                          ar:
+                            type: string
+                            example: 'Ut quia.'
+                          en:
+                            type: string
+                            example: Ipsum.
+                      about:
+                        type: object
+                        properties:
+                          ar:
+                            type: string
+                            example: 'Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.'
+                          en:
+                            type: string
+                            example: 'Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel.'
+      tags:
+        - 'Admin Endpoints'
+      security: []
+    put:
+      summary: 'Update Author.'
+      operationId: updateAuthor
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Endpoints'
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: array
+                  description: 'The name of the Author.'
+                  example:
+                    en: Ahmad
+                    ar: أحمد
+                  items:
+                    type: string
+                about:
+                  type: array
+                  description: 'The about of the Author.'
+                  example:
+                    en: 'about the author'
+                    ar: 'حول المؤلف'
+                  items:
+                    type: string
+                avatar:
+                  type: string
+                  format: binary
+                  description: 'The avatar of the Author.'
+              required:
+                - name
+                - about
+                - avatar
+      security: []
+    delete:
+      summary: 'Delete Author.'
+      operationId: deleteAuthor
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Admin Endpoints'
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the Author'
+        example: 18
         required: true
         schema:
           type: integer
@@ -448,11 +1046,11 @@ paths:
                 username:
                   type: string
                   description: ''
-                  example: qui
+                  example: omnis
                 password:
                   type: string
                   description: ''
-                  example: '-0QKN2['
+                  example: 'v)B4BhX8me\ZO8vV%,'
               required:
                 - username
                 - password
@@ -490,138 +1088,95 @@ paths:
                 example:
                   data:
                     -
-                      id: 20
-                      title: 'Enim non.'
+                      title: Odit.
                     -
-                      id: 19
-                      title: Quasi.
+                      title: Officiis.
                     -
-                      id: 18
-                      title: 'Ut maxime.'
+                      title: 'Velit qui.'
                     -
-                      id: 17
-                      title: Sit.
+                      title: 'Sunt nemo.'
                     -
-                      id: 16
-                      title: 'Totam sed.'
+                      title: 'A totam.'
                     -
-                      id: 15
-                      title: Sunt.
+                      title: Beatae.
                     -
-                      id: 14
-                      title: Deleniti.
+                      title: Eius.
                     -
-                      id: 13
-                      title: Sint.
+                      title: Nesciunt.
                     -
-                      id: 12
-                      title: Quam.
+                      title: 'Earum ea.'
                     -
-                      id: 11
-                      title: 'Vel aut.'
+                      title: Eum.
                     -
-                      id: 10
-                      title: Totam.
+                      title: Harum.
                     -
-                      id: 9
-                      title: 'Unde et.'
+                      title: 'Aut sunt.'
                     -
-                      id: 8
-                      title: Deserunt.
+                      title: Culpa.
                     -
-                      id: 7
-                      title: 'Et ut et.'
+                      title: 'Vitae qui.'
                     -
-                      id: 6
-                      title: Maxime.
+                      title: Aliquid.
                     -
-                      id: 5
-                      title: 'Nam sit.'
+                      title: Dolorem.
                     -
-                      id: 4
-                      title: Saepe.
+                      title: Officiis.
                     -
-                      id: 3
-                      title: Vel.
+                      title: Libero.
                     -
-                      id: 2
-                      title: Possimus.
+                      title: Aperiam.
                     -
-                      id: 1
-                      title: Molestiae.
+                      title: Qui.
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 20
-                        title: 'Enim non.'
+                        title: Odit.
                       -
-                        id: 19
-                        title: Quasi.
+                        title: Officiis.
                       -
-                        id: 18
-                        title: 'Ut maxime.'
+                        title: 'Velit qui.'
                       -
-                        id: 17
-                        title: Sit.
+                        title: 'Sunt nemo.'
                       -
-                        id: 16
-                        title: 'Totam sed.'
+                        title: 'A totam.'
                       -
-                        id: 15
-                        title: Sunt.
+                        title: Beatae.
                       -
-                        id: 14
-                        title: Deleniti.
+                        title: Eius.
                       -
-                        id: 13
-                        title: Sint.
+                        title: Nesciunt.
                       -
-                        id: 12
-                        title: Quam.
+                        title: 'Earum ea.'
                       -
-                        id: 11
-                        title: 'Vel aut.'
+                        title: Eum.
                       -
-                        id: 10
-                        title: Totam.
+                        title: Harum.
                       -
-                        id: 9
-                        title: 'Unde et.'
+                        title: 'Aut sunt.'
                       -
-                        id: 8
-                        title: Deserunt.
+                        title: Culpa.
                       -
-                        id: 7
-                        title: 'Et ut et.'
+                        title: 'Vitae qui.'
                       -
-                        id: 6
-                        title: Maxime.
+                        title: Aliquid.
                       -
-                        id: 5
-                        title: 'Nam sit.'
+                        title: Dolorem.
                       -
-                        id: 4
-                        title: Saepe.
+                        title: Officiis.
                       -
-                        id: 3
-                        title: Vel.
+                        title: Libero.
                       -
-                        id: 2
-                        title: Possimus.
+                        title: Aperiam.
                       -
-                        id: 1
-                        title: Molestiae.
+                        title: Qui.
                     items:
                       type: object
                       properties:
-                        id:
-                          type: integer
-                          example: 20
                         title:
                           type: string
-                          example: 'Enim non.'
+                          example: Odit.
       tags:
         - 'Public Endpoints'
       security: []
