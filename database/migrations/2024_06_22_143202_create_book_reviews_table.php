@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('book_reviews', function (Blueprint $table) {
             $table->id();
             $table->string('username', 255);
-            $table->text('review');
-            $table->timestamps();
+            $table->json('review');
+            $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
         });
     }
 

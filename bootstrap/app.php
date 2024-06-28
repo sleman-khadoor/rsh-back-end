@@ -23,6 +23,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
+        /*
         $exceptions->respond(function(Response $response) {
             if($response->getStatusCode() == 404) {
                 return response()->json([
@@ -38,4 +39,5 @@ return Application::configure(basePath: dirname(__DIR__))
             return $response;
 
         });
+        */
     })->create();

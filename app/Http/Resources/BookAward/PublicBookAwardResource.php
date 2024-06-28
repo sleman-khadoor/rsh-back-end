@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\BookCategory;
+namespace App\Http\Resources\BookAward;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PublicBookCategoryResource extends JsonResource
+class PublicBookAwardResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,8 +15,7 @@ class PublicBookCategoryResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'title' => $this->title,
+            'title' => $this->title
         ];
     }
 }

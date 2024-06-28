@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Faker\Factory as FakerFactory;
-use Faker\Provider\ar_SA\Text;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

@@ -19,6 +19,8 @@ class Author extends Model implements RelationsAware
     protected $fillable = ['name', 'about', 'avatar'];
     public $translatable = ['name', 'about', 'slug'];
 
+    private static $allowedIncludes = ['books'];
+
     public function books(): HasMany {
 
         return $this->hasMany(Book::class);
@@ -39,5 +41,10 @@ class Author extends Model implements RelationsAware
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public static function allowedIncludes(): array {
+
+        return static::$allowedIncludes;
     }
 }

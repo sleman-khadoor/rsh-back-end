@@ -57,6 +57,11 @@ return [
     'langs' => [
         'arabic' => 'ar',
         'english' => 'en'
+    ],
+    'book_formats' => [
+        'E-Book',
+        'PDF',
+        'word'
     ]
 ];
 

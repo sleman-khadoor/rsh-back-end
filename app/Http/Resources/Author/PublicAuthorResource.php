@@ -19,7 +19,7 @@ class PublicAuthorResource extends JsonResource
             'name' => $this->name,
             'about' => $this->about,
             'avatar' => $this->avatar,
-            'slug' => $this->slug,
+            'slug' => $this->getTranslations('slug'),
             'books' => PublicBookResource::collection($this->whenLoaded('books'))
         ];
     }

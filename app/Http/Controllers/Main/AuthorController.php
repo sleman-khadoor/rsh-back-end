@@ -29,7 +29,7 @@ class AuthorController extends Controller
     public function index(Request $request) {
 
         $authors = QueryBuilder::for(Author::class)
-                            ->allowedIncludes(['books'])
+                            ->allowedIncludes(Author::allowedIncludes())
                             ->allowedFilters(['name'])
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
@@ -42,6 +42,6 @@ class AuthorController extends Controller
     #[UrlParam('slug', 'string', 'The slug of the Author', true)]
     public function show(Author $author) {
 
-        return PublicAuthorResource::make($author->load($author->relations()));
+        return PublicAuthorResource::make($author->load(Author::allowedIncludes()));
     }
 }
