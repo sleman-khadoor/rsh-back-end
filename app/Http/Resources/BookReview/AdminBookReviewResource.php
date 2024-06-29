@@ -15,7 +15,6 @@ class AdminBookReviewResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'username' => $this->username,
             ... $this->getTranslations()
         ];
     }

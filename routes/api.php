@@ -6,6 +6,7 @@ use App\Http\Controllers\Main\AuthorController as MainAuthorController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\BookCategoryController as AdminBookCategoryController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;
+use App\Http\Controllers\Admin\BookReviewController as AdminBookReviewController;
 use App\Http\Controllers\Main\BookController as PublicBookController;
 use App\Http\Controllers\Main\BookCategoryController as MainBookCategoryController;
 use App\Models\Role;
@@ -27,6 +28,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/book-categories', AdminBookCategoryController::class);
         Route::apiResource('/authors', AdminAuthorController::class);
         Route::apiResource('/book-awards', AdminBookAwardController::class)->only(['store', 'update', 'destroy']);
+        Route::apiResource('/book-reviews', AdminBookReviewController::class)->only(['store', 'update', 'destroy']);
     });
 });
 
