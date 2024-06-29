@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('book_awards', function (Blueprint $table) {
             $table->id();
             $table->json('title');
+            $table->json('slug');
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
         });
     }

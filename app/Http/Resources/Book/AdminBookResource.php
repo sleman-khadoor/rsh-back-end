@@ -20,6 +20,7 @@ class AdminBookResource extends JsonResource
     {
         return [
             ...$this->getTranslations(),
+            'id' => $this->id,
             'printing_year' => $this->printing_year,
             'ISBN' => $this->ISBN,
             'EISBN' => $this->EISBN,
