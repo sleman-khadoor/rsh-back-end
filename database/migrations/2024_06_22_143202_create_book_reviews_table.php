@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('book_reviews', function (Blueprint $table) {
             $table->id();
-            $table->string('username', 255);
+            $table->json('username');
             $table->json('review');
+            $table->json('slug');
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade');
         });
     }

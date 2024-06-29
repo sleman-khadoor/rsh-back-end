@@ -16,7 +16,7 @@ class PublicBookReviewResource extends JsonResource
     {
         return [
             'username' => $this->username,
-            'review' => $this->review
+            'review' => $this->review,
         ];
     }
 }
