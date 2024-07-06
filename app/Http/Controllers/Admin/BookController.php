@@ -68,6 +68,8 @@ class BookController extends Controller
     #[BodyParam('author_id', 'int', 'The author id of the Book.')]
     #[BodyParam('formats', 'array', 'The formats of the Book.')]
     #[BodyParam('formats.*.id', 'int', 'The id of the format.')]
+    #[BodyParam('categories', 'array', 'The categories of the Book.')]
+    #[BodyParam('categories.*.id', 'int', 'The id of the category.')]
     #[BodyParam('awards', 'array', 'The awards of the Book.')]
     #[BodyParam('awards.*', 'array', 'The awards of the Book.', example:['en' => 'award', 'ar' => 'جائزة'])]
     #[BodyParam('reviews', 'array', 'The reviews of the Book.')]
@@ -82,6 +84,11 @@ class BookController extends Controller
         if($data['cover_image']) {
             $book->cover_image = $this->uploadAttachment($data['cover_image'], 'book-covers');
             $book->save();
+        }
+
+        if($data['categories']) {
+
+            $book->bookCategories()->attach(Arr::flatten($data['categories']));
         }
 
         if($data['awards']) {
@@ -113,6 +120,8 @@ class BookController extends Controller
     #[BodyParam('author_id', 'int', 'The author id of the Book.')]
     #[BodyParam('formats', 'array', 'The formats of the Book.')]
     #[BodyParam('formats.*.id', 'int', 'The id of the format.')]
+    #[BodyParam('categories', 'array', 'The categories of the Book.')]
+    #[BodyParam('categories.*.id', 'int', 'The id of the category.')]
     #[BodyParam('awards', 'array', 'The awards of the Book.')]
     #[BodyParam('awards.*', 'array', 'The awards of the Book.', example:['en' => 'award', 'ar' => 'جائزة'])]
     #[BodyParam('reviews', 'array', 'The reviews of the Book.')]
