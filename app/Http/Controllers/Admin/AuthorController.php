@@ -29,13 +29,14 @@ class AuthorController extends Controller
 
     #[Endpoint('Get all Authors.')]
     #[QueryParam('filter[name]', 'string', 'filter Authors by name.', false)]
-    #[UrlParam('page', 'integer', 'The page number', example: 1)]
-    #[UrlParam('perPage', 'integer', 'Number of items pre page', example: 3)]
+    #[QueryParam('include[]', 'array', 'relations to load on the author', false, example: "['books']")]
+    #[QueryParam('page', 'integer', 'The page number', example: 1)]
+    #[QueryParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
 
         $authors = QueryBuilder::for(Author::class)
-                            ->allowedIncludes(['books'])
-                            ->allowedFilters(['name'])
+                            ->allowedIncludes(Author::allowedIncludes())
+                            ->allowedFilters(Author::allowedFilters())
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
@@ -56,16 +57,7 @@ class AuthorController extends Controller
     #[BodyParam('avatar', 'file', 'The avatar of the Author.')]
     public function store(StoreAuthorRequest $request) {
 
-        $author = Author::create([
-            'name' => [
-                'ar' => $request->validated('name.ar'),
-                'en' => $request->validated('name.en'),
-            ],
-            'about' => [
-                'ar' => $request->validated('about.ar'),
-                'en' => $request->validated('about.en'),
-            ]
-        ]);
+        $author = Author::create($request->validated());
 
         if($request->hasFile('avatar')) {
             $author->avatar = $this->uploadAttachment($request->file('avatar'), 'avatars');
@@ -82,16 +74,7 @@ class AuthorController extends Controller
     #[BodyParam('avatar', 'file', 'The avatar of the Author.')]
     public function update(UpdateAuthorRequest $request, Author $author) {
 
-        $author->update([
-            'name' => [
-                'ar' => $request->validated('name.ar'),
-                'en' => $request->validated('name.en'),
-            ],
-            'about' => [
-                'ar' => $request->validated('about.ar'),
-                'en' => $request->validated('about.en'),
-            ]
-        ]);
+        $author->update($request->validated());
 
         if($request->hasFile('avatar')) {
             $author->avatar = $this->uploadAttachment($request->file('avatar'), 'avatars');

@@ -45,6 +45,8 @@ class StoreBookRequest extends FormRequest
             'awards.*.en' => ['required', 'string'],
             'awards.*.ar' => ['required', 'string'],
             'formats' => ['required', 'array'],
+            'categories' => ['required', 'array'],
+            'categories.*.id' => ['required', 'integer', Rule::exists('book_categories')],
             'formats.*.id' => ['required', 'integer', Rule::exists('book_formats')],
             'reviews' => ['required', 'array'],
             'reviews.*.username' => ['required', 'string', 'max:255'],

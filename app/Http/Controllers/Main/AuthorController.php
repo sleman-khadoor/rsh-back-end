@@ -30,7 +30,7 @@ class AuthorController extends Controller
 
         $authors = QueryBuilder::for(Author::class)
                             ->allowedIncludes(Author::allowedIncludes())
-                            ->allowedFilters(['name'])
+                            ->allowedFilters(Author::allowedFilters())
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 

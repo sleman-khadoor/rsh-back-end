@@ -34,7 +34,7 @@ class BookCategoryController extends Controller
     public function index(Request $request) {
 
         $bookCategories = QueryBuilder::for(BookCategory::class)
-                                ->allowedFilters(['title'])
+                                ->allowedFilters(BookCategory::allowedFilters())
                                 ->defaultSort('-id')
                                 ->paginate($request->perPage, ['*'], 'page', $request->page);
 
@@ -52,12 +52,7 @@ class BookCategoryController extends Controller
     #[BodyParam('title', 'array', 'The title of the Book Category.', example: ['en' => 'Historical', 'ar' => 'تاريخي'])]
     public function store(StoreBookCategoryRequest $request) {
 
-        $bookCategory = BookCategory::create([
-            'title' => [
-                'en' => $request->validated('title.en'),
-                'ar' => $request->validated('title.ar'),
-            ]
-        ]);
+        $bookCategory = BookCategory::create($request->validated());
 
         return AdminBookCategoryResource::make($bookCategory);
     }
@@ -67,12 +62,7 @@ class BookCategoryController extends Controller
     #[BodyParam('title', 'array', 'The title of the Book Category.', example: ['en' => 'Historical', 'ar' => 'تاريخي'])]
     public function update(UpdateBookCategoryRequest $request, BookCategory $bookCategory) {
 
-        $bookCategory->update([
-            'title' => [
-                'en' => $request->validated('title.en'),
-                'ar' => $request->validated('title.ar'),
-            ]
-        ]);
+        $bookCategory->update($request->validated());
 
         return AdminBookCategoryResource::make($bookCategory);
     }

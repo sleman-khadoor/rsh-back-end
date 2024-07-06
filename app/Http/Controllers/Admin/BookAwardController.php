@@ -14,25 +14,14 @@ class BookAwardController extends Controller
 {
     public function store(StoreBookAwardRequest $request) {
 
-        $bookAward = BookAward::create([
-            'title' => [
-                'en' => $request->validated('title.en'),
-                'ar' => $request->validated('title.ar'),
-            ],
-            'book_id' => $request->validated('book_id')
-        ]);
+        $bookAward = BookAward::create($request->validated());
 
         return AdminBookAwardResource::make($bookAward);
     }
 
     public function update(UpdateBookAwardRequest $request, BookAward $bookAward) {
 
-        $bookAward->update([
-            'title' => [
-                'en' => $request->validated('title.en'),
-                'ar' => $request->validated('title.ar'),
-            ],
-        ]);
+        $bookAward->update($request->validated());
 
         return AdminBookAwardResource::make($bookAward);
     }

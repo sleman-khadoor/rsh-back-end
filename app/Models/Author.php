@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Models\Abstracts\RelationsAware;
+use App\Traits\HasFilters;
+use App\Traits\HasIncludes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,13 +15,14 @@ use Spatie\Sluggable\SlugOptions;
 
 class Author extends Model implements RelationsAware
 {
-    use HasFactory, HasTranslations, HasTranslatableSlug;
+    use HasFactory, HasTranslations, HasTranslatableSlug, HasIncludes, HasFilters;
 
     public $timestamps = false;
     protected $fillable = ['name', 'about', 'avatar'];
     public $translatable = ['name', 'about', 'slug'];
 
-    private static $allowedIncludes = ['books'];
+    protected static array $allowedIncludes = ['books'];
+    protected static array $allowedFilters = ['name'];
 
     public function books(): HasMany {
 
@@ -41,10 +44,5 @@ class Author extends Model implements RelationsAware
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    public static function allowedIncludes(): array {
-
-        return static::$allowedIncludes;
     }
 }

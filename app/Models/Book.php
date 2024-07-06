@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use App\Traits\HasFilters;
+use App\Traits\HasIncludes;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Abstracts\RelationsAware;
 use Spatie\Translatable\HasTranslations;
 use Spatie\Sluggable\HasTranslatableSlug;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,12 +15,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Book extends Model
 {
-    use HasFactory, HasTranslations, HasTranslatableSlug;
+    use HasFactory, HasTranslations, HasTranslatableSlug, HasIncludes, HasFilters;
 
     protected $fillable = ['title', 'abstract', 'ISBN', 'EISBN', 'printing_year', 'author_id'];
     public $translatable = ['title', 'abstract', 'slug'];
 
-    private static $allowedIncludes = ['bookCategories', 'formats', 'awards', 'reviews'];
+    protected static $allowedIncludes = ['bookCategories', 'formats', 'awards', 'reviews'];
+    protected static $allowedFilters = ['title', 'ISBN', 'EISBN'];
 
     public function author(): BelongsTo {
 
@@ -56,10 +58,5 @@ class Book extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    public static function allowedIncludes(): array {
-
-        return static::$allowedIncludes;
     }
 }

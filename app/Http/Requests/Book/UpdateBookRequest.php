@@ -52,6 +52,8 @@ class UpdateBookRequest extends FormRequest
             'cover_image' => [File::image()->min('200kb')->max('2mb')],
             'author_id' => ['required', 'int', Rule::exists('authors', 'id')],
             'formats' => ['required', 'array'],
+            'categories' => ['required', 'array'],
+            'categories.*.id' => ['required', 'integer', Rule::exists('book_categories')],
             'formats.*.id' => ['required', 'integer', Rule::exists('book_formats')],
         ];
     }

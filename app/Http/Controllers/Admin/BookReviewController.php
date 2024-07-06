@@ -13,33 +13,14 @@ class BookReviewController extends Controller
 {
     public function store(StoreBookReviewRequest $request) {
 
-        $bookReview = BookReview::create([
-            'username' => [
-                'en' => $request->validated('username.en'),
-                'ar' => $request->validated('username.ar'),
-            ],
-            'review' => [
-                'en' => $request->validated('review.en'),
-                'ar' => $request->validated('review.ar'),
-            ],
-            'book_id' => $request->validated('book_id')
-        ]);
+        $bookReview = BookReview::create($request->validated());
 
         return AdminBookReviewResource::make($bookReview);
     }
 
     public function update(UpdateBookReviewRequest $request, BookReview $bookReview) {
 
-        $bookReview->update([
-            'username' => [
-                'en' => $request->validated('username.en'),
-                'ar' => $request->validated('username.ar'),
-            ],
-            'review' => [
-                'en' => $request->validated('review.en'),
-                'ar' => $request->validated('review.ar'),
-            ],
-        ]);
+        $bookReview->update($request->validated());
 
         return AdminBookReviewResource::make($bookReview);
     }
