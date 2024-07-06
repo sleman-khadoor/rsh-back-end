@@ -4,12 +4,170 @@ endpoints:
   -
     httpMethods:
       - GET
+    uri: api/books
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Books
+      subgroupDescription: 'APIs for Books'
+      title: 'Get all Books.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      'filter[title]':
+        name: 'filter[title]'
+        description: 'filter Books by name.'
+        required: false
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[ISBN]':
+        name: 'filter[ISBN]'
+        description: 'filter Books by ISBN.'
+        required: false
+        example: velit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[EISBN]':
+        name: 'filter[EISBN]'
+        description: 'filter Books by EISBN.'
+        required: false
+        example: aliquam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'include[]':
+        name: 'include[]'
+        description: 'relations to load on the book'
+        required: false
+        example: "['bookCategories', 'formats', 'awards', 'reviews']"
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[title]': qui
+      'filter[ISBN]': velit
+      'filter[EISBN]': aliquam
+      'include[]': "['bookCategories', 'formats', 'awards', 'reviews']"
+      page: 1
+      perPage: 3
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"title":"Error repellat et eum.","slug":{"ar":"mgharth-mtrka-ghada-bsrh","en":"error-repellat-et-eum"},"printing_year":"1989","ISBN":"6880767443","EISBN":"9799804475534","abstract":"Eum veniam molestiae quia voluptas consequuntur laborum sapiente. Vel distinctio commodi esse quo distinctio et omnis. Molestiae dignissimos labore qui eos voluptatum. Ea mollitia doloribus voluptas exercitationem quia ut aliquid. Et aut a quas est voluptas quia. Doloremque maxime ut fugit repellat sunt eius. Fugiat fugiat ut rerum officia blanditiis. Maiores dolores perferendis et officiis omnis molestias mollitia. Reiciendis et in non qui corrupti ut. Necessitatibus vitae eveniet minus. Accusantium quo nemo est iure vero sequi. Et aut doloremque eum atque quos doloremque eligendi. Tempora vel numquam harum sed dolores maxime et quis. Ut accusamus sapiente sed animi voluptatibus. Corporis quo et aperiam totam autem repellat. Nemo occaecati quod alias aut quaerat. Laboriosam voluptate deleniti cum aut. Doloremque provident unde iusto sit tempore minus. Autem sunt sed itaque quod incidunt temporibus dolorum. Et beatae eos ut amet officiis. Voluptas et animi et est qui eius quas minima.","author":"Laborum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=sit"},{"title":"Possimus veniam ut sed eum.","slug":{"ar":"alty-rbth-oosf-lh-ma-amknh","en":"possimus-veniam-ut-sed-eum"},"printing_year":"1991","ISBN":"2206087472","EISBN":"9786717656167","abstract":"Est officia labore cupiditate deserunt. Velit maiores molestiae animi dolore consequatur veritatis. Voluptas deleniti omnis vero. Eveniet necessitatibus voluptas dolores est iure. Non recusandae ex dolor. Et est commodi labore fugiat dolores incidunt impedit aut. Non eius ut laudantium dicta quia veniam. Sunt est optio possimus sed et voluptatem. Unde aliquam dolorem eum non nemo provident. Optio laboriosam asperiores eum et et. Tempore ut ullam exercitationem dolorem in qui. Dignissimos officiis temporibus magnam deserunt deleniti magnam. Corporis debitis in veniam similique dolorum eum eos hic. Et labore repudiandae sint modi iusto eaque. Corporis accusamus perspiciatis ut necessitatibus harum. Minima ut distinctio a voluptas neque et alias. Quod reiciendis ipsam expedita nihil saepe. Nemo ullam voluptatem consequatur dolorem minima. Itaque voluptas veniam qui consequatur animi pariatur. Voluptatibus sed vero temporibus porro assumenda.","author":"Laborum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007799?text=aut"},{"title":"Et et hic sapiente vitae.","slug":{"ar":"alyha-oarad-an-yakhth-mnha","en":"et-et-hic-sapiente-vitae"},"printing_year":"1994","ISBN":"7464243943","EISBN":"9781920257286","abstract":"Sed fugit atque nihil libero quaerat perspiciatis est. Soluta quos itaque est velit. Quae fuga dolores sed est sed. Eius beatae est corporis voluptas. Voluptatem est dolorum adipisci placeat. Consequatur aut sed ea commodi aut nobis. Suscipit sequi neque sint molestiae. Est nemo ut nihil quia consequatur esse amet. Repellat qui quos quam quia. Et est rem delectus rerum accusantium esse pariatur. Nobis unde voluptas exercitationem cupiditate necessitatibus quia. Cum dolores molestiae expedita quia et. Sequi unde aut ipsa consequatur a consequatur explicabo. Omnis recusandae ad asperiores et. Et nam ratione aut repudiandae. Accusantium eveniet consectetur a ad id labore beatae adipisci. Rerum et iure sint eos corporis dolorum. Voluptas quibusdam qui nostrum fugiat voluptatum eveniet suscipit veniam. Nulla ut et et veritatis odit iusto inventore. Expedita voluptates exercitationem quibusdam neque ducimus et. Voluptatem culpa placeat ipsam dolor esse.","author":"Ut.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007722?text=ut"}],"links":{"first":"http:\/\/localhost\/api\/books?page=1","last":"http:\/\/localhost\/api\/books?page=14","prev":null,"next":"http:\/\/localhost\/api\/books?page=2"},"meta":{"current_page":1,"from":1,"last_page":14,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/books?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/books?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/books?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/books?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/books?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/books?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/books?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/books?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/books?page=9","label":"9","active":false},{"url":"http:\/\/localhost\/api\/books?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/books?page=13","label":"13","active":false},{"url":"http:\/\/localhost\/api\/books?page=14","label":"14","active":false},{"url":"http:\/\/localhost\/api\/books?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/books","per_page":3,"to":3,"total":40}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/books/{book_slug}'
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Books
+      subgroupDescription: 'APIs for Books'
+      title: 'Get Book by slug.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      book_slug:
+        name: book_slug
+        description: 'The slug of the book.'
+        required: true
+        example: velit-ea-corrupti-amet
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      slug:
+        name: slug
+        description: 'The slug of the Book'
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      book_slug: velit-ea-corrupti-amet
+      slug: est
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"title":"Velit ea corrupti amet.","slug":{"ar":"aldoam-fanh-ykon-fy-alam-la","en":"velit-ea-corrupti-amet"},"printing_year":"1977","ISBN":"2553308809","EISBN":"9789696630081","abstract":"In sit temporibus consequatur quis. Dicta quidem consequatur nisi. Qui et quam excepturi excepturi fugiat numquam. Sed sed sequi deserunt optio. Praesentium accusamus eum quia est. Laboriosam excepturi alias consectetur labore. Sint rerum delectus tempore eaque qui. Harum quae qui vitae saepe. Laboriosam quia numquam magni necessitatibus non. Ut labore suscipit aut officia sapiente. Iusto nemo culpa quidem. Aut fugit voluptatem voluptatem culpa. Fugiat non maxime ea nam veniam. Et voluptatem vel ex voluptatem autem deleniti sequi. Possimus sit et incidunt et. Assumenda nemo dolores et voluptatem quia corrupti explicabo. Explicabo consequuntur dolores totam labore impedit blanditiis. Quia et reiciendis numquam. Repudiandae voluptas enim provident aut nisi dolorem qui nam. Dolorum in velit sed est qui aliquam. Suscipit a voluptatem corrupti sit et harum ut aliquam. Voluptatibus minus repellendus distinctio et ad sequi. Est natus quia vero hic iure reprehenderit.","author":"Aut et.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/005511?text=mollitia","book_categories":[],"book_awards":[],"book_formats":[],"book_reviews":[]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
     uri: api/book-categories
     metadata:
       groupName: 'Public Endpoints'
       groupDescription: ''
       subgroup: 'Book Categories'
-      subgroupDescription: 'API for detching Book Categories.'
+      subgroupDescription: 'API for Book Categories.'
       title: 'Get all Book Categories.'
       description: ''
       authenticated: false
@@ -28,7 +186,149 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"title":"Odit."},{"title":"Officiis."},{"title":"Velit qui."},{"title":"Sunt nemo."},{"title":"A totam."},{"title":"Beatae."},{"title":"Eius."},{"title":"Nesciunt."},{"title":"Earum ea."},{"title":"Eum."},{"title":"Harum."},{"title":"Aut sunt."},{"title":"Culpa."},{"title":"Vitae qui."},{"title":"Aliquid."},{"title":"Dolorem."},{"title":"Officiis."},{"title":"Libero."},{"title":"Aperiam."},{"title":"Qui."}]}'
+        content: '{"data":[{"title":"\u062a\u0627\u0631\u064a\u062e\u064a \u0642\u062f\u064a\u0645"},{"title":"\u0641\u0627\u0646 \u0648\u062c\u0648\u062f."},{"title":"\u0642\u0628\u0644 \u0630\u0644\u0643\u060c."},{"title":"\u0648\u0647\u064a \u0645\u062f\u0627\u0631."},{"title":"\u0639\u0646\u0647\u060c \u0628\u0639\u062f."},{"title":"\u0630\u0644\u0643 \u0648\u0631\u0648\u0649."},{"title":"\u062a\u0639\u0644\u0642 \u0644\u0647\u0627."},{"title":"\u0639\u0644\u0649 \u0633\u0631\u062a\u0647."},{"title":"\u0627\u0644\u0645\u0634\u0627\u0647\u062f\u0629."},{"title":"\u0645\u0646 \u0627\u0644\u062c\u0647\u0629."},{"title":"\u0643\u0644\u0647\u0627 \u062d\u062c\u0628."},{"title":"\u0641\u064a \u0648\u0633\u0637\u0647\u060c."},{"title":"\u0641\u0627\u0646\u0647 \u0625\u0630\u0627."},{"title":"\u0639\u0646 \u062a\u0639\u0644\u064a\u0645."},{"title":"\u062a\u0644\u0643 \u0627\u0644\u062a\u064a."},{"title":"\u0648\u0645\u062a\u0649 \u0648\u0642\u0639."},{"title":"\u0643\u062a\u0646\u0632\u0647 \u0639\u0646."},{"title":"\u064a\u0631 \u0634\u064a\u0626\u0627\u064b."},{"title":"\u0645\u0646 \u0627\u0644\u0643\u062f\u0631."},{"title":"\u062d\u0627\u0631\u0629 \u0648\u0644\u0627."},{"title":"\u0643\u0627\u0646 \u062a\u0628\u064a\u0646."}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/authors
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Authors
+      subgroupDescription: 'APIs for Authors'
+      title: 'Get all Authors.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      lang: ar
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      page: 1
+      perPage: 3
+    queryParameters:
+      'filter[name]':
+        name: 'filter[name]'
+        description: 'filter Authors by name.'
+        required: false
+        example: officiis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'include[]':
+        name: 'include[]'
+        description: 'include authors relations'
+        required: false
+        example: 'include[] = books'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[name]': officiis
+      'include[]': 'include[] = books'
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"name":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f111","about":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","avatar":"storage\/avatars\/UserUpload-0706202417572366898583d9e11.jpg","slug":{"ar":"aaly-ahmd111","en":"ali-ahmad111"}},{"name":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f1","about":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","avatar":"C:\\xampp\\tmp\\php932A.tmp","slug":{"ar":"aaly-ahmd1","en":"ali-ahmad1"}},{"name":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f","about":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","avatar":null,"slug":{"ar":"aaly-ahmd","en":"ali-ahmad"}},{"name":"\u062a\u0633\u062aTEST","about":"\u062a\u0633\u062a \u062a\u0633\u062a","avatar":null,"slug":{"ar":"tsttest","en":"testtest"}},{"name":"\u0639\u0628\u062f \u0627\u0644\u0644\u0647 \u0635\u062f\u0627\u0645 \u0627\u0644\u0633\u0645\u064a\u0631","about":"\u062b\u0645 \u063a\u0648\u0635 \u062a\u062d\u062a \u0627\u0644\u0645\u0627\u0621 \u0648\u0627\u0645\u0627 \u0623\u0646 \u062a\u0643\u0648\u0646 \u0646\u062c\u0627\u062a\u0647\u0645 \u0639\u0644\u0649 \u064a\u062f\u064a\u0647\u060c \u062d\u062f\u062b\u062a \u0644\u0647 \u0627\u0644\u0646\u064a\u0629 \u0641\u064a \u0627\u0644\u0648\u0635\u0648\u0644 \u0627\u0644\u064a\u0647\u0645\u061f \u0641\u0623\u0639\u0644\u0645\u0647 \u0628\u0645\u0627 \u0647\u0645 \u0641\u064a\u0647 \u0645\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ccee?text=quia","slug":{"ar":"aabd-allh-sdam-alsmyr","en":"laborum"}},{"name":"\u062f\u0627\u0644\u064a\u0629 \u0627\u0644\u0639\u0642\u0644","about":"\u0635\u0627\u062f\u0631\u0629 \u0639\u0646\u0647\u060c \u0641\u0643\u0627\u0646 \u064a\u0631\u0649 \u0627\u0644\u0646\u0648\u0639 \u0628\u0647\u0630\u0627 \u0627\u0644\u0646\u0638\u0631 \u0648\u0627\u062d\u062f\u0627\u064b\u060c \u0648\u064a\u062c\u0639\u0644 \u0643\u062b\u0631\u0629 \u0623\u0634\u062e\u0627\u0635\u0647 \u0628\u0645\u0646\u0632\u0644\u0629 \u0643\u062b\u064a\u0631\u0629 \u0623\u0639\u0636\u0627\u0621 \u0627\u0644\u0634\u062e\u0635 \u0627\u0644\u0648\u0627\u062d\u062f\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006611?text=et","slug":{"ar":"daly-alaakl","en":"ut"}},{"name":"\u0628\u0627\u0633\u0644 \u0627\u0644\u062d\u0635\u064a\u0646","about":"\u0648\u0644\u0627 \u062a\u0646\u0645\u0648\u060c \u0645\u0646 \u0627\u0644\u062d\u062c\u0627\u0631\u0629\u060c \u0648\u0627\u0644\u062a\u0631\u0627\u0628\u060c \u0648\u0627\u0644\u0645\u0627\u0621\u060c \u0648\u0627\u0644\u0647\u0648\u0627\u0621\u060c \u0648\u0627\u0644\u0644\u0647\u0628\u060c \u0641\u064a\u0631\u0649 \u0623\u0646\u0647\u0627 \u0623\u062c\u0633\u0627\u0645 \u0645\u0642\u062f\u0631 \u0644\u0647\u0627 \u0627\u0644\u0637\u0648\u0644 \u0648\u0639\u0631\u0636 \u0648\u0639\u0645\u0642.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/008811?text=perferendis","slug":{"ar":"basl-alhsyn","en":"qui-et"}},{"name":"\u0646\u0627\u062c\u064a \u0627\u0633\u0645\u0627\u0639\u064a\u0644 \u0627\u0644\u062f\u0627\u0648\u0648\u062f","about":"\u0645\u0646 \u0627\u0644\u0628\u0642\u0648\u0644 \u0627\u0644\u062a\u064a \u0644\u0645 \u062a\u0643\u0646 \u0642\u062f\u064a\u0645\u0629\u060c \u0648\u0647\u0648 \u0641\u064a \u062d\u0627\u0644 \u0627\u0644\u0623\u0639\u0631\u0627\u0636\u060c \u0641\u064a\u0641\u0636\u064a \u0625\u0644\u0649 \u0627\u0644\u0634\u0642\u0627\u0621 \u0627\u0644\u062f\u0627\u0626\u0645\u060c \u0648\u0623\u0644\u0645 \u0627\u0644\u062d\u062c\u0627\u0628. \u0641\u0633\u0627\u0621\u0647 \u062d\u0627\u0644\u0647.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009988?text=autem","slug":{"ar":"nagy-asmaaayl-aldaood","en":"ut-sed"}},{"name":"\u0631\u0648\u064a\u062f\u0629 \u0627\u0644\u0631\u0627\u062c\u062d\u064a","about":"\u0643\u0644\u0647\u0627. \u0625\u0644\u0627 \u0645\u0639\u0646\u0649 \u0627\u0644\u0627\u0645\u062a\u062f\u0627\u062f \u0627\u0644\u0645\u0648\u062c\u0648\u062f \u0641\u064a \u062c\u0645\u064a\u0639\u0647\u0627 \u0641\u064a \u0627\u0644\u0623\u0642\u0637\u0627\u0631 \u0627\u0644\u062b\u0644\u0627\u062b\u0629: \u0627\u0644\u0637\u0648\u0644\u060c \u0648\u0627\u0644\u0639\u0631\u0636\u060c \u0648\u0627\u0644\u0639\u0645\u0642\u061b \u0644\u0627 \u064a\u0646\u0641\u0643 \u0634\u064a\u0621.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=et","slug":{"ar":"royd-alraghy","en":"soluta"}},{"name":"\u0627\u0644\u0645\u0647\u0646\u062f\u0633\u0629 \u062f\u0627\u0631\u064a\u0646 \u0627\u0644\u0641\u0631\u064a\u062f\u064a","about":"\u0633\u0645\u062a \u0631\u0624\u0648\u0633 \u0627\u0644\u0633\u0627\u0643\u0646\u064a\u0646 \u0641\u064a\u0647\u060c \u0648\u062d\u064a\u0646\u0626\u0630 \u062a\u0643\u0648\u0646 \u0627\u0644\u062d\u0631\u0627\u0631\u0629 \u0641\u064a \u0630\u0644\u0643 \u0627\u0644\u0645\u0642\u0627\u0645 \u0628\u0627\u0644\u0646\u062d\u0648 \u0627\u0644\u0630\u064a \u0637\u0644\u0628\u0647 \u0623\u0648\u0644\u0627\u064b \u062d\u062a\u0649 \u0648\u0635\u0644 \u0625\u0644\u064a\u0647 \u0628\u0623\u064a\u0633\u0631.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00dd33?text=illo","slug":{"ar":"almhnds-daryn-alfrydy","en":"qui-neque"}},{"name":"\u063a\u0632\u0644 \u0628\u0627\u0634\u0627","about":"\u0628\u0646 \u064a\u0642\u0638\u0627\u0646 \u0648\u064a\u0633\u0627\u0626\u0644\u0647 \u0639\u0646 \u0634\u0623\u0646\u0647 \u0648\u0645\u0646 \u0623\u064a\u0646 \u0635\u0627\u0631 \u0625\u0644\u0649 \u062a\u0644\u0643 \u0627\u0644\u062d\u0627\u0644 \u0645\u062f\u0629 \u0648\u0647\u0648 \u064a\u062c\u0627\u0647\u062f \u0642\u0648\u0627\u0647 \u0627\u0644\u062c\u0633\u0645\u0627\u0646\u064a\u0629 \u0648\u062a\u062c\u0627\u0647\u062f\u0647\u060c \u0648\u064a\u0646\u0627\u0632\u0639\u0647\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0022ee?text=maiores","slug":{"ar":"ghzl-basha","en":"nisi"}},{"name":"\u0646\u0639\u0645\u0629 \u0632\u0645\u0627\u0645 \u0627\u0644\u0633\u0645\u0627\u0631\u064a","about":"\u064a\u062a\u0635\u0641\u062d \u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u062d\u064a\u0648\u0627\u0646 \u0628\u062c\u0632\u0626\u0647 \u0627\u0644\u062e\u0633\u064a\u0633 \u0627\u0644\u0630\u064a \u0647\u0648 \u0628\u0645\u0646\u0632\u0644\u0629 \u0627\u0644\u0637\u064a\u0646 \u0641\u064a \u0647\u0630\u0627 \u0627\u0644\u0648\u0642\u062a \u0645\u0632\u064a\u062f \u0628\u064a\u0627\u0646 \u0628\u0627\u0644\u0645\u0634\u0627\u0641\u0647\u0629 \u0639\u0644\u0649 \u0645\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ffaa?text=ut","slug":{"ar":"naam-zmam-alsmary","en":"magni-et"}},{"name":"\u0631\u062c\u0628 \u0627\u0644\u0635\u0642\u064a\u0647","about":"\u0627\u0644\u062d\u0644\u0648\u0629\u060c \u0648\u064a\u0637\u0639\u0645\u0647\u0627. \u0648\u0645\u0627\u0632\u0644 \u0627\u0644\u0647\u0632\u0644 \u0648\u0627\u0644\u0636\u0639\u0641 \u064a\u0633\u062a\u0648\u0644\u064a \u0639\u0644\u064a\u0647\u0627 \u0648\u064a\u062a\u0648\u0627\u0644\u0649\u060c \u0625\u0644\u0649 \u0623\u0646 \u0623\u062f\u0631\u0643\u0647\u0627 \u0627\u0644\u0645\u0648\u062a\u060c \u0641\u0633\u0643\u0646\u062a \u062d\u0631\u0643\u0627\u062a\u0647\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/005533?text=quia","slug":{"ar":"rgb-alskyh","en":"labore"}},{"name":"\u0622\u064a\u0629 \u0627\u0644\u0639\u0642\u0644","about":"\u0641\u064a\u0647: \u0625\u0646 \u0623\u0644\u0632\u0645 \u0646\u0641\u0633\u0647 \u0625\u0646 \u0644\u0627 \u064a\u0641\u0643\u0631 \u0641\u064a \u0634\u064a\u0621 \u0645\u0646 \u0627\u0644\u0627\u0645\u062a\u062f\u0627\u062f\u061f \u0641\u062a\u062d\u064a\u0631 \u0628\u0639\u062f \u0630\u0644\u0643 \u0625\u0644\u0649 \u063a\u064a\u0631 \u0646\u0647\u0627\u064a\u0629 \u0648\u0644\u0627 \u064a\u0646\u0642\u0635 \u0623\u062d\u062f\u0647\u0645\u0627 \u0639\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006622?text=ducimus","slug":{"ar":"ay-alaakl","en":"aut"}},{"name":"\u0625\u0646\u0639\u0627\u0645 \u0627\u0644\u062d\u0635\u064a\u0646","about":"\u0645\u0646 \u0623\u0646 \u064a\u0642\u0627\u0644 \u0623\u0646\u0647 \u0644\u0627 \u0628\u062f \u0644\u0647 \u0645\u0646 \u0623\u0646 \u064a\u0643\u0648\u0646 \u0645\u0633\u0643\u0646\u0647 \u0623\u062d\u062f \u0647\u0630\u064a\u0646 \u0627\u0644\u0628\u064a\u062a\u064a\u0646. \u062b\u0645 \u0642\u0627\u0644: \u0623\u0645\u0627 \u0647\u0630\u0627 \u0627\u0644\u0628\u064a\u062a \u0639\u0644\u0649 \u0645\u0627 \u0628\u0647 \u0645\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00bbdd?text=alias","slug":{"ar":"anaaam-alhsyn","en":"aut-in"}}],"links":{"first":"http:\/\/localhost\/api\/authors?page=1","last":"http:\/\/localhost\/api\/authors?page=2","prev":null,"next":"http:\/\/localhost\/api\/authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/authors","per_page":15,"to":15,"total":24}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/authors/{author_slug}'
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Authors
+      subgroupDescription: 'APIs for Authors'
+      title: 'Get Author by slug.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      author_slug:
+        name: author_slug
+        description: 'The slug of the author.'
+        required: true
+        example: maamr-grys-alsoylm
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      slug:
+        name: slug
+        description: 'The slug of the Author'
+        required: true
+        example: sed
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      author_slug: maamr-grys-alsoylm
+      slug: sed
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Author] maamr-grys-alsoylm"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

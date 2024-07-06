@@ -4,6 +4,651 @@ endpoints:
   -
     httpMethods:
       - GET
+    uri: api/admin/books
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Book Management'
+      subgroupDescription: 'APIs for managing Books'
+      title: 'Get all Books.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      'filter[title]':
+        name: 'filter[title]'
+        description: 'filter Books by name.'
+        required: false
+        example: odit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[ISBN]':
+        name: 'filter[ISBN]'
+        description: 'filter Books by ISBN.'
+        required: false
+        example: possimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[EISBN]':
+        name: 'filter[EISBN]'
+        description: 'filter Books by EISBN.'
+        required: false
+        example: culpa
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'include[]':
+        name: 'include[]'
+        description: 'relations to load on the book'
+        required: false
+        example: "['bookCategories', 'formats', 'awards', 'reviews']"
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[title]': odit
+      'filter[ISBN]': possimus
+      'filter[EISBN]': culpa
+      'include[]': "['bookCategories', 'formats', 'awards', 'reviews']"
+      page: 1
+      perPage: 3
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":40,"title":{"ar":"\u0645\u063a\u0627\u0631\u062a\u0647 \u0645\u0637\u0631\u0642\u0627\u064b\u060c \u063a\u0627\u0636\u0627\u064b \u0628\u0635\u0631\u0647\u060c.","en":"Error repellat et eum."},"abstract":{"ar":"\u062a\u062c\u0648\u064a\u0641\u0627\u064b\u060c \u0641\u0642\u0627\u0644: \u0644\u0639\u0644 \u0645\u0637\u0644\u0648\u0628\u064a \u0627\u0644\u0623\u0642\u0635\u0649 \u0625\u0646\u0645\u0627 \u0647\u0648 \u0643\u0627\u0644\u0622\u0644\u0629 \u0648\u0628\u0645\u0646\u0632\u0644\u0629 \u0627\u0644\u0639\u0635\u064a \u0627\u0644\u062a\u064a \u064a\u062f\u0627\u0641\u0639 \u0628\u0647\u0627 \u0639\u0646 \u0633\u0627\u0626\u0631 \u0623\u0639\u0636\u0627\u0621 \u0627\u0644\u062d\u064a\u0648\u0627\u0646 \u0648\u062a\u0631\u062a\u064a\u0628\u0647\u0627 \u0648\u0623\u0648\u0636\u0627\u0639\u0647\u0627 \u0648\u0643\u0645\u064a\u062a\u0647\u0627 \u0648\u0643\u064a\u0641\u064a\u0629 \u0627\u0631\u062a\u0628\u0627\u0637 \u0628\u0639\u0636\u0647\u0627 \u0628\u0628\u0639\u0636\u060c \u0647\u064a \u0628\u0645\u0646\u0632\u0644\u0629 \u0645\u0627 \u0641\u064a \u0627\u0644\u0645\u0639\u0645\u0648\u0631\u0629 \u0627\u0644\u0625\u0642\u0644\u064a\u0645 \u0627\u0644\u0631\u0627\u0628\u0639\u060c \u0641\u0627\u0646 \u0643\u0627\u0646\u0648\u0627 \u0642\u0627\u0644\u0648\u0627 \u0630\u0644\u0643 \u0644\u0623\u0646\u0647 \u0635\u062d \u0639\u0646\u062f\u0647\u0645 \u0627\u0646\u0647 \u0644\u064a\u0633 \u0639\u0644\u0649 \u062e\u0637 \u0627\u0644\u0627\u0633\u062a\u0648\u0627\u0621 \u0627\u0644\u0630\u064a \u0648\u0635\u0641\u0646\u0627\u0647 \u0623\u0648\u0644\u0627\u064b\u060c \u0643\u0627\u0646\u062a \u0647\u0630\u0647 \u0627\u0644\u0645\u0631\u0623\u0629 \u0645\u0642\u0639\u0631\u0629 \u0639\u0644\u0649 \u0634\u0643\u0644 \u0627\u0644\u0643\u0631\u0629\u060c \u0648\u0642\u0648\u0649 \u0630\u0644\u0643 \u0641\u064a \u0623\u0635\u0646\u0627\u0641 \u0627\u0644\u0645\u062e\u0627\u0637\u0628\u0627\u062a \u0627\u0644\u0645\u0639\u062a\u0627\u062f\u0629\u060c \u0641\u0643\u064a\u0641 \u0647\u0627 \u0647\u0646\u0627 \u0648\u0627\u0644\u0634\u0645\u0633 \u0648\u0646\u0648\u0631\u0647\u0627\u060c \u0648\u0635\u0648\u0631\u062a\u0647\u0627 \u0648\u062a\u0634\u0643\u0644\u0647\u0627 \u0648\u0627\u0644\u0645\u0631\u0627\u064a\u0627 \u0648\u0627\u0644\u0635\u0648\u0631 \u0627\u0644\u062d\u0627\u0635\u0644\u0629 \u0641\u064a\u0647\u0627\u060c \u0643\u0644\u0647\u0627 \u0623\u0645\u0648\u0631 \u063a\u064a\u0631 \u0645\u0641\u0627\u0631\u0642\u0629 \u0644\u0644\u0623\u062c\u0633\u0627\u0645\u060c \u0648\u0644\u0627 \u0642\u0648\u0627\u0645 \u0644\u0647\u0627 \u0625\u0644\u0627 \u0628\u0647\u0627 \u0648\u0644\u0627 \u0645\u0646\u0641\u0635\u0644 \u0639\u0646\u0647\u0627. \u0648\u0642\u062f \u0643\u0627\u0646 \u062a\u0628\u064a\u0646 \u0644\u0647 \u0627\u0646\u0647 \u0625\u0646 \u0627\u0639\u062a\u0642\u062f \u062d\u062f\u0648\u062b \u0627\u0644\u0639\u0627\u0644\u0645 \u062e\u0631\u0648\u062c\u0647 \u0625\u0644\u0649 \u0627\u0644\u0648\u062c\u0648\u062f \u0628\u0639\u062f \u0627\u0644\u0639\u062f\u0645\u060c \u0641\u0627\u0644\u0644\u0627\u0632\u0645 \u0639\u0646 \u0630\u0644\u0643 \u0623\u0646 \u062a\u0643\u0648\u0646 \u0646\u062c\u0627\u062a\u0647\u0645 \u0639\u0644\u0649 \u064a\u062f\u064a\u0647\u060c \u062d\u062f\u062b\u062a \u0644\u0647 \u0627\u0644\u0646\u064a\u0629 \u0641\u064a \u0627\u0644\u0648\u0635\u0648\u0644 \u0627\u0644\u064a\u0647\u0645\u061f \u0641\u0623\u0639\u0644\u0645\u0647 \u0628\u0645\u0627 \u0647\u0645 \u0641\u064a\u0647 \u0645\u0646 \u0636\u0631\u0648\u0628 \u0627\u0644\u0627\u062d\u0633\u0627\u0633\u0627\u062a\u060c \u0648\u0641\u0646\u0648\u0646 \u0627\u0644\u0627\u062f\u0631\u0627\u0643\u0627\u062a \u0648\u0623\u0635\u0646\u0627\u0641 \u0627\u0644\u062d\u0631\u0643\u0627\u062a\u060c \u0648\u0630\u0644\u0643 \u0627\u0644\u0645\u0639\u0646\u0649 \u0647\u0648 \u0644\u0644\u062c\u0633\u0645 \u0645\u0646 \u062d\u064a\u062b \u0647\u0648 \u062c\u0633\u0645\u060c \u0644\u0645\u0627 \u0648\u062c\u062f \u0625\u0644\u0627 \u0648\u0647\u0645\u0627 \u0644\u0647. \u0648\u0646\u062d\u0646 \u0646\u062c\u062f \u0627\u0644\u062b\u0642\u064a\u0644 \u0644\u0627 \u062a\u0648\u062c\u062f \u0641\u064a\u0647 \u0627\u0644\u062e\u0641\u0629\u060c \u0648\u0627\u0644\u062e\u0641\u064a\u0641 \u0644\u0627 \u064a\u0648\u062c\u062f \u0645\u062b\u0644\u0647\u0627 \u0644\u0644\u0623\u062c\u0633\u0627\u0645 \u0627\u0644\u0633\u0645\u0627\u0648\u064a\u0629. \u062b\u0645 \u0627\u0646\u0647 \u0633\u0646\u062d \u0644\u0646\u0638\u0631\u0647 \u063a\u0631\u0627\u0628\u0627\u0646 \u064a\u0642\u062a\u062a\u0644\u0627\u0646 \u062d\u062a\u0649 \u0635\u0631\u0639 \u0623\u062d\u062f\u0647\u0645\u0627 \u0627\u0644\u0622\u062e\u0631 \u0645\u064a\u062a\u0627\u064b. \u062b\u0645 \u062c\u0639\u0644 \u064a\u062a\u0641\u0643\u0631 \u0645\u0627 \u0627\u0644\u0630\u064a \u064a\u0644\u0632\u0645 \u0639\u0646 \u0643\u0644 \u0648\u0627\u062d\u062f \u0645\u0646\u0647\u0627\u060c \u0644\u0627 \u064a\u062e\u0644\u0648 \u0645\u0646 \u0623\u062d\u062f \u0623\u0645\u0631\u064a\u0646: \u0625\u0645\u0627 \u0623\u0646 \u064a\u062a\u062d\u0631\u0643 \u0625\u0644\u0649 \u0641\u0648\u0642 \u0648\u0635\u0644\u062d \u0644\u0647\u0627. \u0641\u0630\u0644\u0643 \u0627\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0647\u0648.","en":"Eum veniam molestiae quia voluptas consequuntur laborum sapiente. Vel distinctio commodi esse quo distinctio et omnis. Molestiae dignissimos labore qui eos voluptatum. Ea mollitia doloribus voluptas exercitationem quia ut aliquid. Et aut a quas est voluptas quia. Doloremque maxime ut fugit repellat sunt eius. Fugiat fugiat ut rerum officia blanditiis. Maiores dolores perferendis et officiis omnis molestias mollitia. Reiciendis et in non qui corrupti ut. Necessitatibus vitae eveniet minus. Accusantium quo nemo est iure vero sequi. Et aut doloremque eum atque quos doloremque eligendi. Tempora vel numquam harum sed dolores maxime et quis. Ut accusamus sapiente sed animi voluptatibus. Corporis quo et aperiam totam autem repellat. Nemo occaecati quod alias aut quaerat. Laboriosam voluptate deleniti cum aut. Doloremque provident unde iusto sit tempore minus. Autem sunt sed itaque quod incidunt temporibus dolorum. Et beatae eos ut amet officiis. Voluptas et animi et est qui eius quas minima."},"slug":{"ar":"mgharth-mtrka-ghada-bsrh","en":"error-repellat-et-eum"},"printing_year":"1989","ISBN":"6880767443","EISBN":"9799804475534","author":"Laborum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=sit"},{"id":39,"title":{"ar":"\u0627\u0644\u062a\u064a \u0631\u0628\u062a\u0647\u060c \u0648\u0648\u0635\u0641 \u0644\u0647 \u0645\u0627 \u0623\u0645\u0643\u0646\u0647.","en":"Possimus veniam ut sed eum."},"abstract":{"ar":"\u0647\u0644 \u0647\u0648 \u0648\u0627\u062d\u062f \u0623\u0648 \u0643\u062b\u064a\u0631\u061f \u0641\u062a\u0635\u0641\u062d \u062c\u0645\u064a\u0639 \u0627\u0644\u0623\u062c\u0633\u0627\u0645 \u0627\u0644\u062a\u064a \u0641\u064a \u0639\u0627\u0644\u0645 \u0627\u0644\u0643\u0648\u0646 \u0648\u0627\u0644\u0641\u0633\u0627\u062f\u060c \u062a\u0641\u0643\u0631 \u0641\u064a \u0647\u0630\u0627 \u0627\u0644\u0645\u0648\u0636\u0639 \u0645\u0646 \u0627\u0644\u062e\u0641\u0627\u0641\u064a\u0634 \u0627\u0644\u0630\u064a\u0646 \u062a\u0638\u0644\u0645 \u0627\u0644\u0634\u0645\u0633 \u0641\u064a \u0630\u0627\u062a\u0647\u0627 \u063a\u064a\u0631 \u062d\u0627\u0631\u0629 \u0648\u0644\u0627 \u0645\u062a\u0643\u064a\u0641\u0629 \u0628\u0634\u064a\u0621 \u0645\u0646 \u0647\u0630\u0647 \u0627\u0644\u0623\u0631\u0628\u0639\u0629 \u064a\u0633\u062a\u062d\u064a\u0644 \u0628\u0639\u0636\u0647\u0627 \u0625\u0644\u0649 \u0628\u0639\u0636: \u0641\u0627\u0644\u0623\u0648\u0644\u0649 \u0645\u0646\u0647\u0627 \u062d\u0627\u062c\u062a\u0647\u0627 \u0625\u0644\u0649 \u0627\u0644\u0622\u062e\u0631\u064a\u0646\u060c \u062d\u0627\u062c\u0629 \u0627\u0633\u062a\u062e\u062f\u0627\u0645 \u0648\u062a\u0633\u062e\u064a\u0631. \u0648\u0627\u0644\u0623\u062e\u0631\u064a\u0627\u0646 \u062d\u0627\u062c\u062a\u0647\u0645\u0627 \u0625\u0644\u0649 \u0627\u0644\u0623\u0648\u0644\u0649 \u062d\u0627\u062c\u0629 \u0627\u0644\u0645\u0631\u0624\u0648\u0633 \u0625\u0644\u0649 \u0627\u0644\u0631\u0626\u064a\u0633\u060c \u0648\u0627\u0644\u0645\u062f\u0628\u0631 \u0625\u0644\u0649 \u0627\u0644\u0645\u062f\u0628\u0631\u061b \u0648\u0643\u0644\u0627\u0647\u0645\u0627 \u0644\u0645\u0627 \u064a\u062a\u062e\u0644\u0642 \u0628\u0639\u062f\u0647\u0645\u0627 \u0645\u0646 \u0627\u0644\u0623\u0639\u0636\u0627\u0621 \u0631\u0626\u064a\u0633 \u0644\u0627 \u0645\u0631\u0624\u0648\u0633. \u0648\u0623\u062d\u062f\u0647\u0645\u0627\u060c \u0648\u0647\u0648 \u0627\u0644\u062b\u0627\u0646\u064a\u060c \u0623\u062a\u0645\u0645 \u0631\u0626\u0627\u0633\u0629 \u0645\u0646 \u0627\u0644\u062b\u0627\u0644\u062b \u0641\u0627\u0644\u0623\u0648\u0644 \u0645\u0646\u0647\u0645\u0627 \u0644\u0645\u0627 \u062a\u0639\u0644\u0642 \u0628\u0647 \u0646\u0628\u0627\u062a \u0622\u062e\u0631 \u064a\u0624\u0630\u064a\u0647\u060c \u0623\u0648 \u0639\u0637\u0634 \u0639\u0637\u0634\u0627\u064b \u064a\u0643\u0627\u062f \u064a\u0641\u0633\u062f\u0647\u060c \u0623\u0632\u0627\u0644 \u0639\u0646\u0647 \u0630\u0644\u0643 \u0627\u0644\u0641\u0639\u0644\u060c \u0625\u0644\u0649 \u0623\u0646 \u062a\u0645 \u0644\u0647 \u062d\u0648\u0644\u0627\u0646\u060c \u0648\u062a\u062f\u0631\u062c \u0641\u064a \u0627\u0644\u0645\u0634\u064a \u0648\u0623\u062b\u063a\u0631 \u0641\u0643\u0627\u0646 \u064a\u062a\u0628\u0639 \u062a\u0644\u0643 \u0627\u0644\u0638\u0628\u064a\u0629\u060c \u0648\u0643\u0627\u0646\u062a \u0647\u064a \u062a\u0631\u0641\u0642 \u0628\u0647 \u0648 \u062a\u0631\u062d\u0645\u0647 \u0648\u062a\u062d\u0645\u0644\u0647 \u0625\u0644\u0649 \u0645\u0648\u0627\u0636\u0639 \u0641\u064a\u0647\u0627 \u0634\u062c\u0631 \u0645\u062b\u0645\u0631 \u0641\u0643\u0627\u0646\u062a \u062a\u0637\u0639\u0645\u0647 \u0645\u0627 \u062a\u0633\u0627\u0642\u0637 \u0645\u0646 \u062b\u0645\u0631\u0627\u062a\u0647\u0627 \u0627\u0644\u062d\u0644\u0648\u0629 \u0627\u0644\u0646\u0636\u064a\u062c\u0629\u061b \u0648\u0645\u0627 \u0643\u0627\u0646 \u0645\u0646\u0647\u0627 \u0642\u0631\u064a\u0628\u0627\u064b \u0645\u0646 \u0623\u0646 \u064a\u062a\u0627\u0644\u0641 \u0628\u0639\u0636 \u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0627\u0644\u0634\u062f\u064a\u062f\u0629 \u0627\u0644\u0639\u062f\u0648\u060c \u0648\u064a\u062d\u0633\u0646 \u0625\u0644\u064a\u0647\u0627 \u0628\u0623\u0639\u062f\u0627\u062f \u0627\u0644\u063a\u0630\u0627\u0621 \u0627\u0644\u0630\u064a \u064a\u0635\u0644\u062d \u0644\u0647\u0627\u060c \u062d\u062a\u0649 \u064a\u062a\u0623\u062a\u0649 \u0644\u0647 \u0627\u0644\u0631\u0643\u0648\u0628 \u0639\u0644\u064a\u0647\u0627 \u0648\u0645\u0637\u0627\u0631\u062f\u0629 \u0633\u0627\u0626\u0631 \u0627\u0644\u0623\u0635\u0646\u0627\u0641 \u0628\u0647\u0627. \u0648\u0643\u0627\u0646 \u0628\u062a\u0644\u0643 \u0627\u0644\u062c\u0632\u064a\u0631\u0629 \u062e\u064a\u0644 \u0627\u0644\u0628\u0631\u064a\u0629 \u0648\u062d\u0645\u0631 \u0648\u062d\u0634\u064a\u0629\u060c \u0641\u0627\u062a\u062e\u0630 \u0645\u0646\u0647\u0627 \u0645\u0627 \u064a\u0635\u0644\u062d \u0644\u062d\u064a\u0648\u0627\u0646 \u0627\u0644\u0628\u062d\u0631\u060c \u0648\u0627\u0644\u0649 \u0645\u0627 \u064a\u0635\u0644\u062d \u0644\u0644\u062b\u0642\u0628\u060c \u0648\u0627\u0644\u0628\u062f\u0646 \u0627\u0644\u0648\u0627\u062d\u062f\u060c \u0648\u0647\u0648 \u064a\u0635\u0631\u0641 \u0630\u0644\u0643 \u0623\u0646\u062d\u0627\u0621 \u0645\u0646 \u0627\u0644\u062a\u0635\u0631\u064a\u0641 \u0628\u062d\u0633\u0628 \u0645\u0627 \u064a\u0631\u0627\u0647 \u062c\u0645\u0647\u0648\u0631 \u0627\u0644\u0641\u0644\u0627\u0633\u0641\u0629 \u0648\u0643\u0628\u0627\u0631 \u0627\u0644\u0623\u0637\u0628\u0627\u0621\u060c.","en":"Est officia labore cupiditate deserunt. Velit maiores molestiae animi dolore consequatur veritatis. Voluptas deleniti omnis vero. Eveniet necessitatibus voluptas dolores est iure. Non recusandae ex dolor. Et est commodi labore fugiat dolores incidunt impedit aut. Non eius ut laudantium dicta quia veniam. Sunt est optio possimus sed et voluptatem. Unde aliquam dolorem eum non nemo provident. Optio laboriosam asperiores eum et et. Tempore ut ullam exercitationem dolorem in qui. Dignissimos officiis temporibus magnam deserunt deleniti magnam. Corporis debitis in veniam similique dolorum eum eos hic. Et labore repudiandae sint modi iusto eaque. Corporis accusamus perspiciatis ut necessitatibus harum. Minima ut distinctio a voluptas neque et alias. Quod reiciendis ipsam expedita nihil saepe. Nemo ullam voluptatem consequatur dolorem minima. Itaque voluptas veniam qui consequatur animi pariatur. Voluptatibus sed vero temporibus porro assumenda."},"slug":{"ar":"alty-rbth-oosf-lh-ma-amknh","en":"possimus-veniam-ut-sed-eum"},"printing_year":"1991","ISBN":"2206087472","EISBN":"9786717656167","author":"Laborum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007799?text=aut"},{"id":38,"title":{"ar":"\u0625\u0644\u064a\u0647\u0627\u060c \u0648\u0623\u0631\u0627\u062f \u0623\u0646 \u064a\u0623\u062e\u0630 \u0645\u0646\u0647\u0627.","en":"Et et hic sapiente vitae."},"abstract":{"ar":"\u0627\u0644\u0648\u0627\u062d\u062f \u0627\u0644\u062d\u0642 \u0627\u0644\u0645\u0648\u062c\u0648\u062f \u0627\u0644\u0648\u0627\u062c\u0628 \u0627\u0644\u0648\u062c\u0648\u062f\u060c \u0648\u0623\u0646 \u062a\u0644\u0643 \u0627\u0644\u0630\u0648\u0627\u062a \u0627\u0644\u0628\u0631\u064a\u0626\u0629 \u0639\u0646 \u0627\u0644\u062c\u0633\u0645\u0627\u0646\u064a\u0629\u060c \u0641\u0644\u0627 \u064a\u062a\u0635\u0648\u0631 \u0641\u0633\u0627\u062f\u0647 \u0627\u0644\u0628\u062a\u0629. \u0641\u0644\u0645\u0627 \u062b\u0628\u062a \u0644\u0647 \u0623\u0646 \u064a\u0641\u0631\u0636 \u0644\u0646\u0641\u0633\u0647 \u0641\u064a\u0647\u0627 \u062d\u062f\u0648\u062f\u0627\u064b \u0644\u0627 \u064a\u062a\u0639\u062f\u0627\u0647\u0627\u060c \u0648\u0645\u0642\u0627\u062f\u064a\u0631 \u0644\u0627 \u064a\u062a\u062c\u0627\u0648\u0632\u0647\u0627\u060c \u0648\u0628\u0623\u0646 \u0644\u0647 \u0627\u0644\u0641\u0631\u0636 \u064a\u062c\u0628 \u0623\u0646 \u064a\u0643\u0648\u0646 \u0627\u0644\u0633\u0648\u0627\u062f \u0645\u062b\u0644\u0627\u064b \u062d\u0644\u0648\u0627\u064b \u0623\u0648 \u062d\u0627\u0645\u0636\u0627\u064b. \u0644\u0643\u0646\u0627\u060c \u0645\u0639 \u0630\u0644\u0643\u060c \u0644\u0627 \u0646\u062e\u064a\u0644\u0643 \u0639\u0646 \u0625\u0634\u0627\u0631\u0627\u062a \u0646\u0648\u0645\u0626 \u0628\u0647\u0627 \u0625\u0644\u0649 \u0645\u0627 \u0623\u0634\u064a\u0631 \u0628\u0647 \u0627\u0644\u064a\u0643 \u0644\u0639\u0644\u0643 \u0623\u0646 \u062a\u062c\u062f \u0645\u0646\u0647 \u0647\u062f\u064a\u0627\u064b \u064a\u0644\u0642\u064a\u0643 \u0639\u0644\u0649 \u062c\u0627\u062f\u0629 \u0627\u0644\u0637\u0631\u064a\u0642! \u0648\u0634\u0631\u0637\u064a \u0639\u0644\u064a\u0643 \u0623\u0646 \u0644\u0627 \u064a\u0635\u0644\u060c \u0645\u0639 \u0627\u0646\u0647 \u0631\u0623\u0649 \u0623\u064a\u0636\u0627\u064b \u0623\u0646 \u0623\u0641\u0639\u0627\u0644 \u0627\u0644\u0646\u0628\u0627\u062a \u0643\u0644\u0647\u0627 \u0644\u0627 \u062a\u062a\u0639\u062f\u0649 \u0627\u0644\u063a\u0630\u0627\u0621 \u0648\u0627\u0644\u062a\u0648\u0644\u064a\u062f. \u062b\u0645 \u0627\u0646\u0647 \u0628\u0639\u062f \u0630\u0644\u0643 \u062d\u062a\u0649 \u064a\u0648\u0627\u0641\u064a \u0645\u0648\u0636\u0639 \u0627\u0644\u0647\u0648\u0627\u0621\u060c \u0648\u0630\u0644\u0643 \u0628\u062e\u0631\u0648\u062c\u0647 \u0645\u0646 \u062a\u062d\u062a \u0627\u0644\u0645\u0627\u0621 \u0648\u0627\u0645\u0627 \u0623\u0646 \u064a\u062a\u062d\u0631\u0643 \u0625\u0644\u0649 \u0641\u0648\u0642 \u0648\u0635\u0644\u062d \u0644\u0647\u0627. \u0641\u0630\u0644\u0643 \u0627\u0644\u0627\u0633\u062a\u0639\u062f\u0627\u062f \u0647\u0648 \u0635\u0648\u0631\u062a\u0647\u060c \u0648\u0647\u0648 \u0627\u0644\u0630\u064a \u062a\u0642\u062f\u0645 \u0630\u0643\u0631\u0647\u060c \u0641\u062a\u0642\u0648\u0644: \u0627\u0646\u0647 \u0628\u0639\u0636 \u0627\u0644\u0627\u0633\u062a\u063a\u0631\u0627\u0642 \u0627\u0644\u0645\u062d\u0636\u060c \u0648\u0627\u0644\u0641\u0646\u0627\u0621 \u0627\u0644\u062a\u0627\u0645\u060c \u0648\u062d\u0642\u064a\u0642\u0629 \u0627\u0644\u0648\u0635\u0648\u0644\u060c \u0648\u0634\u0627\u0647\u062f \u0644\u0644\u0641\u0644\u0643 \u0627\u0644\u0623\u0639\u0644\u0649\u060c \u0627\u0644\u0630\u064a \u0644\u0627 \u0627\u0644\u062a\u0641\u0627\u062a \u0641\u064a\u0647 \u0628\u0648\u062c\u0647 \u0645\u0646 \u0627\u0644\u0648\u062c\u0648\u0647\u060c \u062a\u0639\u0637\u0644 \u0627\u0644\u062c\u0633\u062f \u0643\u0644\u0647\u060c \u0648\u0635\u0627\u0631 \u0625\u0644\u0649 \u062d\u0627\u0644\u0629 \u0627\u0644\u0645\u0648\u062a\u060c \u0641\u0627\u0646\u062a\u0647\u0649 \u0628\u0647 \u0625\u0644\u0649 \u0647\u0630\u0627 \u0627\u0644\u0641\u0627\u0639\u0644 \u062a\u0628\u064a\u0646 \u0644\u0647 \u0623\u0646 \u0643\u0644 \u062c\u0633\u0645 \u0641\u0627\u0646\u0647 \u0644\u0627 \u064a\u0632\u0627\u0644 \u064a\u0634\u062a\u0627\u0642 \u0625\u0644\u0649 \u0630\u0644\u0643 \u0627\u0644\u062a\u062c\u0648\u064a\u0641 \u0627\u0644\u0630\u064a \u0635\u0627\u062f\u0641\u0647 \u062e\u0627\u0644\u064a\u0627\u064b \u0639\u0646\u062f\u0645\u0627 \u0634\u0642 \u0639\u0644\u064a\u0647 \u0645\u0646 \u062d\u064a\u062b \u0647\u0648 \u0627\u0644\u0630\u0627\u062a \u0628\u0639\u064a\u0646\u0647\u0627. \u0648\u0643\u0630\u0644\u0643 \u062c\u0645\u064a\u0639 \u0627\u0644\u0630\u0648\u0627\u062a \u0648\u0644\u0645 \u064a\u0631 \u0634\u064a\u0626\u0627\u064b \u0623\u0646\u062c\u0639 \u0644\u0647 \u0645\u0646 \u0623\u0645\u0631 \u0627\u0644\u0639\u0627\u0644\u0645 \u0627\u0644\u0625\u0644\u0647\u064a\u060c \u0648\u0627\u0644\u062c\u0646\u0629 \u0648\u0627\u0644\u0646\u0627\u0631\u060c \u0648\u0627\u0644\u0628\u0639\u062b \u0648\u0627\u0644\u0646\u0634\u0648\u0631\u060c \u0648\u0627\u0644\u062d\u0634\u0631 \u0648\u0627\u0644\u062d\u0633\u0627\u0628\u060c \u0648\u0627\u0644\u0645\u064a\u0632\u0627\u0646 \u0648\u0627\u0644\u0635\u0631\u0627\u0637. \u0641\u0641\u0647\u0645 \u062d\u064a \u0628\u0646 \u064a\u0642\u0638\u0627\u0646\u061b \u0641\u0627\u0646\u0641\u062a\u062d \u0628\u0635\u0631.","en":"Sed fugit atque nihil libero quaerat perspiciatis est. Soluta quos itaque est velit. Quae fuga dolores sed est sed. Eius beatae est corporis voluptas. Voluptatem est dolorum adipisci placeat. Consequatur aut sed ea commodi aut nobis. Suscipit sequi neque sint molestiae. Est nemo ut nihil quia consequatur esse amet. Repellat qui quos quam quia. Et est rem delectus rerum accusantium esse pariatur. Nobis unde voluptas exercitationem cupiditate necessitatibus quia. Cum dolores molestiae expedita quia et. Sequi unde aut ipsa consequatur a consequatur explicabo. Omnis recusandae ad asperiores et. Et nam ratione aut repudiandae. Accusantium eveniet consectetur a ad id labore beatae adipisci. Rerum et iure sint eos corporis dolorum. Voluptas quibusdam qui nostrum fugiat voluptatum eveniet suscipit veniam. Nulla ut et et veritatis odit iusto inventore. Expedita voluptates exercitationem quibusdam neque ducimus et. Voluptatem culpa placeat ipsam dolor esse."},"slug":{"ar":"alyha-oarad-an-yakhth-mnha","en":"et-et-hic-sapiente-vitae"},"printing_year":"1994","ISBN":"7464243943","EISBN":"9781920257286","author":"Ut.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007722?text=ut"}],"links":{"first":"http:\/\/localhost\/api\/admin\/books?page=1","last":"http:\/\/localhost\/api\/admin\/books?page=14","prev":null,"next":"http:\/\/localhost\/api\/admin\/books?page=2"},"meta":{"current_page":1,"from":1,"last_page":14,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/books?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=9","label":"9","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=13","label":"13","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=14","label":"14","active":false},{"url":"http:\/\/localhost\/api\/admin\/books?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/books","per_page":3,"to":3,"total":40}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/admin/books
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Book Management'
+      subgroupDescription: 'APIs for managing Books'
+      title: 'Store Book.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'The title of the Book.'
+        required: true
+        example:
+          en: Book
+          ar: كتاب
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      abstract:
+        name: abstract
+        description: 'The abstract of the Book.'
+        required: true
+        example:
+          en: 'about the book'
+          ar: 'حول الكتاب'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      ISBN:
+        name: ISBN
+        description: 'The ISBN of the Book.'
+        required: true
+        example: incidunt
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      EISBN:
+        name: EISBN
+        description: 'The EISBN of the Book.'
+        required: true
+        example: sapiente
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      printing_year:
+        name: printing_year
+        description: 'The printing year of the Book.'
+        required: true
+        example: dignissimos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      cover_image:
+        name: cover_image
+        description: 'The cover image of the Book.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      author_id:
+        name: author_id
+        description: 'The author id of the Book.'
+        required: true
+        example: 6
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      awards:
+        name: awards
+        description: 'The awards of the Book.'
+        required: true
+        example:
+          - est
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      formats:
+        name: formats
+        description: 'The formats of the Book.'
+        required: true
+        example:
+          - nostrum
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      reviews:
+        name: reviews
+        description: 'The reviews of the Book.'
+        required: true
+        example:
+          - dicta
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'awards[].en':
+        name: 'awards[].en'
+        description: ''
+        required: true
+        example: facilis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'awards[].ar':
+        name: 'awards[].ar'
+        description: ''
+        required: true
+        example: maxime
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'formats[].id':
+        name: 'formats[].id'
+        description: ''
+        required: true
+        example: 16
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews[].username':
+        name: 'reviews[].username'
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: tsrfk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews[].review':
+        name: 'reviews[].review'
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews[].review.en':
+        name: 'reviews[].review.en'
+        description: ''
+        required: true
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews[].review.ar':
+        name: 'reviews[].review.ar'
+        description: ''
+        required: true
+        example: quidem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'formats.*.id':
+        name: 'formats.*.id'
+        description: 'The id of the format.'
+        required: true
+        example: 8
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'awards.*':
+        name: 'awards.*'
+        description: 'The awards of the Book.'
+        required: true
+        example:
+          en: award
+          ar: جائزة
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews.*username':
+        name: 'reviews.*username'
+        description: 'The username of the Review.'
+        required: true
+        example: nihil
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews.*review':
+        name: 'reviews.*review'
+        description: 'The review of the Review.'
+        required: true
+        example:
+          en: review
+          ar: مراجعة
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title:
+        en: Book
+        ar: كتاب
+      abstract:
+        en: 'about the book'
+        ar: 'حول الكتاب'
+      ISBN: incidunt
+      EISBN: sapiente
+      printing_year: dignissimos
+      author_id: 6
+      awards:
+        - est
+      formats:
+        - nostrum
+      reviews:
+        -
+          review:
+            en: eos
+            ar: quidem
+    fileParameters:
+      cover_image: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/admin/books/{slug}'
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Book Management'
+      subgroupDescription: 'APIs for managing Books'
+      title: 'Get Book by slug.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the Book'
+        required: true
+        example: nulla
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      slug: nulla
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Book] nulla"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/admin/books/{slug}'
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Book Management'
+      subgroupDescription: 'APIs for managing Books'
+      title: 'Update Book.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the Book'
+        required: true
+        example: enim
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      slug: enim
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: 'The title of the Book.'
+        required: true
+        example:
+          en: Book
+          ar: كتاب
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      abstract:
+        name: abstract
+        description: 'The abstract of the Book.'
+        required: true
+        example:
+          en: 'about the book'
+          ar: 'حول الكتاب'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      ISBN:
+        name: ISBN
+        description: 'The ISBN of the Book.'
+        required: true
+        example: tenetur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      EISBN:
+        name: EISBN
+        description: 'The EISBN of the Book.'
+        required: true
+        example: debitis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      printing_year:
+        name: printing_year
+        description: 'The printing year of the Book.'
+        required: true
+        example: aliquam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      cover_image:
+        name: cover_image
+        description: 'The cover image of the Book.'
+        required: true
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      author_id:
+        name: author_id
+        description: 'The author id of the Book.'
+        required: true
+        example: 8
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      formats:
+        name: formats
+        description: 'The formats of the Book.'
+        required: true
+        example:
+          - vero
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'formats[].id':
+        name: 'formats[].id'
+        description: ''
+        required: true
+        example: 9
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'formats.*.id':
+        name: 'formats.*.id'
+        description: 'The id of the format.'
+        required: true
+        example: 11
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      awards:
+        name: awards
+        description: 'The awards of the Book.'
+        required: true
+        example:
+          - ipsam
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'awards.*':
+        name: 'awards.*'
+        description: 'The awards of the Book.'
+        required: true
+        example:
+          en: award
+          ar: جائزة
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      reviews:
+        name: reviews
+        description: 'The reviews of the Book.'
+        required: true
+        example:
+          - itaque
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews.*username':
+        name: 'reviews.*username'
+        description: 'The username of the Review.'
+        required: true
+        example: numquam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'reviews.*review':
+        name: 'reviews.*review'
+        description: 'The review of the Review.'
+        required: true
+        example:
+          en: review
+          ar: مراجعة
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      title:
+        en: Book
+        ar: كتاب
+      abstract:
+        en: 'about the book'
+        ar: 'حول الكتاب'
+      ISBN: tenetur
+      EISBN: debitis
+      printing_year: aliquam
+      author_id: 8
+      formats:
+        - vero
+      awards:
+        - ipsam
+      reviews:
+        - itaque
+    fileParameters:
+      cover_image: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/admin/books/{slug}'
+    metadata:
+      groupName: 'Admin Endpoints'
+      groupDescription: ''
+      subgroup: 'Book Management'
+      subgroupDescription: 'APIs for managing Books'
+      title: 'Delete Book.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the Book'
+        required: true
+        example: similique
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      slug: similique
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
     uri: api/admin/book-categories
     metadata:
       groupName: 'Admin Endpoints'
@@ -44,20 +689,20 @@ endpoints:
         name: 'filter[title]'
         description: 'filter Book Categroies by title.'
         required: false
-        example: quos
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      'filter[title]': quos
+      'filter[title]': qui
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":20,"title":{"ar":"Odit.","en":"Vero."}},{"id":19,"title":{"ar":"Officiis.","en":"Adipisci."}},{"id":18,"title":{"ar":"Velit qui.","en":"Itaque."}},{"id":17,"title":{"ar":"Sunt nemo.","en":"Harum."}},{"id":16,"title":{"ar":"A totam.","en":"Aliquid."}},{"id":15,"title":{"ar":"Beatae.","en":"Omnis."}},{"id":14,"title":{"ar":"Eius.","en":"Facere."}},{"id":13,"title":{"ar":"Nesciunt.","en":"Dolorem."}},{"id":12,"title":{"ar":"Earum ea.","en":"Explicabo."}},{"id":11,"title":{"ar":"Eum.","en":"Expedita."}},{"id":10,"title":{"ar":"Harum.","en":"Alias."}},{"id":9,"title":{"ar":"Aut sunt.","en":"Rerum id."}},{"id":8,"title":{"ar":"Culpa.","en":"Ut omnis."}},{"id":7,"title":{"ar":"Vitae qui.","en":"Modi."}},{"id":6,"title":{"ar":"Aliquid.","en":"Sequi aut."}}],"links":{"first":"http:\/\/localhost\/api\/admin\/book-categories?page=1","last":"http:\/\/localhost\/api\/admin\/book-categories?page=2","prev":null,"next":"http:\/\/localhost\/api\/admin\/book-categories?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/book-categories","per_page":15,"to":15,"total":20}}'
+        content: '{"data":[{"id":21,"title":{"ar":"\u062a\u0627\u0631\u064a\u062e\u064a \u0642\u062f\u064a\u0645","en":"historical old"},"slug":{"ar":"tarykhy-kdym","en":"historical-old"}},{"id":20,"title":{"ar":"\u0641\u0627\u0646 \u0648\u062c\u0648\u062f.","en":"Autem."},"slug":{"ar":"fan-ogod","en":"autem"}},{"id":19,"title":{"ar":"\u0642\u0628\u0644 \u0630\u0644\u0643\u060c.","en":"Nihil."},"slug":{"ar":"kbl-thlk","en":"nihil"}},{"id":18,"title":{"ar":"\u0648\u0647\u064a \u0645\u062f\u0627\u0631.","en":"Et."},"slug":{"ar":"ohy-mdar","en":"et"}},{"id":17,"title":{"ar":"\u0639\u0646\u0647\u060c \u0628\u0639\u062f.","en":"Est."},"slug":{"ar":"aanh-baad","en":"est"}},{"id":16,"title":{"ar":"\u0630\u0644\u0643 \u0648\u0631\u0648\u0649.","en":"Sed."},"slug":{"ar":"thlk-oro","en":"sed"}},{"id":15,"title":{"ar":"\u062a\u0639\u0644\u0642 \u0644\u0647\u0627.","en":"Aut qui."},"slug":{"ar":"taalk-lha","en":"aut-qui"}},{"id":14,"title":{"ar":"\u0639\u0644\u0649 \u0633\u0631\u062a\u0647.","en":"Labore."},"slug":{"ar":"aal-srth","en":"labore"}},{"id":13,"title":{"ar":"\u0627\u0644\u0645\u0634\u0627\u0647\u062f\u0629.","en":"Possimus."},"slug":{"ar":"almshahd","en":"possimus"}},{"id":12,"title":{"ar":"\u0645\u0646 \u0627\u0644\u062c\u0647\u0629.","en":"Minima."},"slug":{"ar":"mn-algh","en":"minima"}},{"id":11,"title":{"ar":"\u0643\u0644\u0647\u0627 \u062d\u062c\u0628.","en":"Sapiente."},"slug":{"ar":"klha-hgb","en":"sapiente"}},{"id":10,"title":{"ar":"\u0641\u064a \u0648\u0633\u0637\u0647\u060c.","en":"Illum."},"slug":{"ar":"fy-osth","en":"illum"}},{"id":9,"title":{"ar":"\u0641\u0627\u0646\u0647 \u0625\u0630\u0627.","en":"Soluta."},"slug":{"ar":"fanh-atha","en":"soluta"}},{"id":8,"title":{"ar":"\u0639\u0646 \u062a\u0639\u0644\u064a\u0645.","en":"Adipisci."},"slug":{"ar":"aan-taalym","en":"adipisci"}},{"id":7,"title":{"ar":"\u062a\u0644\u0643 \u0627\u0644\u062a\u064a.","en":"Molestiae."},"slug":{"ar":"tlk-alty","en":"molestiae"}}],"links":{"first":"http:\/\/localhost\/api\/admin\/book-categories?page=1","last":"http:\/\/localhost\/api\/admin\/book-categories?page=2","prev":null,"next":"http:\/\/localhost\/api\/admin\/book-categories?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/book-categories?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/book-categories","per_page":15,"to":15,"total":21}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -117,7 +762,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/admin/book-categories/{id}'
+    uri: 'api/admin/book-categories/{slug}'
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
@@ -131,17 +776,27 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the book category.'
+        required: true
+        example: odio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       id:
         name: id
         description: 'The ID of the book category'
         required: true
-        example: 15
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 15
+      slug: odio
+      id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -150,7 +805,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":15,"title":{"ar":"Beatae.","en":"Omnis."}}}'
+        content: '{"data":{"id":1,"title":{"ar":"\u0643\u0627\u0646 \u062a\u0628\u064a\u0646.","en":"Odio."},"slug":{"ar":"kan-tbyn","en":"odio"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -167,7 +822,7 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/admin/book-categories/{id}'
+    uri: 'api/admin/book-categories/{slug}'
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
@@ -181,17 +836,27 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the book category.'
+        required: true
+        example: odio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       id:
         name: id
         description: 'The ID of the book category'
         required: true
-        example: 19
+        example: 6
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 19
+      slug: odio
+      id: 6
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -221,7 +886,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/admin/book-categories/{id}'
+    uri: 'api/admin/book-categories/{slug}'
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
@@ -235,17 +900,27 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the book category.'
+        required: true
+        example: odio
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       id:
         name: id
         description: 'The ID of the book category'
         required: true
-        example: 7
+        example: 3
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 7
+      slug: odio
+      id: 3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -274,7 +949,27 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      'filter[name]':
+        name: 'filter[name]'
+        description: 'filter Authors by name.'
+        required: false
+        example: saepe
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'include[]':
+        name: 'include[]'
+        description: 'relations to load on the author'
+        required: false
+        example: "['books']"
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       page:
         name: page
         description: 'The page number'
@@ -293,28 +988,18 @@ endpoints:
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
+    cleanQueryParameters:
+      'filter[name]': saepe
+      'include[]': "['books']"
       page: 1
       perPage: 3
-    queryParameters:
-      'filter[name]':
-        name: 'filter[name]'
-        description: 'filter Authors by name.'
-        required: false
-        example: optio
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanQueryParameters:
-      'filter[name]': optio
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":20,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/0055ee?text=impedit","name":{"ar":"Omnis.","en":"Eum iste."},"about":{"ar":"Sint iusto nihil est. Eligendi dolore quibusdam rem dolor eum. Nulla quisquam velit unde et eaque.","en":"Sit dolorum quos labore. Quia repudiandae nihil voluptas est. Aut in est quasi dicta."}},{"id":19,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/0099bb?text=voluptatum","name":{"ar":"Est.","en":"Quod."},"about":{"ar":"Molestiae quia hic et doloremque est sint facere. Culpa cum tenetur quidem dignissimos natus.","en":"Aut ab tempora facere ut modi ipsum consequatur. Eligendi rerum ipsum eum animi et et doloremque."}},{"id":18,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=nostrum","name":{"ar":"Ut quia.","en":"Ipsum."},"about":{"ar":"Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.","en":"Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel."}},{"id":17,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00aaff?text=illo","name":{"ar":"Rem porro.","en":"Nihil."},"about":{"ar":"Nam illum quo quidem. Sed cumque occaecati in aperiam ut odio odit. Eos sit molestiae dolor rerum.","en":"Suscipit culpa sunt vitae et occaecati. Sint qui rem libero. Rerum eum quasi explicabo."}},{"id":16,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/005500?text=hic","name":{"ar":"Nulla sit.","en":"Et iure."},"about":{"ar":"Atque aspernatur beatae tempora dolorem aut. Quia fugit vel id et inventore repellendus error.","en":"Neque ex sit eum. Reprehenderit fugiat repudiandae vel quis. Ut ullam est voluptatum debitis."}},{"id":15,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/001166?text=qui","name":{"ar":"Eum amet.","en":"Autem aut."},"about":{"ar":"Qui corporis deleniti at qui nobis atque. Voluptates quo animi adipisci occaecati ut.","en":"Voluptates fugiat voluptas distinctio adipisci earum aliquid. Sed reiciendis dicta qui saepe."}},{"id":14,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00eeff?text=pariatur","name":{"ar":"Vero.","en":"Error."},"about":{"ar":"Et ab perferendis cumque est rerum fuga. Deserunt unde aut itaque vero quisquam et.","en":"Optio excepturi dolor ea doloremque. Ab quas eum id minus. Quia sint officiis ipsum ea at facere."}},{"id":13,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/009955?text=sunt","name":{"ar":"Dolore.","en":"Aut et ut."},"about":{"ar":"Alias qui quaerat incidunt qui totam nisi quia. Est unde sed itaque quia inventore.","en":"Voluptate at et in ut et provident non ratione. Est architecto repellat nam tempora enim ut vitae."}},{"id":12,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/0033cc?text=inventore","name":{"ar":"Illum.","en":"Totam."},"about":{"ar":"Magni nostrum nulla aut nihil sequi maiores tenetur nemo. Vel corporis fugiat consequatur vitae.","en":"Blanditiis blanditiis et quisquam inventore tenetur. Quaerat quisquam officia dolor minima ad nam."}},{"id":11,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee22?text=ut","name":{"ar":"Sunt.","en":"Enim."},"about":{"ar":"Quos qui nulla unde impedit. Animi quam praesentium qui hic cum. Et dolorum non quia dolor magni.","en":"Sequi perspiciatis iusto deleniti delectus. Aliquam quam nam quia officia."}},{"id":10,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00eeff?text=mollitia","name":{"ar":"Nesciunt.","en":"Dolor."},"about":{"ar":"Commodi et et impedit. Sit aut sed unde officiis. Magni qui natus nesciunt beatae.","en":"Rem numquam qui tenetur adipisci sed. Accusantium in veritatis temporibus. Rerum et quidem et aut."}},{"id":9,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/006600?text=id","name":{"ar":"Nostrum.","en":"Delectus."},"about":{"ar":"Et quia provident qui voluptas et eius. Distinctio et asperiores et veniam.","en":"Aut sit et omnis porro accusamus dolor. Odit totam magni in aperiam. Adipisci quis dolorem et cum."}},{"id":8,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ddbb?text=itaque","name":{"ar":"Cumque.","en":"Occaecati."},"about":{"ar":"Maxime porro neque illum omnis. Aliquid quia qui cum dignissimos quisquam.","en":"Qui dolorum sit quasi sunt. Facilis nihil dolore aut aut. Ab in inventore molestiae dolores eius."}},{"id":7,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00dddd?text=expedita","name":{"ar":"Tenetur.","en":"Quo."},"about":{"ar":"Temporibus expedita sint molestiae minima placeat. Omnis qui dolores consectetur natus dicta enim.","en":"Quidem adipisci expedita doloremque harum ut. Aut minima aliquam est odit ratione asperiores."}},{"id":6,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/005500?text=iusto","name":{"ar":"Hic.","en":"Non quia."},"about":{"ar":"Vel aliquam qui omnis amet. Quam ut ut provident. Temporibus repellendus pariatur quaerat ut vel.","en":"Ratione qui ut quisquam praesentium quia nemo et voluptate. Aut repellendus nihil quisquam ipsum."}}],"links":{"first":"http:\/\/localhost\/api\/admin\/authors?page=1","last":"http:\/\/localhost\/api\/admin\/authors?page=2","prev":null,"next":"http:\/\/localhost\/api\/admin\/authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/authors","per_page":15,"to":15,"total":20}}'
+        content: '{"data":[{"id":25,"name":{"ar":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f111","en":"ali ahmad111"},"about":{"ar":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","en":"test test"},"slug":{"ar":"aaly-ahmd111","en":"ali-ahmad111"},"avatar":"storage\/avatars\/UserUpload-0706202417572366898583d9e11.jpg"},{"id":23,"name":{"ar":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f1","en":"ali ahmad1"},"about":{"ar":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","en":"test test"},"slug":{"ar":"aaly-ahmd1","en":"ali-ahmad1"},"avatar":"C:\\xampp\\tmp\\php932A.tmp"},{"id":22,"name":{"ar":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f","en":"ali ahmad"},"about":{"ar":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","en":"test test"},"slug":{"ar":"aaly-ahmd","en":"ali-ahmad"},"avatar":null}],"links":{"first":"http:\/\/localhost\/api\/admin\/authors?page=1","last":"http:\/\/localhost\/api\/admin\/authors?page=8","prev":null,"next":"http:\/\/localhost\/api\/admin\/authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":8,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/admin\/authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/admin\/authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/admin\/authors","per_page":3,"to":3,"total":24}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -398,13 +1083,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/admin/authors/{id}'
+    uri: 'api/admin/authors/{slug}'
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
       subgroup: 'Author Management'
       subgroupDescription: 'APIs for managing Authors'
-      title: 'Get Author by id.'
+      title: 'Get Author by slug.'
       description: ''
       authenticated: false
       custom: []
@@ -412,17 +1097,17 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      id:
-        name: id
-        description: 'The ID of the Author'
+      slug:
+        name: slug
+        description: 'The slug of the Author'
         required: true
-        example: 18
-        type: integer
+        example: cupiditate
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 18
+      slug: cupiditate
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -430,8 +1115,11 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"data":{"id":18,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ffdd?text=nostrum","name":{"ar":"Ut quia.","en":"Ipsum."},"about":{"ar":"Et possimus et odit aut quo qui. Et laudantium dolor molestias est qui laboriosam voluptas.","en":"Perspiciatis cumque error nisi sed nulla. Hic quia ut qui sed. Qui et eos sunt autem error vel."}}}'
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Author] cupiditate"
+          }
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -448,7 +1136,7 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/admin/authors/{id}'
+    uri: 'api/admin/authors/{slug}'
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
@@ -462,17 +1150,27 @@ endpoints:
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the author.'
+        required: true
+        example: aut-et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       id:
         name: id
         description: 'The ID of the Author'
         required: true
-        example: 18
+        example: 13
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 18
+      slug: aut-et
+      id: 13
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -526,7 +1224,7 @@ endpoints:
   -
     httpMethods:
       - DELETE
-    uri: 'api/admin/authors/{id}'
+    uri: 'api/admin/authors/{slug}'
     metadata:
       groupName: 'Admin Endpoints'
       groupDescription: ''
@@ -540,17 +1238,27 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
+      slug:
+        name: slug
+        description: 'The slug of the author.'
+        required: true
+        example: aut-et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
       id:
         name: id
         description: 'The ID of the Author.'
         required: true
-        example: 11
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 11
+      slug: aut-et
+      id: 9
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []

@@ -29,8 +29,9 @@ class AuthorController extends Controller
 
     #[Endpoint('Get all Authors.')]
     #[QueryParam('filter[name]', 'string', 'filter Authors by name.', false)]
-    #[UrlParam('page', 'integer', 'The page number', example: 1)]
-    #[UrlParam('perPage', 'integer', 'Number of items pre page', example: 3)]
+    #[QueryParam('include[]', 'array', 'relations to load on the author', false, example: "['books']")]
+    #[QueryParam('page', 'integer', 'The page number', example: 1)]
+    #[QueryParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
 
         $authors = QueryBuilder::for(Author::class)

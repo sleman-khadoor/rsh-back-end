@@ -15,99 +15,136 @@ use Spatie\QueryBuilder\AllowedFilter;
 use App\Http\Requests\Book\StoreBookRequest;
 use App\Http\Requests\Book\UpdateBookRequest;
 use App\Http\Resources\Book\AdminBookResource;
+use Illuminate\Support\Arr;
 use Symfony\Component\HttpFoundation\Response;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\UrlParam;
+use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\QueryParam;
 
-
+#[Group('Admin Endpoints')]
+#[Subgroup('Book Management', 'APIs for managing Books')]
 class BookController extends Controller
 {
     use Uploader;
 
+    #[Endpoint('Get all Books.')]
+    #[QueryParam('filter[title]', 'string', 'filter Books by name.', false)]
+    #[QueryParam('filter[ISBN]', 'string', 'filter Books by ISBN.', false)]
+    #[QueryParam('filter[EISBN]', 'string', 'filter Books by EISBN.', false)]
+    #[QueryParam('include[]', 'array', 'relations to load on the book', false, example: "['bookCategories', 'formats', 'awards', 'reviews']")]
+    #[QueryParam('page', 'integer', 'The page number', example: 1)]
+    #[QueryParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
 
         $books = QueryBuilder::for(Book::class)
                             ->allowedIncludes(Book::allowedIncludes())
                             ->allowedFilters([
+                                ...Book::allowedFilters(),
                                 AllowedFilter::custom('book_category', new FilterBookByCategory),
-                                'title', 'ISBN', 'EISBN'])
+                                ])
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
         return AdminBookResource::collection($books);
     }
 
+    #[Endpoint('Get Book by slug.')]
+    #[UrlParam('slug', 'string', 'The slug of the Book', true)]
     public function show(Book $book) {
 
         return AdminBookResource::make($book->load(Book::allowedIncludes()));
     }
 
+    #[Endpoint('Store Book.')]
+    #[BodyParam('title', 'array', 'The title of the Book.', example: ['en' => 'Book', 'ar' => 'كتاب'])]
+    #[BodyParam('abstract', 'array', 'The abstract of the Book.', example: ['en' => 'about the book', 'ar' => 'حول الكتاب'])]
+    #[BodyParam('ISBN', 'string', 'The ISBN of the Book.')]
+    #[BodyParam('EISBN', 'string', 'The EISBN of the Book.')]
+    #[BodyParam('printing_year', 'string', 'The printing year of the Book.')]
+    #[BodyParam('cover_image', 'file', 'The cover image of the Book.')]
+    #[BodyParam('author_id', 'int', 'The author id of the Book.')]
+    #[BodyParam('formats', 'array', 'The formats of the Book.')]
+    #[BodyParam('formats.*.id', 'int', 'The id of the format.')]
+    #[BodyParam('awards', 'array', 'The awards of the Book.')]
+    #[BodyParam('awards.*', 'array', 'The awards of the Book.', example:['en' => 'award', 'ar' => 'جائزة'])]
+    #[BodyParam('reviews', 'array', 'The reviews of the Book.')]
+    #[BodyParam('reviews.*username', 'string', 'The username of the Review.')]
+    #[BodyParam('reviews.*review', 'array', 'The review of the Review.', example:['en' => 'review', 'ar' => 'مراجعة'])]
     public function store(StoreBookRequest $request) {
 
-        $book = Book::create($this->extractBookData($request));
+        $data = $request->validated();
 
-        if($request->hasFile('cover_image')) {
-            $book->cover_image = $this->uploadAttachment($request->file('cover_image'), 'book-covers');
+        $book = Book::create($data);
+
+        if($data['cover_image']) {
+            $book->cover_image = $this->uploadAttachment($data['cover_image'], 'book-covers');
             $book->save();
         }
 
-        if($request->has('awards')) {
+        if($data['awards']) {
 
-            $this->storeAwards($request->validated('awards'), $book->id);
+            $this->storeAwards($data['awards'], $book->id);
         }
 
-        if($request->has('formats')) {
+        if($data['formats']) {
 
-            $this->storeFormats($request->validated('formats'), $book->id);
+            $book->formats()->attach(Arr::flatten($data['formats']));
         }
 
-        if($request->has('reviews')) {
+        if($data['reviews']) {
 
-            $this->storeReviews($request->validated('reviews'), $book->id);
+            $this->storeReviews($data['reviews'], $book->id);
         }
 
         return AdminBookResource::make($book);
     }
 
+    #[Endpoint('Update Book.')]
+    #[UrlParam('slug', 'string', 'The slug of the Book', true)]
+    #[BodyParam('title', 'array', 'The title of the Book.', example: ['en' => 'Book', 'ar' => 'كتاب'])]
+    #[BodyParam('abstract', 'array', 'The abstract of the Book.', example: ['en' => 'about the book', 'ar' => 'حول الكتاب'])]
+    #[BodyParam('ISBN', 'string', 'The ISBN of the Book.')]
+    #[BodyParam('EISBN', 'string', 'The EISBN of the Book.')]
+    #[BodyParam('printing_year', 'string', 'The printing year of the Book.')]
+    #[BodyParam('cover_image', 'file', 'The cover image of the Book.')]
+    #[BodyParam('author_id', 'int', 'The author id of the Book.')]
+    #[BodyParam('formats', 'array', 'The formats of the Book.')]
+    #[BodyParam('formats.*.id', 'int', 'The id of the format.')]
+    #[BodyParam('awards', 'array', 'The awards of the Book.')]
+    #[BodyParam('awards.*', 'array', 'The awards of the Book.', example:['en' => 'award', 'ar' => 'جائزة'])]
+    #[BodyParam('reviews', 'array', 'The reviews of the Book.')]
+    #[BodyParam('reviews.*username', 'string', 'The username of the Review.')]
+    #[BodyParam('reviews.*review', 'array', 'The review of the Review.', example:['en' => 'review', 'ar' => 'مراجعة'])]
     public function update(UpdateBookRequest $request, Book $book) {
 
-        $book->update($this->extractBookData($request));
+        $data = $request->validated();
 
-        if($request->hasFile('cover_image')) {
-            $book->cover_image = $this->uploadAttachment($request->file('cover_image'), 'book-covers');
+        $book->update($data);
+
+        if($data['cover_image']) {
+            $book->cover_image = $this->uploadAttachment($data['cover_image'], 'book-covers');
             $book->save();
         }
 
-        if($request->has('formats')) {
+        if($data['formats']) {
 
             $book->formats()->sync([]);
-            $this->storeFormats($request->validated('formats'), $book->id);
+            $book->formats()->attach(Arr::flatten($data['formats']));
         }
 
         return AdminBookResource::make($book);
     }
 
+    #[Endpoint('Delete Book.')]
+    #[UrlParam('slug', 'string', 'The slug of the Book', true)]
     public function destroy(Book $book) {
 
         $book->delete();
 
         return $this->success([], config('response-messages.crud.delete_success'), Response::HTTP_OK);
-    }
-
-    private function extractBookData(Request $request): array {
-
-        return [
-            'title' => [
-                'ar' => $request->validated('title.ar'),
-                'en' => $request->validated('title.en'),
-            ],
-            'abstract' => [
-                'ar' => $request->validated('abstract.ar'),
-                'en' => $request->validated('abstract.en'),
-            ],
-            'ISBN' => $request->validated('ISBN'),
-            'EISBN' => $request->validated('EISBN'),
-            'printing_year' => $request->validated('printing_year'),
-            'author_id' => $request->validated('author_id')
-        ];
     }
 
     private function storeAwards(array $awards, int $bookId): void {
@@ -120,17 +157,6 @@ class BookController extends Controller
                     'ar' => $award['ar']
                 ],
                 'book_id' => $bookId
-            ]);
-        }
-    }
-
-    private function storeFormats(array $formats, int $bookId): void {
-
-        foreach($formats as $format) {
-
-            DB::table('book_format')->insert([
-                'book_id' => $bookId,
-                'book_format_id' => $format['id']
             ]);
         }
     }
