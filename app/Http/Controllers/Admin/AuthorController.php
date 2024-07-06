@@ -34,8 +34,8 @@ class AuthorController extends Controller
     public function index(Request $request) {
 
         $authors = QueryBuilder::for(Author::class)
-                            ->allowedIncludes(['books'])
-                            ->allowedFilters(['name'])
+                            ->allowedIncludes(Author::allowedIncludes())
+                            ->allowedFilters(Author::allowedFilters())
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
@@ -56,16 +56,7 @@ class AuthorController extends Controller
     #[BodyParam('avatar', 'file', 'The avatar of the Author.')]
     public function store(StoreAuthorRequest $request) {
 
-        $author = Author::create([
-            'name' => [
-                'ar' => $request->validated('name.ar'),
-                'en' => $request->validated('name.en'),
-            ],
-            'about' => [
-                'ar' => $request->validated('about.ar'),
-                'en' => $request->validated('about.en'),
-            ]
-        ]);
+        $author = Author::create($request->validated());
 
         if($request->hasFile('avatar')) {
             $author->avatar = $this->uploadAttachment($request->file('avatar'), 'avatars');
@@ -82,16 +73,7 @@ class AuthorController extends Controller
     #[BodyParam('avatar', 'file', 'The avatar of the Author.')]
     public function update(UpdateAuthorRequest $request, Author $author) {
 
-        $author->update([
-            'name' => [
-                'ar' => $request->validated('name.ar'),
-                'en' => $request->validated('name.en'),
-            ],
-            'about' => [
-                'ar' => $request->validated('about.ar'),
-                'en' => $request->validated('about.en'),
-            ]
-        ]);
+        $author->update($request->validated());
 
         if($request->hasFile('avatar')) {
             $author->avatar = $this->uploadAttachment($request->file('avatar'), 'avatars');

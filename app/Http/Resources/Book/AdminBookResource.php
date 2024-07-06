@@ -19,8 +19,8 @@ class AdminBookResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            ...$this->getTranslations(),
             'id' => $this->id,
+            ...$this->getTranslations(),
             'printing_year' => $this->printing_year,
             'ISBN' => $this->ISBN,
             'EISBN' => $this->EISBN,
