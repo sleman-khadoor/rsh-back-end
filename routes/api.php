@@ -7,8 +7,11 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\BookCategoryController as AdminBookCategoryController;
 use App\Http\Controllers\Admin\BookController as AdminBookController;
 use App\Http\Controllers\Admin\BookReviewController as AdminBookReviewController;
+use App\Http\Controllers\Admin\ContactController as AdminContactController;
+use App\Http\Controllers\Admin\ContactTypeController as AdminContactTypeController;
 use App\Http\Controllers\Main\BookController as PublicBookController;
 use App\Http\Controllers\Main\BookCategoryController as MainBookCategoryController;
+use App\Http\Controllers\Main\ContactController as PublicContactController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +32,9 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/authors', AdminAuthorController::class);
         Route::apiResource('/book-awards', AdminBookAwardController::class)->only(['store', 'update', 'destroy']);
         Route::apiResource('/book-reviews', AdminBookReviewController::class)->only(['store', 'update', 'destroy']);
+
+        Route::apiResource('/contact-types', AdminContactTypeController::class);
+        Route::apiResource('/contacts', AdminContactController::class);
     });
 });
 
@@ -37,3 +43,4 @@ Route::get('/books/{book}', [PublicBookController::class, 'show']);
 Route::get('/book-categories', MainBookCategoryController::class);
 Route::get('/authors', [MainAuthorController::class, 'index']);
 Route::get('/authors/{author}', [MainAuthorController::class, 'show']);
+Route::get('/contacts', PublicContactController::class);

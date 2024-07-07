@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('contact_types', function (Blueprint $table) {
             $table->id();
             $table->string('title', 255)->unique();
+            $table->string('slug');
         });
     }
 
