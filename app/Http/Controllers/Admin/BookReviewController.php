@@ -11,18 +11,23 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookReviewController extends Controller
 {
+    public function __construct()
+    {
+        $this->setResource(AdminBookReviewResource::class);
+    }
+
     public function store(StoreBookReviewRequest $request) {
 
         $bookReview = BookReview::create($request->validated());
 
-        return AdminBookReviewResource::make($bookReview);
+        return $this->resource($bookReview, method:'POST');
     }
 
     public function update(UpdateBookReviewRequest $request, BookReview $bookReview) {
 
         $bookReview->update($request->validated());
 
-        return AdminBookReviewResource::make($bookReview);
+        return $this->resource($bookReview, method:'PUT');
     }
 
     public function destroy(BookReview $bookReview) {

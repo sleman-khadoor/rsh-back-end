@@ -9,6 +9,8 @@ return [
     ],
     'crud' => [
         'record_has_childs' => 'You can\'t delete this record, it has related data.',
-        'delete_success' => 'deleted successfully.'
+        'delete_success' => 'Deleted successfully.',
+        'store_success' => 'Added successfully.',
+        'update_success' => 'Updated successfully.',
     ]
 ];

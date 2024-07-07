@@ -16,6 +16,12 @@ class ContactTypeController extends Controller
 {
     use HasChildRecords;
 
+    public function __construct()
+    {
+        $this->setResource(AdminContactTypeResource::class);
+    }
+
+
     public function index(Request $request) {
 
         $contactTypes = QueryBuilder::for(ContactType::class)
@@ -24,26 +30,26 @@ class ContactTypeController extends Controller
                                     ->defaultSort('-id')
                                     ->paginate($request->perPage, ['*'], 'page', $request->page);
 
-        return AdminContactTypeResource::collection($contactTypes);
+        return $this->collection($contactTypes);
     }
 
     public function show(ContactType $contactType) {
 
-        return AdminContactTypeResource::make($contactType->load(ContactType::allowedIncludes()));
+        return $this->resource($contactType->load(ContactType::allowedIncludes()));
     }
 
     public function store(StoreContactTypeRequest $request) {
 
         $contactType = ContactType::create($request->validated());
 
-        return AdminContactTypeResource::make($contactType);
+        return $this->resource($contactType, method:'POST');
     }
 
     public function update(UpdateContactTypeRequest $request, ContactType $contactType) {
 
         $contactType->update($request->validated());
 
-        return AdminContactTypeResource::make($contactType);
+        return $this->resource($contactType, method:'PUT');
     }
 
     public function destroy(ContactType $contactType) {

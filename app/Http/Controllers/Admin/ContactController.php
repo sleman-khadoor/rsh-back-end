@@ -13,6 +13,12 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class ContactController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->setResource(AdminContactResource::class);
+    }
+
     public function index(Request $request) {
 
         $contacts = QueryBuilder::for(Contact::class)
@@ -21,26 +27,26 @@ class ContactController extends Controller
                                 ->defaultSort('-id')
                                 ->paginate($request->perPage, ['*'], 'page', $request->page);
 
-        return AdminContactResource::collection($contacts);
+        return $this->collection($contacts);
     }
 
     public function show(Contact $contact) {
 
-        return AdminContactResource::make($contact->load(Contact::allowedIncludes()));
+        return $this->resource($contact->load(Contact::allowedIncludes()));
     }
 
     public function store(StoreContactRequest $request) {
 
         $contact = Contact::create($request->validated());
 
-        return AdminContactResource::make($contact);
+        return $this->resource($contact, method:'POST');
     }
 
     public function update(UpdateContactRequest $request, Contact $contact) {
 
         $contact->update($request->validated());
 
-        return AdminContactResource::make($contact);
+        return $this->resource($contact, method:'PUT');
     }
 
     public function destroy(Contact $contact) {
