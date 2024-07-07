@@ -62,6 +62,11 @@ return [
         'E-Book',
         'PDF',
         'word'
+    ],
+    'contacts' => [
+        'facebook' => 'rashm.facebook',
+        'whatsapp' => '99201011',
+        'email' => 'rashm@gmail.com'
     ]
 ];
 

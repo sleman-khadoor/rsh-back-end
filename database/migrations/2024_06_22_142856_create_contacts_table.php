@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('value', 255);
+            $table->string('slug');
             $table->foreignId('contact_type_id')->constrained('contact_types');
         });
     }
