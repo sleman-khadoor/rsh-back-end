@@ -30,6 +30,11 @@ class BookController extends Controller
 {
     use Uploader;
 
+    public function __construct()
+    {
+        $this->setResource(AdminBookResource::class);
+    }
+
     #[Endpoint('Get all Books.')]
     #[QueryParam('filter[title]', 'string', 'filter Books by name.', false)]
     #[QueryParam('filter[ISBN]', 'string', 'filter Books by ISBN.', false)]
@@ -48,14 +53,14 @@ class BookController extends Controller
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
-        return AdminBookResource::collection($books);
+        return $this->collection($books);
     }
 
     #[Endpoint('Get Book by slug.')]
     #[UrlParam('slug', 'string', 'The slug of the Book', true)]
     public function show(Book $book) {
 
-        return AdminBookResource::make($book->load(Book::allowedIncludes()));
+        return $this->resource($book->load(Book::allowedIncludes()));
     }
 
     #[Endpoint('Store Book.')]
@@ -106,7 +111,7 @@ class BookController extends Controller
             $this->storeReviews($data['reviews'], $book->id);
         }
 
-        return AdminBookResource::make($book);
+        return $this->resource($book, method:'POST');
     }
 
     #[Endpoint('Update Book.')]
@@ -144,7 +149,7 @@ class BookController extends Controller
             $book->formats()->attach(Arr::flatten($data['formats']));
         }
 
-        return AdminBookResource::make($book);
+        return $this->resource($book, method:'PUT');
     }
 
     #[Endpoint('Delete Book.')]

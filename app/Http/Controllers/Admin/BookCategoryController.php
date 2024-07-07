@@ -27,6 +27,11 @@ class BookCategoryController extends Controller
 
     use HasChildRecords;
 
+    public function __construct()
+    {
+        $this->setResource(AdminBookCategoryResource::class);
+    }
+
     #[Endpoint('Get all Book Categories.')]
     #[QueryParam('filter[title]', 'string', 'filter Book Categroies by title.', false)]
     #[UrlParam('page', 'integer', 'The page number', example: 1)]
@@ -38,14 +43,14 @@ class BookCategoryController extends Controller
                                 ->defaultSort('-id')
                                 ->paginate($request->perPage, ['*'], 'page', $request->page);
 
-        return AdminBookCategoryResource::collection($bookCategories);
+        return $this->collection($bookCategories);
     }
 
     #[Endpoint('Get Book Category by id.')]
     #[UrlParam('id', 'integer', 'The ID of the book category', true)]
     public function show(BookCategory $bookCategory) {
 
-        return AdminBookCategoryResource::make($bookCategory);
+        return $this->resource($bookCategory);
     }
 
     #[Endpoint('Store Book Category.')]
@@ -54,7 +59,7 @@ class BookCategoryController extends Controller
 
         $bookCategory = BookCategory::create($request->validated());
 
-        return AdminBookCategoryResource::make($bookCategory);
+        return $this->resource($bookCategory, method:'POST');
     }
 
     #[Endpoint('Update Book Category.')]
@@ -64,7 +69,7 @@ class BookCategoryController extends Controller
 
         $bookCategory->update($request->validated());
 
-        return AdminBookCategoryResource::make($bookCategory);
+        return $this->resource($bookCategory, method:'PUT');
     }
 
     #[Endpoint('Delete Book Category.')]

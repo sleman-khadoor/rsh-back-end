@@ -27,6 +27,11 @@ class AuthorController extends Controller
 
     use Uploader, HasChildRecords;
 
+    public function __construct()
+    {
+        $this->setResource(AdminAuthorResource::class);
+    }
+
     #[Endpoint('Get all Authors.')]
     #[QueryParam('filter[name]', 'string', 'filter Authors by name.', false)]
     #[QueryParam('include[]', 'array', 'relations to load on the author', false, example: "['books']")]
@@ -41,14 +46,14 @@ class AuthorController extends Controller
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
 
-        return AdminAuthorResource::collection($authors);
+        return $this->collection($authors);
     }
 
     #[Endpoint('Get Author by slug.')]
     #[UrlParam('slug', 'string', 'The slug of the Author', true)]
     public function show(Author $author) {
 
-        return AdminAuthorResource::make($author);
+        return $this->resource($author);
     }
 
     #[Endpoint('Store Author.')]
@@ -64,7 +69,7 @@ class AuthorController extends Controller
             $author->save();
         }
 
-        return AdminAuthorResource::make($author);
+        return $this->resource($author, method: 'POST');
     }
 
     #[Endpoint('Update Author.')]
@@ -81,7 +86,7 @@ class AuthorController extends Controller
             $author->save();
         }
 
-        return AdminAuthorResource::make($author);
+        return $this->resource($author, method:'PUT');
     }
 
     #[Endpoint('Delete Author.')]

@@ -31,25 +31,25 @@ trait JSONResponse
             );
     }
 
-    public function resource($collection, $status = true, $errors = null, $message = null)
+    public function resource($collection, $status = true, $errors = null, $method = null, $message = null)
     {
-        if(!$message)
-        {
-            $method = request()->getMethod();
-            if($method === 'POST')
-                $message =  'added successfully';
-            if($method === 'PUT')
-                $message = 'updated successfully';
-        }
+        $message = match(strtoupper($method)) {
+
+            'POST' => config('response-messages.crud.store_success'),
+            'PUT' => config('response-messages.crud.update_success'),
+            DEFAULT => null
+        };
+
+        $additionalData = [
+            'success' => $status,
+            'errors' => $errors,
+        ];
+
+        if(!is_null($message)) $additionalData['message'] = $message;
 
         $resourceInstance = new $this->resource($collection);
-        $resourceInstance->additional(
-            [
-                'success' => $status,
-                'errors' => $errors,
-                'message' => $message,
-            ]
-        );
+        $resourceInstance->additional($additionalData);
+
         return $resourceInstance;
     }
 }

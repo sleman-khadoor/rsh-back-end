@@ -12,18 +12,24 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BookAwardController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->setResource(AdminBookAwardResource::class);
+    }
+
     public function store(StoreBookAwardRequest $request) {
 
         $bookAward = BookAward::create($request->validated());
 
-        return AdminBookAwardResource::make($bookAward);
+        return $this->resource($bookAward, method:'POST');
     }
 
     public function update(UpdateBookAwardRequest $request, BookAward $bookAward) {
 
         $bookAward->update($request->validated());
 
-        return AdminBookAwardResource::make($bookAward);
+        return $this->resource($bookAward, method:'PUT');
     }
 
     public function destroy(BookAward $bookAward) {
