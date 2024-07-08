@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ContactTypeController as AdminContactTypeControll
 use App\Http\Controllers\Main\BookController as PublicBookController;
 use App\Http\Controllers\Main\BookCategoryController as MainBookCategoryController;
 use App\Http\Controllers\Main\ContactController as PublicContactController;
+use App\Http\Controllers\Main\ContactRequestController as PublicContactRequestController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
@@ -38,9 +39,15 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
     });
 });
 
+// Books endpoints
 Route::get('/books', [PublicBookController::class, 'index']);
 Route::get('/books/{book}', [PublicBookController::class, 'show']);
 Route::get('/book-categories', MainBookCategoryController::class);
+
+// Authors endpoints
 Route::get('/authors', [MainAuthorController::class, 'index']);
 Route::get('/authors/{author}', [MainAuthorController::class, 'show']);
+
 Route::get('/contacts', PublicContactController::class);
+
+Route::post('/contact-requests', PublicContactRequestController::class)->middleware('throttle:2,60');

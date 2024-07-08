@@ -12,5 +12,6 @@ return [
         'delete_success' => 'Deleted successfully.',
         'store_success' => 'Added successfully.',
         'update_success' => 'Updated successfully.',
+        'contact_request_success' => 'Your message has been sent successfully',
     ]
 ];
