@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BookController as AdminBookController;
 use App\Http\Controllers\Admin\BookReviewController as AdminBookReviewController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
 use App\Http\Controllers\Admin\ContactTypeController as AdminContactTypeController;
+use App\Http\Controllers\Admin\NotificationController as AdminNotificationController;
 use App\Http\Controllers\Main\BookController as PublicBookController;
 use App\Http\Controllers\Main\BookCategoryController as MainBookCategoryController;
 use App\Http\Controllers\Main\ContactController as PublicContactController;
@@ -36,6 +37,9 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
         Route::apiResource('/contact-types', AdminContactTypeController::class);
         Route::apiResource('/contacts', AdminContactController::class);
+
+        Route::get('/notifications', [AdminNotificationController::class, 'index']);
+        Route::get('/notifications/{type}', [AdminNotificationController::class, 'getByType']);
     });
 });
 
@@ -50,4 +54,4 @@ Route::get('/authors/{author}', [MainAuthorController::class, 'show']);
 
 Route::get('/contacts', PublicContactController::class);
 
-Route::post('/contact-requests', PublicContactRequestController::class)->middleware('throttle:2,60');
+Route::post('/contact-requests', PublicContactRequestController::class);//->middleware('throttle:2,60');
