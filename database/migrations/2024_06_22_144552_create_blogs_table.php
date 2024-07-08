@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\LanguageEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,13 +14,13 @@ return new class extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->string('slug');
             $table->string('title', 255);
             $table->text('content');
             $table->datetime('date');
             $table->string('writer', 255);
-            $table->string('lang');
-            $table->string('cover_image');
-            $table->foreignId('category_id')->constrained('blog_categories');
+            $table->string('lang')->default(LanguageEnum::EN->value);
+            $table->string('cover_image')->nullable();
             $table->timestamps();
         });
     }

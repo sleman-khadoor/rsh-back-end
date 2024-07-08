@@ -11,18 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('blog_categories', function (Blueprint $table) {
+        Schema::create('blog_category', function (Blueprint $table) {
             $table->id();
-            $table->json('title');
-            $table->json('slug');
-        });
-    }
+            $table->foreignId('blog_id')->constrained('blogs');
+            $table->foreignId('blog_category_id')->constrained('blog_categories');
+        });    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('blog_categories');
+        //
     }
 };
