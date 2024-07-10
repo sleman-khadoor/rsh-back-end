@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Main;
 
+use App\Enums\RequestType;
 use App\Events\NewRequestStored;
 use App\Models\ContactRequest;
 use App\Http\Controllers\Controller;
@@ -18,14 +19,14 @@ class ContactRequestController extends Controller
         $data = $request->validated();
 
         $contactRequest = new ContactRequest();
-        $contactRequest->full_name = $data['full_name'];
+        $contactRequest->fullname = $data['fullname'];
         $contactRequest->mobile = $data['mobile'];
         $contactRequest->email = $data['email'];
         $contactRequest->message = $data['message'];
         $contactRequest->date = Carbon::now();
         $contactRequest->save();
 
-        NewRequestStored::dispatch(config('core-config.notifications.keys.contact_form'));
+        NewRequestStored::dispatch(RequestType::CONTACT_REQUEST->value);
 
         return $this->success([], config('response-messages.crud.contact_request_success'));
     }

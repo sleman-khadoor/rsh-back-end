@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('represented_authors', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
-            $table->text('about');
+            $table->json('name');
+            $table->json('about');
+            $table->json('slug');
             $table->string('avatar')->nullable();
         });
     }
