@@ -68,10 +68,5 @@ return [
         'whatsapp' => '99201011',
         'email' => 'rashm@gmail.com'
     ],
-    'notifications' => [
-        'keys' => [
-            'contact_form' => 'contact_requests'
-        ]
-    ]
 ];
 

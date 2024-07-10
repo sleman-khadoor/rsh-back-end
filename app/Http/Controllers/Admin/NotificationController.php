@@ -16,7 +16,7 @@ class NotificationController extends Controller
     }
 
 
-    public function index(Request $request)
+    public function index()
     {
         $notifications = Notification::all();
 

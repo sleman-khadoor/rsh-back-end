@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\BookController as AdminBookController;
 use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 use App\Http\Controllers\Admin\BookReviewController as AdminBookReviewController;
 use App\Http\Controllers\Admin\ContactController as AdminContactController;
+use App\Http\Controllers\Admin\ContactRequestController as AdminContactRequestController;
 use App\Http\Controllers\Admin\ContactTypeController as AdminContactTypeController;
 use App\Http\Controllers\Admin\NotificationController as AdminNotificationController;
 use App\Http\Controllers\Main\BookController as MainBookController;
@@ -48,6 +49,8 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
         Route::apiResource('/blogs', AdminBlogController::class);
         Route::apiResource('/blog-categories', AdminBlogCategoryController::class);
+
+        Route::apiResource('/contact-requests', AdminContactRequestController::class)->only(['index', 'show', 'destroy']);
     });
 });
 
@@ -66,4 +69,4 @@ Route::get('/blogs/{blog}', [MainBlogController::class, 'show']);
 Route::get('/blog-categories', MainBlogCategoryController::class);
 
 Route::get('/contacts', MainContactController::class);
-Route::post('/contact-requests', MainContactRequestController::class)->middleware('throttle:2,60');
+Route::post('/contact-requests', MainContactRequestController::class);//->middleware('throttle:2,60');
