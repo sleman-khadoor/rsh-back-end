@@ -21,6 +21,8 @@ use App\Http\Controllers\Main\ContactController as MainContactController;
 use App\Http\Controllers\Main\ContactRequestController as MainContactRequestController;
 use App\Http\Controllers\Admin\RepresentedAuthorController as AdminRepresentedAuthorController;
 use App\Http\Controllers\Main\RepresentedAuthorController as MainRepresentedAuthorController;
+use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
+use App\Http\Controllers\Main\PartnerController as MainParterController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +56,8 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
         Route::apiResource('/contact-requests', AdminContactRequestController::class)->only(['index', 'show', 'destroy']);
         Route::apiResource('/represented-authors', AdminRepresentedAuthorController::class);
+
+        Route::apiResource('/partners', AdminPartnerController::class);
     });
 });
 
@@ -77,3 +81,7 @@ Route::post('/contact-requests', MainContactRequestController::class)->middlewar
 // Represented Authors endpoints
 Route::get('/represented-authors', [MainRepresentedAuthorController::class, 'index']);
 Route::get('/represented-authors/{author}', [MainRepresentedAuthorController::class, 'show']);
+
+// Partners endpoints
+Route::get('/partners', [MainParterController::class, 'index']);
+Route::get('/partners/{partner}', [MainParterController::class, 'show']);
