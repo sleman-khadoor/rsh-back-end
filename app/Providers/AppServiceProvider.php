@@ -2,10 +2,8 @@
 
 namespace App\Providers;
 
-use App\Events\NewRequestStored;
-use App\Listeners\StoreNotification;
+
 use App\Models\User;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Knuckles\Camel\Extraction\ExtractedEndpointData;
 use Symfony\Component\HttpFoundation\Request;
