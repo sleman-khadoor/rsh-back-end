@@ -20,7 +20,9 @@ use App\Http\Controllers\Main\BlogCategoryController as MainBlogCategoryControll
 use App\Http\Controllers\Main\ContactController as MainContactController;
 use App\Http\Controllers\Main\ContactRequestController as MainContactRequestController;
 use App\Http\Controllers\Admin\RepresentedAuthorController as AdminRepresentedAuthorController;
+use App\Http\Controllers\Admin\ServiceRequestController as AdminServiceRequestController;
 use App\Http\Controllers\Main\RepresentedAuthorController as MainRepresentedAuthorController;
+use App\Http\Controllers\Main\ServiceRequestController as MainServiceRequestController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
@@ -52,7 +54,10 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/blogs', AdminBlogController::class);
         Route::apiResource('/blog-categories', AdminBlogCategoryController::class);
 
+
         Route::apiResource('/contact-requests', AdminContactRequestController::class)->only(['index', 'show', 'destroy']);
+        Route::apiResource('/service-requests', AdminServiceRequestController::class)->only(['index', 'show', 'destroy']);
+
         Route::apiResource('/represented-authors', AdminRepresentedAuthorController::class);
     });
 });
@@ -77,3 +82,6 @@ Route::post('/contact-requests', MainContactRequestController::class)->middlewar
 // Represented Authors endpoints
 Route::get('/represented-authors', [MainRepresentedAuthorController::class, 'index']);
 Route::get('/represented-authors/{author}', [MainRepresentedAuthorController::class, 'show']);
+
+// Service Requests endpoints
+Route::post('/service-requests', MainServiceRequestController::class);
