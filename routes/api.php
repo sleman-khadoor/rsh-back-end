@@ -23,6 +23,8 @@ use App\Http\Controllers\Admin\RepresentedAuthorController as AdminRepresentedAu
 use App\Http\Controllers\Admin\ServiceRequestController as AdminServiceRequestController;
 use App\Http\Controllers\Main\RepresentedAuthorController as MainRepresentedAuthorController;
 use App\Http\Controllers\Main\ServiceRequestController as MainServiceRequestController;
+use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
+use App\Http\Controllers\Main\PartnerController as MainParterController;
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +61,8 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/service-requests', AdminServiceRequestController::class)->only(['index', 'show', 'destroy']);
 
         Route::apiResource('/represented-authors', AdminRepresentedAuthorController::class);
+
+        Route::apiResource('/partners', AdminPartnerController::class);
     });
 });
 
@@ -85,3 +89,7 @@ Route::get('/represented-authors/{author}', [MainRepresentedAuthorController::cl
 
 // Service Requests endpoints
 Route::post('/service-requests', MainServiceRequestController::class);
+
+// Partners endpoints
+Route::get('/partners', [MainParterController::class, 'index']);
+Route::get('/partners/{partner}', [MainParterController::class, 'show']);

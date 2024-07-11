@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             BookSeeder::class,
             ContactSeeder::class,
             BlogSeeder::class,
-            RepresentedAuthorSeeder::class
+            RepresentedAuthorSeeder::class,
+            PartnerSeeder::class
         ]);
     }
 }
