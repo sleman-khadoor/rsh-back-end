@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Resources\BookCategory;
+namespace App\Http\Resources\Partner;
 
+use App\Http\Resources\BlogCategory\AdminBlogCategoryResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PublicBookCategoryResource extends JsonResource
+class AdminPartnerResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,7 +17,9 @@ class PublicBookCategoryResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
+            ...$this->getTranslations(),
+            'avatar' => $this->avatar,
+            'website_link' => $this->website_link,
         ];
     }
 }

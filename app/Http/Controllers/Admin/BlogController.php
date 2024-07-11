@@ -83,7 +83,7 @@ class BlogController extends Controller
             $blog->blogCategories()->attach(Arr::flatten($data['categories']));
         }
 
-        return $this->resource($blog, method:'POST');
+        return $this->resource($blog->load(Blog::allowedIncludes()), method:'POST');
     }
 
     #[Endpoint('Update Blog.')]

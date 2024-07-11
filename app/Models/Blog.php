@@ -22,7 +22,7 @@ class Blog extends Model
 
     public function blogCategories(): BelongsToMany {
 
-        return $this->belongsToMany(BookCategory::class, 'blog_category', 'blog_id','blog_category_id');
+        return $this->belongsToMany(BlogCategory::class, 'blog_category', 'blog_id','blog_category_id');
     }
 
     public function getSlugOptions() : SlugOptions
@@ -35,4 +35,5 @@ class Blog extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }}
+    }
+}
