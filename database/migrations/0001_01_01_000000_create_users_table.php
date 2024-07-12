@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('last_name', 255);
             $table->string('username', 255)->unique();
             $table->string('password', 255);
-            $table->boolean('is_deletable')->default(true)->comment('to decide of we can delete this user.');
+            $table->string('slug');
+            $table->boolean('is_deletable')->default(true)->comment('to decide if we can delete this user.');
             $table->rememberToken();
             $table->timestamps();
         });

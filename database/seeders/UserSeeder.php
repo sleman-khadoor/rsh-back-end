@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         // create super admin user
         $superAdminData = config('core-config.users.super_admin');
         $superAdmin = User::factory()->create($superAdminData);
-        $superAdmin->assignRoles($roles); // assign all roles to the super admin user
+        $superAdmin->assignRole($roles['super_admin']); // assign all roles to the super admin user
 
 
         unset($roles['super_admin']); // remove super admin array from the roles list.

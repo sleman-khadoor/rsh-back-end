@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\NotificationController as AdminNotificationContro
 use App\Http\Controllers\Admin\RepresentedAuthorController as AdminRepresentedAuthorController;
 use App\Http\Controllers\Admin\ServiceRequestController as AdminServiceRequestController;
 use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
+use App\Http\Controllers\Admin\UserManagemenrController;
 use App\Models\Role;
 
 
@@ -47,5 +48,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/represented-authors', AdminRepresentedAuthorController::class);
 
         Route::apiResource('/partners', AdminPartnerController::class);
+
+        Route::apiResource('/users', UserManagemenrController::class);
     });
 });
