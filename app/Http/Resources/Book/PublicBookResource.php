@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Book;
 
+use App\Http\Resources\Author\PublicAuthorResource;
 use App\Http\Resources\BookAward\PublicBookAwardResource;
 use App\Http\Resources\BookCategory\PublicBookCategoryResource;
 use App\Http\Resources\BookFormat\PublicBookFormatResource;
@@ -25,8 +26,8 @@ class PublicBookResource extends JsonResource
             'ISBN' => $this->ISBN,
             'EISBN' => $this->EISBN,
             'abstract' => $this->abstract,
-            'author' => $this->author?->name,
             'cover_image' => $this->cover_image,
+            'author' => PublicAuthorResource::make($this->whenLoaded('author')),
             'book_categories' => PublicBookCategoryResource::collection($this->whenLoaded('bookCategories')),
             'book_awards' => PublicBookAwardResource::collection($this->whenLoaded('awards')),
             'book_formats' => PublicBookFormatResource::collection($this->whenLoaded('formats')),

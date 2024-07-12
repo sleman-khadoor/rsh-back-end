@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Filters\FilterBookByAuthor;
 use App\Models\Book;
 use App\Traits\Uploader;
 use App\Models\BookAward;
@@ -39,6 +40,7 @@ class BookController extends Controller
     #[QueryParam('filter[title]', 'string', 'filter Books by name.', false)]
     #[QueryParam('filter[ISBN]', 'string', 'filter Books by ISBN.', false)]
     #[QueryParam('filter[EISBN]', 'string', 'filter Books by EISBN.', false)]
+    #[QueryParam('filter[author]', 'string', 'filter Books by author.', false)]
     #[QueryParam('include[]', 'array', 'relations to load on the book', false, example: "['bookCategories', 'formats', 'awards', 'reviews']")]
     #[QueryParam('page', 'integer', 'The page number', example: 1)]
     #[QueryParam('perPage', 'integer', 'Number of items pre page', example: 3)]
@@ -49,6 +51,7 @@ class BookController extends Controller
                             ->allowedFilters([
                                 ...Book::allowedFilters(),
                                 AllowedFilter::custom('book_category', new FilterBookByCategory),
+                                AllowedFilter::custom('author', new FilterBookByAuthor)
                                 ])
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
