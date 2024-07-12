@@ -20,7 +20,7 @@ class Book extends Model
     protected $fillable = ['title', 'abstract', 'ISBN', 'EISBN', 'printing_year', 'author_id'];
     public $translatable = ['title', 'abstract', 'slug'];
 
-    protected static $allowedIncludes = ['bookCategories', 'formats', 'awards', 'reviews'];
+    protected static $allowedIncludes = ['bookCategories', 'formats', 'awards', 'reviews', 'author'];
     protected static $allowedFilters = ['title', 'ISBN', 'EISBN'];
 
     public function author(): BelongsTo {
