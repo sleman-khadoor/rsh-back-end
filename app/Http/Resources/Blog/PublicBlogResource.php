@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources\Blog;
 
-use App\Http\Resources\BlogCategory\AdminBlogCategoryResource;
+use App\Http\Resources\BlogCategory\PublicBlogCategoryResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -24,7 +24,7 @@ class PublicBlogResource extends JsonResource
             'date' => $this->date,
             'lang' => $this->lang,
             'cover_image' => $this->cover_image,
-            'blog_categories' => AdminBlogCategoryResource::collection($this->whenLoaded('blogCategories')),
+            'blog_categories' => PublicBlogCategoryResource::collection($this->whenLoaded('blogCategories')),
         ];
     }
 }
