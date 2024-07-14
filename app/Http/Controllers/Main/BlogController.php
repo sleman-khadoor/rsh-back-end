@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Main;
 
+use App\Actions\Blogs\GetRelatedBlogs;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -43,8 +44,10 @@ class BlogController extends Controller
 
     #[Endpoint('Get Blog by slug.')]
     #[UrlParam('slug', 'string', 'The slug of the Blog', true)]
-    public function show(Blog $blog) {
+    public function show(Blog $blog, GetRelatedBlogs $getRelatedBlogsAction) {
 
-        return PublicBlogResource::make($blog->load(Blog::allowedIncludes()));
+        return PublicBlogResource::make($blog->load(Blog::allowedIncludes()))->additional([
+            'related_blogs' => $getRelatedBlogsAction->execute($blog)
+        ]);
     }
 }

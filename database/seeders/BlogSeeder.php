@@ -15,15 +15,14 @@ class BlogSeeder extends Seeder
      */
     public function run(): void
     {
-        $categories = BlogCategory::factory(20)->create();
-        $blogs = Blog::factory(10)->create();
-        foreach($categories as $category) {
-            foreach($blogs as $blog) {
-                BlogsCategories::create([
-                    'blog_category_id'=> $category->id,
-                    'blog_id'=> $blog->id,
-                ]);
-            }
+        BlogCategory::factory(5)->create();
+        Blog::factory(20)->create();
+
+        for($i = 1; $i <= 20; $i++) {
+            BlogsCategories::create([
+                'blog_category_id'=> rand(1, 5),
+                'blog_id'=> $i,
+            ]);
         }
     }
 }
