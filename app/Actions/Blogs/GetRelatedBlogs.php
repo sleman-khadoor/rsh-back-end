@@ -10,7 +10,7 @@ use Illuminate\Support\Collection as SupportCollection;
 
 class GetRelatedBlogs {
 
-    public function execute(Blog $blog): AnonymousResourceCollection {
+    public function execute(Blog $blog): Collection {
 
         $numberOfBlogsInDB = Blog::where('lang', $blog->lang)->count();
         $numberOfRequiredRelatedBlogs = config('core-config.number_of_related_blogs');
@@ -32,7 +32,7 @@ class GetRelatedBlogs {
         }
 
 
-        return PublicBlogResource::collection($relatedBlogs);
+        return $relatedBlogs;
     }
 
     private function getListOfRelatedBlogs(

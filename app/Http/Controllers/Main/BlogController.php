@@ -47,7 +47,7 @@ class BlogController extends Controller
     public function show(Blog $blog, GetRelatedBlogs $getRelatedBlogsAction) {
 
         return PublicBlogResource::make($blog->load(Blog::allowedIncludes()))->additional([
-            'related_blogs' => $getRelatedBlogsAction->execute($blog)
+            'related_blogs' => PublicBlogResource::collection($getRelatedBlogsAction->execute($blog))
         ]);
     }
 }
