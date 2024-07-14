@@ -68,5 +68,6 @@ return [
         'whatsapp' => '99201011',
         'email' => 'rashm@gmail.com'
     ],
+    'number_of_related_blogs' => 5
 ];
 
