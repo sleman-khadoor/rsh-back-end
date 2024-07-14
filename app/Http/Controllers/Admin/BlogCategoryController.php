@@ -44,8 +44,8 @@ class BlogCategoryController extends Controller
         return $this->collection($blogCategories);
     }
 
-    #[Endpoint('Get Blog Category by id.')]
-    #[UrlParam('id', 'integer', 'The ID of the Blog category', true)]
+    #[Endpoint('Get Blog Category by slug.')]
+    #[UrlParam('slug', 'integer', 'The slug of the Blog category', true)]
     public function show(BlogCategory $BlogCategory) {
 
         return $this->resource($BlogCategory);
@@ -61,7 +61,7 @@ class BlogCategoryController extends Controller
     }
 
     #[Endpoint('Update Blog Category.')]
-    #[UrlParam('id', 'integer', 'The ID of the Blog category', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the Blog category', true)]
     #[BodyParam('title', 'array', 'The title of the Blog Category.', example: ['en' => 'Historical', 'ar' => 'تاريخي'])]
     public function update(UpdateBlogCategoryRequest $request, BlogCategory $blogCategory) {
 
@@ -71,7 +71,7 @@ class BlogCategoryController extends Controller
     }
 
     #[Endpoint('Delete Blog Category.')]
-    #[UrlParam('id', 'integer', 'The ID of the Blog category', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the Blog category', true)]
     public function destroy(BlogCategory $blogCategory) {
 
         if($this->hasChildRecords($blogCategory)) {

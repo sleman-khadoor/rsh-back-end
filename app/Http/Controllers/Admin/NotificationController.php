@@ -6,7 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Notification\NotificationResource;
 use App\Models\Notification;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Subgroup;
+use Knuckles\Scribe\Attributes\UrlParam;
 
+#[Group('Admin Endpoints')]
+#[Subgroup('Notifications', 'APIs for Notifications.')]
 class NotificationController extends Controller
 {
 
@@ -16,6 +22,8 @@ class NotificationController extends Controller
     }
 
 
+
+    #[Endpoint('Get all Notifications.')]
     public function index()
     {
         $notifications = Notification::all();
@@ -23,6 +31,8 @@ class NotificationController extends Controller
         return $this->collection($notifications);
     }
 
+    #[Endpoint('Get Notifications by service type.')]
+    #[UrlParam('type', 'string', 'The type of the service.', true)]
     public function getByType(string $type) {
 
         $notification = Notification::where('type', $type)->firstOrFail();

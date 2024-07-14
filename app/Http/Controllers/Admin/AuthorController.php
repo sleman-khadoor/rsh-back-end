@@ -73,7 +73,7 @@ class AuthorController extends Controller
     }
 
     #[Endpoint('Update Author.')]
-    #[UrlParam('id', 'integer', 'The ID of the Author', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the Author', true)]
     #[BodyParam('name', 'array', 'The name of the Author.', example: ['en' => 'Ahmad', 'ar' => 'أحمد'])]
     #[BodyParam('about', 'array', 'The about of the Author.', example: ['en' => 'about the author', 'ar' => 'حول المؤلف'])]
     #[BodyParam('avatar', 'file', 'The avatar of the Author.')]
@@ -90,7 +90,7 @@ class AuthorController extends Controller
     }
 
     #[Endpoint('Delete Author.')]
-    #[UrlParam('id', 'integer', 'The ID of the Author.', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the Author.', true)]
     public function destroy(Author $author) {
 
         if($this->hasChildRecords($author)) {

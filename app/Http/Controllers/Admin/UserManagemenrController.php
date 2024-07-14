@@ -12,7 +12,15 @@ use App\Http\Resources\User\UserResource;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
 use Symfony\Component\HttpFoundation\Response;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Subgroup;
+use Knuckles\Scribe\Attributes\UrlParam;
+use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\QueryParam;
 
+#[Group('Admin Endpoints')]
+#[Subgroup('User Management', 'APIs for managing Users.')]
 class UserManagemenrController extends Controller
 {
     public function __construct()
@@ -20,6 +28,13 @@ class UserManagemenrController extends Controller
         $this->setResource(UserResource::class);
     }
 
+    #[Endpoint('Get all Users.')]
+    #[QueryParam('filter[first_name]', 'string', 'filter Users by first_name.', false)]
+    #[QueryParam('filter[last_name]', 'string', 'filter Users by last_name.', false)]
+    #[QueryParam('filter[username]', 'string', 'filter Users by username.', false)]
+    #[QueryParam('include[roles]', 'array', 'include roles with the users.', false)]
+    #[UrlParam('page', 'integer', 'The page number', example: 1)]
+    #[UrlParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
 
         $users = QueryBuilder::for(User::class)
@@ -32,11 +47,20 @@ class UserManagemenrController extends Controller
         return $this->collection($users);
     }
 
+    #[Endpoint('Get User by slug.')]
+    #[UrlParam('slug', 'string', 'The slug of the User.', true)]
     public function show(User $user) {
 
         return $this->resource($user->load(User::allowedIncludes()));
     }
 
+    #[Endpoint('Store User.')]
+    #[BodyParam('first_name', 'string', 'The first_name of the User.')]
+    #[BodyParam('last_name', 'string', 'The last_name of the User.')]
+    #[BodyParam('username', 'string', 'The username of the User.')]
+    #[BodyParam('password', 'string', 'The password of the User.')]
+    #[BodyParam('password_confirmation', 'string', 'The password Confirmation.')]
+    #[BodyParam('roles', 'array', 'The roles of the User.')]
     public function store(StoreUserRequest $request) {
 
         $data = $request->validated();
@@ -58,6 +82,14 @@ class UserManagemenrController extends Controller
         return $this->resource($user);
     }
 
+    #[Endpoint('Update User.')]
+    #[UrlParam('slug', 'string', 'The slug of the User.', true)]
+    #[BodyParam('first_name', 'string', 'The first_name of the User.')]
+    #[BodyParam('last_name', 'string', 'The last_name of the User.')]
+    #[BodyParam('username', 'string', 'The username of the User.')]
+    #[BodyParam('password', 'string', 'The password of the User.')]
+    #[BodyParam('password_confirmation', 'string', 'The password Confirmation.')]
+    #[BodyParam('roles', 'array', 'The roles of the User.')]
     public function update(UpdateUserRequest $request, User $user) {
 
         $data = $request->validated();
@@ -81,6 +113,8 @@ class UserManagemenrController extends Controller
         return $this->resource($user);
     }
 
+    #[Endpoint('Delete User.')]
+    #[UrlParam('slug', 'string', 'The slug of the User.', true)]
     public function destroy(User $user) {
 
         if(!$user->canBeDeleted()) {

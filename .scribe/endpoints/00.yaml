@@ -26,7 +26,7 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: esse
+        example: id
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -35,14 +35,14 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: Z<jKSxaK6nv
+        example: 'vJ![Mtr!^3'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      username: esse
-      password: Z<jKSxaK6nv
+      username: id
+      password: 'vJ![Mtr!^3'
     fileParameters: []
     responses: []
     responseFields: []
@@ -83,14 +83,53 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/admin/book-awards
+      - GET
+    uri: api/contacts
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Handle the incoming request.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"value":"rashm@gmail.com"},{"value":"99201011"},{"value":"rashm.facebook"}],"links":{"first":"http:\/\/localhost\/api\/contacts?page=1","last":"http:\/\/localhost\/api\/contacts?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/contacts?page=1","label":"1","active":true},{"url":null,"label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/contacts","per_page":15,"to":3,"total":3}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/contact-requests
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Handle the incoming request.'
       description: ''
       authenticated: false
       custom: []
@@ -102,122 +141,47 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      title:
-        name: title
+      fullname:
+        name: fullname
         description: 'Must not be greater than 255 characters.'
         required: true
-        example:
-          - papsqjhtvbhvhpnoh
-        type: 'string[]'
+        example: fwjuo
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      book_id:
-        name: book_id
-        description: ''
+      mobile:
+        name: mobile
+        description: 'Must not be greater than 255 characters.'
         required: true
-        example: quam
+        example: fwfwibfttjhsqalwmh
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
+        required: true
+        example: blanda.mazie@example.org
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      message:
+        name: message
+        description: 'Must not be greater than 1000 characters.'
+        required: true
+        example: thngrzmjcnsssjbxpbcuzztql
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      title:
-        - papsqjhtvbhvhpnoh
-      book_id: quam
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/admin/book-awards/{slug}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      slug:
-        name: slug
-        description: 'The slug of the book award.'
-        required: true
-        example: facere
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      slug: facere
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      title:
-        name: title
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example:
-          - lqavnpjlkdplxxiyphgd
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      title:
-        - lqavnpjlkdplxxiyphgd
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/admin/book-awards/{slug}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      slug:
-        name: slug
-        description: 'The slug of the book award.'
-        required: true
-        example: omnis
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      slug: omnis
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      fullname: fwjuo
+      mobile: fwfwibfttjhsqalwmh
+      email: blanda.mazie@example.org
+      message: thngrzmjcnsssjbxpbcuzztql
     fileParameters: []
     responses: []
     responseFields: []
@@ -229,13 +193,13 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/admin/book-reviews
+    uri: api/service-requests
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Handle the incoming request.'
       description: ''
       authenticated: false
       custom: []
@@ -247,146 +211,68 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      username:
-        name: username
+      fullname:
+        name: fullname
         description: 'Must not be greater than 255 characters.'
         required: true
-        example:
-          - qkjoigh
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      review:
-        name: review
-        description: ''
-        required: true
-        example:
-          - non
-        type: 'string[]'
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      book_id:
-        name: book_id
-        description: ''
-        required: true
-        example: omnis
+        example: zpsves
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      username:
-        - qkjoigh
-      review:
-        - non
-      book_id: omnis
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/admin/book-reviews/{slug}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      slug:
-        name: slug
-        description: 'The slug of the book review.'
+      mobile:
+        name: mobile
+        description: 'Must not be greater than 255 characters.'
         required: true
-        example: adipisci
+        example: laherhaxxouvtpwed
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanUrlParameters:
-      slug: adipisci
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      username:
-        name: username
-        description: 'Must not be greater than 255 characters.'
+      email:
+        name: email
+        description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example:
-          - rsvoaqe
-        type: 'string[]'
+        example: qmckenzie@example.com
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      review:
-        name: review
+      description:
+        name: description
+        description: 'Must not be greater than 1000 characters.'
+        required: true
+        example: 'Eaque enim unde in esse.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      service_name:
+        name: service_name
         description: ''
         required: true
-        example:
-          - ex
+        example: translation_service
+        type: string
+        enumValues:
+          - contact_request
+          - translation_service
+        exampleWasSpecified: false
+        custom: []
+      documents:
+        name: documents
+        description: ''
+        required: false
+        example: null
         type: 'string[]'
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      username:
-        - rsvoaqe
-      review:
-        - ex
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/admin/book-reviews/{slug}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      slug:
-        name: slug
-        description: 'The slug of the book review.'
-        required: true
-        example: modi
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanUrlParameters:
-      slug: modi
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+      fullname: zpsves
+      mobile: laherhaxxouvtpwed
+      email: qmckenzie@example.com
+      description: 'Eaque enim unde in esse.'
+      service_name: translation_service
     fileParameters: []
     responses: []
     responseFields: []

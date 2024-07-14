@@ -35,6 +35,7 @@ class BookReviewController extends Controller
     }
 
     #[Endpoint('Update Book Review.')]
+    #[UrlParam('slug', 'integer', 'The slug of the book review', true)]
     #[BodyParam('username', 'array', 'The username of the Book Review.')]
     #[BodyParam('review', 'array', 'The review of the Book Review.')]
     public function update(UpdateBookReviewRequest $request, BookReview $bookReview) {
@@ -45,7 +46,7 @@ class BookReviewController extends Controller
     }
 
     #[Endpoint('Delete Book Review.')]
-    #[UrlParam('id', 'integer', 'The ID of the book review', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the book review', true)]
     public function destroy(BookReview $bookReview) {
 
         $bookReview->delete();
