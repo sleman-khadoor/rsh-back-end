@@ -16,6 +16,7 @@ class PublicAchievementResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'slug' => $this->getTranslations('slug'),
             'content' => $this->content,
         ];
     }
