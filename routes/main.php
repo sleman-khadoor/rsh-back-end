@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 use App\Http\Controllers\Main\AuthorController as MainAuthorController;
 
@@ -13,6 +13,8 @@ use App\Http\Controllers\Main\RepresentedAuthorController as MainRepresentedAuth
 use App\Http\Controllers\Main\ServiceRequestController as MainServiceRequestController;
 
 use App\Http\Controllers\Main\PartnerController as MainParterController;
+
+use App\Http\Controllers\Main\AchievementController as MainAchievementController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -43,3 +45,7 @@ Route::post('/service-requests', MainServiceRequestController::class);
 // Partners endpoints
 Route::get('/partners', [MainParterController::class, 'index']);
 Route::get('/partners/{partner}', [MainParterController::class, 'show']);
+
+// Achievements endpoints
+Route::get('/achievements', [MainAchievementController::class, 'index']);
+Route::get('/achievements/{achievement}', [MainAchievementController::class, 'show']);
