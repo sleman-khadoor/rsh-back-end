@@ -24,7 +24,7 @@ endpoints:
         name: 'filter[title]'
         description: 'filter Books by name.'
         required: false
-        example: qui
+        example: suscipit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -33,7 +33,7 @@ endpoints:
         name: 'filter[ISBN]'
         description: 'filter Books by ISBN.'
         required: false
-        example: velit
+        example: odit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -42,7 +42,16 @@ endpoints:
         name: 'filter[EISBN]'
         description: 'filter Books by EISBN.'
         required: false
-        example: aliquam
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[author]':
+        name: 'filter[author]'
+        description: 'filter Books by author.'
+        required: false
+        example: excepturi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -75,9 +84,10 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      'filter[title]': qui
-      'filter[ISBN]': velit
-      'filter[EISBN]': aliquam
+      'filter[title]': suscipit
+      'filter[ISBN]': odit
+      'filter[EISBN]': et
+      'filter[author]': excepturi
       'include[]': "['bookCategories', 'formats', 'awards', 'reviews']"
       page: 1
       perPage: 3
@@ -87,7 +97,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"title":"Error repellat et eum.","slug":{"ar":"mgharth-mtrka-ghada-bsrh","en":"error-repellat-et-eum"},"printing_year":"1989","ISBN":"6880767443","EISBN":"9799804475534","abstract":"Eum veniam molestiae quia voluptas consequuntur laborum sapiente. Vel distinctio commodi esse quo distinctio et omnis. Molestiae dignissimos labore qui eos voluptatum. Ea mollitia doloribus voluptas exercitationem quia ut aliquid. Et aut a quas est voluptas quia. Doloremque maxime ut fugit repellat sunt eius. Fugiat fugiat ut rerum officia blanditiis. Maiores dolores perferendis et officiis omnis molestias mollitia. Reiciendis et in non qui corrupti ut. Necessitatibus vitae eveniet minus. Accusantium quo nemo est iure vero sequi. Et aut doloremque eum atque quos doloremque eligendi. Tempora vel numquam harum sed dolores maxime et quis. Ut accusamus sapiente sed animi voluptatibus. Corporis quo et aperiam totam autem repellat. Nemo occaecati quod alias aut quaerat. Laboriosam voluptate deleniti cum aut. Doloremque provident unde iusto sit tempore minus. Autem sunt sed itaque quod incidunt temporibus dolorum. Et beatae eos ut amet officiis. Voluptas et animi et est qui eius quas minima.","author":"Laborum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=sit"},{"title":"Possimus veniam ut sed eum.","slug":{"ar":"alty-rbth-oosf-lh-ma-amknh","en":"possimus-veniam-ut-sed-eum"},"printing_year":"1991","ISBN":"2206087472","EISBN":"9786717656167","abstract":"Est officia labore cupiditate deserunt. Velit maiores molestiae animi dolore consequatur veritatis. Voluptas deleniti omnis vero. Eveniet necessitatibus voluptas dolores est iure. Non recusandae ex dolor. Et est commodi labore fugiat dolores incidunt impedit aut. Non eius ut laudantium dicta quia veniam. Sunt est optio possimus sed et voluptatem. Unde aliquam dolorem eum non nemo provident. Optio laboriosam asperiores eum et et. Tempore ut ullam exercitationem dolorem in qui. Dignissimos officiis temporibus magnam deserunt deleniti magnam. Corporis debitis in veniam similique dolorum eum eos hic. Et labore repudiandae sint modi iusto eaque. Corporis accusamus perspiciatis ut necessitatibus harum. Minima ut distinctio a voluptas neque et alias. Quod reiciendis ipsam expedita nihil saepe. Nemo ullam voluptatem consequatur dolorem minima. Itaque voluptas veniam qui consequatur animi pariatur. Voluptatibus sed vero temporibus porro assumenda.","author":"Laborum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007799?text=aut"},{"title":"Et et hic sapiente vitae.","slug":{"ar":"alyha-oarad-an-yakhth-mnha","en":"et-et-hic-sapiente-vitae"},"printing_year":"1994","ISBN":"7464243943","EISBN":"9781920257286","abstract":"Sed fugit atque nihil libero quaerat perspiciatis est. Soluta quos itaque est velit. Quae fuga dolores sed est sed. Eius beatae est corporis voluptas. Voluptatem est dolorum adipisci placeat. Consequatur aut sed ea commodi aut nobis. Suscipit sequi neque sint molestiae. Est nemo ut nihil quia consequatur esse amet. Repellat qui quos quam quia. Et est rem delectus rerum accusantium esse pariatur. Nobis unde voluptas exercitationem cupiditate necessitatibus quia. Cum dolores molestiae expedita quia et. Sequi unde aut ipsa consequatur a consequatur explicabo. Omnis recusandae ad asperiores et. Et nam ratione aut repudiandae. Accusantium eveniet consectetur a ad id labore beatae adipisci. Rerum et iure sint eos corporis dolorum. Voluptas quibusdam qui nostrum fugiat voluptatum eveniet suscipit veniam. Nulla ut et et veritatis odit iusto inventore. Expedita voluptates exercitationem quibusdam neque ducimus et. Voluptatem culpa placeat ipsam dolor esse.","author":"Ut.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007722?text=ut"}],"links":{"first":"http:\/\/localhost\/api\/books?page=1","last":"http:\/\/localhost\/api\/books?page=14","prev":null,"next":"http:\/\/localhost\/api\/books?page=2"},"meta":{"current_page":1,"from":1,"last_page":14,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/books?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/books?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/books?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/books?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/books?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/books?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/books?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/books?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/books?page=9","label":"9","active":false},{"url":"http:\/\/localhost\/api\/books?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/books?page=13","label":"13","active":false},{"url":"http:\/\/localhost\/api\/books?page=14","label":"14","active":false},{"url":"http:\/\/localhost\/api\/books?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/books","per_page":3,"to":3,"total":40}}'
+        content: '{"data":[{"title":"Cum ipsa enim omnis odit.","slug":{"ar":"ahlha-alrglyn-aal-alshaty","en":"cum-ipsa-enim-omnis-odit"},"printing_year":"1974","ISBN":"1470885867","EISBN":"9799923911760","abstract":"Aliquam magnam voluptatum adipisci quam accusamus et. Labore consequatur eos sunt. Omnis aliquam maxime tenetur et eligendi quis totam. Id et mollitia molestiae qui aut praesentium. Aut praesentium omnis aliquid velit cupiditate. Quasi error sint velit qui nihil. Quasi aperiam inventore sunt deleniti deleniti expedita rerum. Ratione eos voluptate debitis ea molestiae. Ad officia iusto repellat sed ea. Esse dignissimos quod optio sed velit. Accusamus est enim similique aperiam quia. Nihil accusantium nihil aut sint cum dolorum. Doloribus provident culpa excepturi et mollitia molestiae. Quidem asperiores laborum modi voluptatum. Suscipit laborum molestiae doloremque dolor. Neque rerum quibusdam maiores iure recusandae quo cumque. Incidunt non ut nemo eius veritatis ea eius. Dolorem est iure consequatur. Recusandae et deserunt cupiditate. Nam pariatur quo labore omnis.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/003366?text=magni"},{"title":"Et aut saepe laborum.","slug":{"ar":"hy-klha-fy-dmnh-oghyr-kharg","en":"et-aut-saepe-laborum"},"printing_year":"1980","ISBN":"3328191526","EISBN":"9785019305711","abstract":"Sequi et dolore voluptas sunt nihil. Excepturi libero atque minima reiciendis. Amet saepe ducimus molestias corrupti corporis eos rerum. Ea voluptas pariatur rerum corrupti ipsam architecto ea. Pariatur ad ad repellendus amet. Ut molestiae quam excepturi dolorum. Voluptatem asperiores sunt fugit cum. Quaerat delectus ut reiciendis id et. Quia fugit numquam provident voluptatibus. Dolores fugiat voluptatem maiores hic atque. Voluptas voluptatem est blanditiis ullam. Veniam ad ipsum perferendis corporis. Ut consequatur cupiditate quia ut. Numquam nobis praesentium animi placeat excepturi necessitatibus voluptas. Amet sit magni incidunt reprehenderit excepturi. Quos eum distinctio eveniet quis. Deleniti ea earum eos cumque ex incidunt suscipit. Quod atque non autem quam. Et sapiente ut id accusantium. Ipsam tempora asperiores beatae. Nemo impedit autem ut unde at reiciendis itaque. Qui commodi ut minus deserunt laborum nobis modi. Nisi nam occaecati dolorem illum.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/0000dd?text=et"},{"title":"Nisi fugit ut provident nemo.","slug":{"ar":"fho-maa-tlk-almshahd-yaakl","en":"nisi-fugit-ut-provident-nemo"},"printing_year":"1988","ISBN":"4332354982","EISBN":"9792368213024","abstract":"Voluptates voluptatem odio autem libero error delectus. Ut unde mollitia doloribus esse ipsa amet possimus sed. Saepe perspiciatis natus natus et iste. Commodi commodi ipsa dolor beatae totam. Aspernatur et est libero illo quas architecto. Dolores quo ut dicta accusamus rerum. Recusandae praesentium reprehenderit minus sunt. Nihil non magni quaerat laudantium et et. Laboriosam enim est sed qui voluptate. Ipsam aut qui nisi illo veritatis nihil et. Earum maxime sed dolor quaerat. Autem et voluptatum recusandae deleniti est qui. Repellendus et in perspiciatis et ducimus. Cumque quos cumque id quia odit quia. Tenetur molestiae nostrum cumque consequatur. Quaerat sit soluta dolorem et ipsam. Sit numquam maiores iusto voluptatibus fugiat. Et quos veniam natus minima. Dolores sed a aperiam in. Dignissimos ratione iusto est. Ipsum rem a sapiente eveniet adipisci. Tempore corporis iure reiciendis officiis. Consequatur nihil esse nemo et aspernatur. Commodi et rem ex rerum aut.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/00dd33?text=esse"}],"links":{"first":"http:\/\/localhost\/api\/books?page=1","last":"http:\/\/localhost\/api\/books?page=14","prev":null,"next":"http:\/\/localhost\/api\/books?page=2"},"meta":{"current_page":1,"from":1,"last_page":14,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/books?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/books?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/books?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/books?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/books?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/books?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/books?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/books?page=8","label":"8","active":false},{"url":"http:\/\/localhost\/api\/books?page=9","label":"9","active":false},{"url":"http:\/\/localhost\/api\/books?page=10","label":"10","active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/books?page=13","label":"13","active":false},{"url":"http:\/\/localhost\/api\/books?page=14","label":"14","active":false},{"url":"http:\/\/localhost\/api\/books?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/books","per_page":3,"to":3,"total":40}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -121,7 +131,7 @@ endpoints:
         name: book_slug
         description: 'The slug of the book.'
         required: true
-        example: velit-ea-corrupti-amet
+        example: debitis-ipsa-autem-magni
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,14 +140,14 @@ endpoints:
         name: slug
         description: 'The slug of the Book'
         required: true
-        example: est
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      book_slug: velit-ea-corrupti-amet
-      slug: est
+      book_slug: debitis-ipsa-autem-magni
+      slug: accusantium
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -146,7 +156,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"title":"Velit ea corrupti amet.","slug":{"ar":"aldoam-fanh-ykon-fy-alam-la","en":"velit-ea-corrupti-amet"},"printing_year":"1977","ISBN":"2553308809","EISBN":"9789696630081","abstract":"In sit temporibus consequatur quis. Dicta quidem consequatur nisi. Qui et quam excepturi excepturi fugiat numquam. Sed sed sequi deserunt optio. Praesentium accusamus eum quia est. Laboriosam excepturi alias consectetur labore. Sint rerum delectus tempore eaque qui. Harum quae qui vitae saepe. Laboriosam quia numquam magni necessitatibus non. Ut labore suscipit aut officia sapiente. Iusto nemo culpa quidem. Aut fugit voluptatem voluptatem culpa. Fugiat non maxime ea nam veniam. Et voluptatem vel ex voluptatem autem deleniti sequi. Possimus sit et incidunt et. Assumenda nemo dolores et voluptatem quia corrupti explicabo. Explicabo consequuntur dolores totam labore impedit blanditiis. Quia et reiciendis numquam. Repudiandae voluptas enim provident aut nisi dolorem qui nam. Dolorum in velit sed est qui aliquam. Suscipit a voluptatem corrupti sit et harum ut aliquam. Voluptatibus minus repellendus distinctio et ad sequi. Est natus quia vero hic iure reprehenderit.","author":"Aut et.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/005511?text=mollitia","book_categories":[],"book_awards":[],"book_formats":[],"book_reviews":[]}}'
+        content: '{"data":{"title":"Debitis ipsa autem magni.","slug":{"ar":"oaan-gmyaa-ma-ord-fy-alshryaa","en":"debitis-ipsa-autem-magni"},"printing_year":"1973","ISBN":"587355935X","EISBN":"9783746781587","abstract":"Ipsum dolorum hic atque. Harum nemo magnam qui impedit nesciunt beatae enim. Quisquam facere tenetur vitae sed. Voluptatem ex eos quia vel nulla. Voluptatem quia eum odit. Nihil eos est blanditiis suscipit numquam. Rerum voluptatibus veniam rerum enim. Assumenda maiores sed dignissimos qui quisquam inventore ratione. Tempore qui itaque sunt. Soluta autem corporis consectetur sed neque beatae. Maxime praesentium sunt possimus sit deleniti adipisci dolore. Quis enim aliquam quo tempore. Aut nisi beatae maiores ut. Minima praesentium error omnis accusamus ut corrupti. Quibusdam ipsum minima maxime illum et. Dolores ipsum fuga vero nihil id. Odio facilis consequatur natus ut dolores. Culpa magnam sunt maxime amet. Dolore aut sit nemo ipsa rem pariatur laborum. Quaerat voluptatem minus est provident cumque quia aut. Vel at iste aut temporibus animi ea voluptas ut.","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/000033?text=totam","author":{"name":"Vel optio.","about":"Minus incidunt alias est omnis consectetur. Modi nulla aliquam cum nulla fuga.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ee11?text=laudantium","slug":{"ar":"alans-tala-alaamro","en":"vel-optio"}},"book_categories":[],"book_awards":[],"book_formats":[],"book_reviews":[]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -186,7 +196,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"title":"\u062a\u0627\u0631\u064a\u062e\u064a \u0642\u062f\u064a\u0645"},{"title":"\u0641\u0627\u0646 \u0648\u062c\u0648\u062f."},{"title":"\u0642\u0628\u0644 \u0630\u0644\u0643\u060c."},{"title":"\u0648\u0647\u064a \u0645\u062f\u0627\u0631."},{"title":"\u0639\u0646\u0647\u060c \u0628\u0639\u062f."},{"title":"\u0630\u0644\u0643 \u0648\u0631\u0648\u0649."},{"title":"\u062a\u0639\u0644\u0642 \u0644\u0647\u0627."},{"title":"\u0639\u0644\u0649 \u0633\u0631\u062a\u0647."},{"title":"\u0627\u0644\u0645\u0634\u0627\u0647\u062f\u0629."},{"title":"\u0645\u0646 \u0627\u0644\u062c\u0647\u0629."},{"title":"\u0643\u0644\u0647\u0627 \u062d\u062c\u0628."},{"title":"\u0641\u064a \u0648\u0633\u0637\u0647\u060c."},{"title":"\u0641\u0627\u0646\u0647 \u0625\u0630\u0627."},{"title":"\u0639\u0646 \u062a\u0639\u0644\u064a\u0645."},{"title":"\u062a\u0644\u0643 \u0627\u0644\u062a\u064a."},{"title":"\u0648\u0645\u062a\u0649 \u0648\u0642\u0639."},{"title":"\u0643\u062a\u0646\u0632\u0647 \u0639\u0646."},{"title":"\u064a\u0631 \u0634\u064a\u0626\u0627\u064b."},{"title":"\u0645\u0646 \u0627\u0644\u0643\u062f\u0631."},{"title":"\u062d\u0627\u0631\u0629 \u0648\u0644\u0627."},{"title":"\u0643\u0627\u0646 \u062a\u0628\u064a\u0646."}]}'
+        content: '{"data":[{"id":20,"title":"\u064a\u0646\u0638\u0631 \u0625\u0644\u0649."},{"id":19,"title":"\u0627\u0644\u0645\u062d\u062a\u0627\u062c\u0629."},{"id":18,"title":"\u0628\u0639\u064a\u062f\u0629 \u0639\u0646."},{"id":17,"title":"\u062a\u062f\u0648\u0645 \u0641\u064a\u0647."},{"id":16,"title":"\u0623\u0646\u0643\u0631 \u0630\u0644\u0643."},{"id":15,"title":"\u0639\u0644\u0649 \u062c\u0627\u062f\u0629."},{"id":14,"title":"\u0648\u0625\u0630\u0627 \u0643\u0627\u0646."},{"id":13,"title":"\u0627\u0644\u0630\u064a \u0643\u0631\u0647."},{"id":12,"title":"\u0643\u0644\u0647\u0627 \u0625\u0644\u0649."},{"id":11,"title":"\u0628\u0627\u0644\u0623\u062c\u0633\u0627\u0645."},{"id":10,"title":"\u0627\u0644\u0633\u0641\u064a\u0646\u0629\u060c."},{"id":9,"title":"\u0646\u0641\u0633\u0647 \u0639\u0644\u0649."},{"id":8,"title":"\u0648\u0627\u0644\u0625\u0642\u0628\u0627\u0644."},{"id":7,"title":"\u0633\u0648\u062f\u0627\u0621 \u0645\u0646."},{"id":6,"title":"\u0642\u0648\u064a\u0629 \u0623\u0646\u0647."},{"id":5,"title":"\u0639\u0646\u0647 \u062c\u0647\u062f\u0647."},{"id":4,"title":"\u0644\u0627 \u0645\u062d\u0627\u0644\u0629."},{"id":3,"title":"\u062a\u0637\u0648\u064a\u0644\u0627\u064b\u060c."},{"id":2,"title":"\u064a\u0639\u0648\u0642\u0647 \u0639\u0646."},{"id":1,"title":"\u0641\u0645\u0646\u0647\u0627 \u0645\u0627."}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -243,7 +253,7 @@ endpoints:
         name: 'filter[name]'
         description: 'filter Authors by name.'
         required: false
-        example: officiis
+        example: placeat
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -258,7 +268,7 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanQueryParameters:
-      'filter[name]': officiis
+      'filter[name]': placeat
       'include[]': 'include[] = books'
     bodyParameters: []
     cleanBodyParameters: []
@@ -266,7 +276,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"name":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f111","about":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","avatar":"storage\/avatars\/UserUpload-0706202417572366898583d9e11.jpg","slug":{"ar":"aaly-ahmd111","en":"ali-ahmad111"}},{"name":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f1","about":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","avatar":"C:\\xampp\\tmp\\php932A.tmp","slug":{"ar":"aaly-ahmd1","en":"ali-ahmad1"}},{"name":"\u0639\u0644\u064a \u0623\u062d\u0645\u062f","about":"\u062a\u0633\u062a \u062a\u0633\u062a \u062a\u0633\u062a","avatar":null,"slug":{"ar":"aaly-ahmd","en":"ali-ahmad"}},{"name":"\u062a\u0633\u062aTEST","about":"\u062a\u0633\u062a \u062a\u0633\u062a","avatar":null,"slug":{"ar":"tsttest","en":"testtest"}},{"name":"\u0639\u0628\u062f \u0627\u0644\u0644\u0647 \u0635\u062f\u0627\u0645 \u0627\u0644\u0633\u0645\u064a\u0631","about":"\u062b\u0645 \u063a\u0648\u0635 \u062a\u062d\u062a \u0627\u0644\u0645\u0627\u0621 \u0648\u0627\u0645\u0627 \u0623\u0646 \u062a\u0643\u0648\u0646 \u0646\u062c\u0627\u062a\u0647\u0645 \u0639\u0644\u0649 \u064a\u062f\u064a\u0647\u060c \u062d\u062f\u062b\u062a \u0644\u0647 \u0627\u0644\u0646\u064a\u0629 \u0641\u064a \u0627\u0644\u0648\u0635\u0648\u0644 \u0627\u0644\u064a\u0647\u0645\u061f \u0641\u0623\u0639\u0644\u0645\u0647 \u0628\u0645\u0627 \u0647\u0645 \u0641\u064a\u0647 \u0645\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ccee?text=quia","slug":{"ar":"aabd-allh-sdam-alsmyr","en":"laborum"}},{"name":"\u062f\u0627\u0644\u064a\u0629 \u0627\u0644\u0639\u0642\u0644","about":"\u0635\u0627\u062f\u0631\u0629 \u0639\u0646\u0647\u060c \u0641\u0643\u0627\u0646 \u064a\u0631\u0649 \u0627\u0644\u0646\u0648\u0639 \u0628\u0647\u0630\u0627 \u0627\u0644\u0646\u0638\u0631 \u0648\u0627\u062d\u062f\u0627\u064b\u060c \u0648\u064a\u062c\u0639\u0644 \u0643\u062b\u0631\u0629 \u0623\u0634\u062e\u0627\u0635\u0647 \u0628\u0645\u0646\u0632\u0644\u0629 \u0643\u062b\u064a\u0631\u0629 \u0623\u0639\u0636\u0627\u0621 \u0627\u0644\u0634\u062e\u0635 \u0627\u0644\u0648\u0627\u062d\u062f\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006611?text=et","slug":{"ar":"daly-alaakl","en":"ut"}},{"name":"\u0628\u0627\u0633\u0644 \u0627\u0644\u062d\u0635\u064a\u0646","about":"\u0648\u0644\u0627 \u062a\u0646\u0645\u0648\u060c \u0645\u0646 \u0627\u0644\u062d\u062c\u0627\u0631\u0629\u060c \u0648\u0627\u0644\u062a\u0631\u0627\u0628\u060c \u0648\u0627\u0644\u0645\u0627\u0621\u060c \u0648\u0627\u0644\u0647\u0648\u0627\u0621\u060c \u0648\u0627\u0644\u0644\u0647\u0628\u060c \u0641\u064a\u0631\u0649 \u0623\u0646\u0647\u0627 \u0623\u062c\u0633\u0627\u0645 \u0645\u0642\u062f\u0631 \u0644\u0647\u0627 \u0627\u0644\u0637\u0648\u0644 \u0648\u0639\u0631\u0636 \u0648\u0639\u0645\u0642.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/008811?text=perferendis","slug":{"ar":"basl-alhsyn","en":"qui-et"}},{"name":"\u0646\u0627\u062c\u064a \u0627\u0633\u0645\u0627\u0639\u064a\u0644 \u0627\u0644\u062f\u0627\u0648\u0648\u062f","about":"\u0645\u0646 \u0627\u0644\u0628\u0642\u0648\u0644 \u0627\u0644\u062a\u064a \u0644\u0645 \u062a\u0643\u0646 \u0642\u062f\u064a\u0645\u0629\u060c \u0648\u0647\u0648 \u0641\u064a \u062d\u0627\u0644 \u0627\u0644\u0623\u0639\u0631\u0627\u0636\u060c \u0641\u064a\u0641\u0636\u064a \u0625\u0644\u0649 \u0627\u0644\u0634\u0642\u0627\u0621 \u0627\u0644\u062f\u0627\u0626\u0645\u060c \u0648\u0623\u0644\u0645 \u0627\u0644\u062d\u062c\u0627\u0628. \u0641\u0633\u0627\u0621\u0647 \u062d\u0627\u0644\u0647.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009988?text=autem","slug":{"ar":"nagy-asmaaayl-aldaood","en":"ut-sed"}},{"name":"\u0631\u0648\u064a\u062f\u0629 \u0627\u0644\u0631\u0627\u062c\u062d\u064a","about":"\u0643\u0644\u0647\u0627. \u0625\u0644\u0627 \u0645\u0639\u0646\u0649 \u0627\u0644\u0627\u0645\u062a\u062f\u0627\u062f \u0627\u0644\u0645\u0648\u062c\u0648\u062f \u0641\u064a \u062c\u0645\u064a\u0639\u0647\u0627 \u0641\u064a \u0627\u0644\u0623\u0642\u0637\u0627\u0631 \u0627\u0644\u062b\u0644\u0627\u062b\u0629: \u0627\u0644\u0637\u0648\u0644\u060c \u0648\u0627\u0644\u0639\u0631\u0636\u060c \u0648\u0627\u0644\u0639\u0645\u0642\u061b \u0644\u0627 \u064a\u0646\u0641\u0643 \u0634\u064a\u0621.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=et","slug":{"ar":"royd-alraghy","en":"soluta"}},{"name":"\u0627\u0644\u0645\u0647\u0646\u062f\u0633\u0629 \u062f\u0627\u0631\u064a\u0646 \u0627\u0644\u0641\u0631\u064a\u062f\u064a","about":"\u0633\u0645\u062a \u0631\u0624\u0648\u0633 \u0627\u0644\u0633\u0627\u0643\u0646\u064a\u0646 \u0641\u064a\u0647\u060c \u0648\u062d\u064a\u0646\u0626\u0630 \u062a\u0643\u0648\u0646 \u0627\u0644\u062d\u0631\u0627\u0631\u0629 \u0641\u064a \u0630\u0644\u0643 \u0627\u0644\u0645\u0642\u0627\u0645 \u0628\u0627\u0644\u0646\u062d\u0648 \u0627\u0644\u0630\u064a \u0637\u0644\u0628\u0647 \u0623\u0648\u0644\u0627\u064b \u062d\u062a\u0649 \u0648\u0635\u0644 \u0625\u0644\u064a\u0647 \u0628\u0623\u064a\u0633\u0631.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00dd33?text=illo","slug":{"ar":"almhnds-daryn-alfrydy","en":"qui-neque"}},{"name":"\u063a\u0632\u0644 \u0628\u0627\u0634\u0627","about":"\u0628\u0646 \u064a\u0642\u0638\u0627\u0646 \u0648\u064a\u0633\u0627\u0626\u0644\u0647 \u0639\u0646 \u0634\u0623\u0646\u0647 \u0648\u0645\u0646 \u0623\u064a\u0646 \u0635\u0627\u0631 \u0625\u0644\u0649 \u062a\u0644\u0643 \u0627\u0644\u062d\u0627\u0644 \u0645\u062f\u0629 \u0648\u0647\u0648 \u064a\u062c\u0627\u0647\u062f \u0642\u0648\u0627\u0647 \u0627\u0644\u062c\u0633\u0645\u0627\u0646\u064a\u0629 \u0648\u062a\u062c\u0627\u0647\u062f\u0647\u060c \u0648\u064a\u0646\u0627\u0632\u0639\u0647\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0022ee?text=maiores","slug":{"ar":"ghzl-basha","en":"nisi"}},{"name":"\u0646\u0639\u0645\u0629 \u0632\u0645\u0627\u0645 \u0627\u0644\u0633\u0645\u0627\u0631\u064a","about":"\u064a\u062a\u0635\u0641\u062d \u0623\u0646\u0648\u0627\u0639 \u0627\u0644\u062d\u064a\u0648\u0627\u0646 \u0628\u062c\u0632\u0626\u0647 \u0627\u0644\u062e\u0633\u064a\u0633 \u0627\u0644\u0630\u064a \u0647\u0648 \u0628\u0645\u0646\u0632\u0644\u0629 \u0627\u0644\u0637\u064a\u0646 \u0641\u064a \u0647\u0630\u0627 \u0627\u0644\u0648\u0642\u062a \u0645\u0632\u064a\u062f \u0628\u064a\u0627\u0646 \u0628\u0627\u0644\u0645\u0634\u0627\u0641\u0647\u0629 \u0639\u0644\u0649 \u0645\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ffaa?text=ut","slug":{"ar":"naam-zmam-alsmary","en":"magni-et"}},{"name":"\u0631\u062c\u0628 \u0627\u0644\u0635\u0642\u064a\u0647","about":"\u0627\u0644\u062d\u0644\u0648\u0629\u060c \u0648\u064a\u0637\u0639\u0645\u0647\u0627. \u0648\u0645\u0627\u0632\u0644 \u0627\u0644\u0647\u0632\u0644 \u0648\u0627\u0644\u0636\u0639\u0641 \u064a\u0633\u062a\u0648\u0644\u064a \u0639\u0644\u064a\u0647\u0627 \u0648\u064a\u062a\u0648\u0627\u0644\u0649\u060c \u0625\u0644\u0649 \u0623\u0646 \u0623\u062f\u0631\u0643\u0647\u0627 \u0627\u0644\u0645\u0648\u062a\u060c \u0641\u0633\u0643\u0646\u062a \u062d\u0631\u0643\u0627\u062a\u0647\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/005533?text=quia","slug":{"ar":"rgb-alskyh","en":"labore"}},{"name":"\u0622\u064a\u0629 \u0627\u0644\u0639\u0642\u0644","about":"\u0641\u064a\u0647: \u0625\u0646 \u0623\u0644\u0632\u0645 \u0646\u0641\u0633\u0647 \u0625\u0646 \u0644\u0627 \u064a\u0641\u0643\u0631 \u0641\u064a \u0634\u064a\u0621 \u0645\u0646 \u0627\u0644\u0627\u0645\u062a\u062f\u0627\u062f\u061f \u0641\u062a\u062d\u064a\u0631 \u0628\u0639\u062f \u0630\u0644\u0643 \u0625\u0644\u0649 \u063a\u064a\u0631 \u0646\u0647\u0627\u064a\u0629 \u0648\u0644\u0627 \u064a\u0646\u0642\u0635 \u0623\u062d\u062f\u0647\u0645\u0627 \u0639\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006622?text=ducimus","slug":{"ar":"ay-alaakl","en":"aut"}},{"name":"\u0625\u0646\u0639\u0627\u0645 \u0627\u0644\u062d\u0635\u064a\u0646","about":"\u0645\u0646 \u0623\u0646 \u064a\u0642\u0627\u0644 \u0623\u0646\u0647 \u0644\u0627 \u0628\u062f \u0644\u0647 \u0645\u0646 \u0623\u0646 \u064a\u0643\u0648\u0646 \u0645\u0633\u0643\u0646\u0647 \u0623\u062d\u062f \u0647\u0630\u064a\u0646 \u0627\u0644\u0628\u064a\u062a\u064a\u0646. \u062b\u0645 \u0642\u0627\u0644: \u0623\u0645\u0627 \u0647\u0630\u0627 \u0627\u0644\u0628\u064a\u062a \u0639\u0644\u0649 \u0645\u0627 \u0628\u0647 \u0645\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00bbdd?text=alias","slug":{"ar":"anaaam-alhsyn","en":"aut-in"}}],"links":{"first":"http:\/\/localhost\/api\/authors?page=1","last":"http:\/\/localhost\/api\/authors?page=2","prev":null,"next":"http:\/\/localhost\/api\/authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/authors","per_page":15,"to":15,"total":24}}'
+        content: '{"data":[{"name":"\u0627\u0644\u0633\u064a\u062f\u0629 \u0644\u064a\u0627\u0646 \u0627\u0644\u0639\u062a\u064a\u0628\u064a","about":"\u0628\u0639\u062f \u0648\u0635\u0648\u0644\u0647\u0627 \u0625\u0644\u064a\u0647\u0645\u060c \u0648\u0635\u0641 \u0644\u0647 \u062c\u0645\u064a\u0639 \u0627\u0644\u0642\u0648\u0649 \u0627\u0644\u0645\u062f\u0631\u0643\u0629\u060c \u0641\u0631\u0623\u0649 \u0623\u0646 \u0643\u0644 \u0648\u0627\u062d\u062f \u0645\u0646 \u0627\u0644\u0627\u0633\u0637\u0642\u0633\u0627\u062a\u060c \u0641\u0643\u0623\u0646\u0647 \u0644\u0627 \u0645\u0636\u0627\u062f\u0629 \u0644\u0635\u0648\u0631\u062a\u0647\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009977?text=commodi","slug":{"ar":"alsyd-lyan-alaatyby","en":"ut-eum"}},{"name":"\u062c\u0627\u0633\u0631 \u0627\u0644\u0645\u0634\u064a\u0642\u062d","about":"\u0627\u0635\u0644 \u0630\u0644\u0643 \u0627\u0644\u0634\u064a\u0621 \u0645\u0627 \u0647\u0648\u061f \u0648\u0643\u064a\u0641 \u0647\u0648\u061f \u0648\u0645\u0627 \u0627\u0644\u0630\u064a \u0623\u0648\u062c\u0628 \u0628\u0643\u0627\u0621\u0647 \u0648\u062a\u0636\u0631\u0639\u0647\u061b \u0641\u0632\u0627\u062f \u0641\u064a \u0627\u0644\u062f\u0646\u0648 \u0645\u0646\u0647 \u062d\u062a\u0649 \u0623\u062d\u0633 \u0628\u0647 \u0623\u0633\u0627\u0644\u061b \u0641\u0627\u0634\u062a\u062f.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0055ff?text=est","slug":{"ar":"gasr-almshykh","en":"ut"}},{"name":"\u0622\u0645\u0627\u0644 \u0645\u062f\u0646\u064a","about":"\u062a\u0644\u0643 \u0627\u0644\u0623\u0641\u0639\u0627\u0644 \u0630\u0627\u062a\u064a\u0629 \u0644\u0647\u0627\u060c \u0623\u0648 \u0633\u0627\u0631\u064a\u0629 \u0623\u0644\u064a\u0647\u0627 \u0645\u0646 \u063a\u064a\u0631\u0647\u0627. \u0648\u0643\u0627\u0646 \u0641\u064a \u063a\u062f\u0648\u0647\u0645\u0627 \u0648\u0631\u0648\u0627\u062d\u0647\u0645\u0627 \u0642\u062f \u0623\u0644\u0641\u0647\u0645\u0627 \u0631\u0628\u0631\u0628 \u064a\u0633\u0631\u062d \u0648\u064a\u0628\u064a\u062a.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006677?text=perferendis","slug":{"ar":"amal-mdny","en":"maiores"}},{"name":"\u0636\u064a\u0627\u0621 \u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0623\u062d\u0645\u0631\u064a","about":"\u062d\u0627\u0631\u0629 \u0648\u0644\u0627 \u0627\u0644\u0623\u0631\u0636 \u0623\u064a\u0636\u0627\u064b \u062a\u0633\u062e\u0646 \u0627\u0644\u0647\u0648\u0627\u0621 \u0623\u0648\u0644\u0627\u064b \u062b\u0645 \u062a\u0633\u062e\u0646 \u0628\u0639\u062f \u0630\u0644\u0643 \u0641\u0643\u0627\u0646 \u064a\u0641\u0643\u0631 \u0641\u064a \u0634\u064a\u0621 \u0645\u0646\u0642\u0633\u0645\u060c \u0641\u0644\u0627 \u0645\u062d\u0627\u0644\u0629 \u0623\u0646\u0647\u0627 \u0625\u0630\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/004455?text=sint","slug":{"ar":"dyaaa-aldyn-alahmry","en":"qui-sit"}},{"name":"\u0628\u0643\u0631 \u0627\u0644\u0635\u0627\u0645\u0644","about":"\u0639\u0644\u064a\u0647\u0627 \u0645\u0646 \u0627\u0644\u0634\u0631\u0643 \u0648\u0627\u0644\u062c\u0644\u0648\u062f \u0623\u0645\u062b\u0627\u0644 \u0627\u0644\u0634\u0643\u0627\u0626\u0645 \u0648\u0627\u0644\u0633\u0631\u0648\u062c \u0641\u062a\u0627\u062a\u064a \u0644\u0647 \u0630\u0644\u0643 \u0648\u062d\u0645\u0644\u0647 \u0625\u0644\u0649 \u0645\u0648\u0636\u0639\u0647 \u0627\u0644\u0630\u064a \u0643\u0627\u0646 \u0642\u062f \u0627\u0635\u0637\u062d\u0628\u0647 \u0645\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009999?text=nihil","slug":{"ar":"bkr-alsaml","en":"accusamus"}},{"name":"\u0628\u0633\u0645\u0629 \u0645\u0648\u0641\u0642 \u0627\u0644\u0645\u0637\u0631\u0641\u064a","about":"\u0639\u0646\u0647 \u0630\u0644\u0643 \u0627\u0644\u062a\u062d\u0627\u0645\u0644 \u0648\u0627\u0644\u0645\u064a\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629 \u0627\u0644\u0639\u0644\u0648 \u0648\u0644\u0645 \u064a\u0637\u0631\u0623 \u0639\u0644\u064a\u0647 \u0627\u0644\u0641\u0633\u0627\u062f\u060c \u0644\u062b\u0628\u062a \u0647\u0646\u0627\u0643 \u0648\u0644\u0645 \u064a\u0637\u0644\u0628 \u0627\u0644\u0635\u0639\u0648\u062f \u0625\u0644\u0649 \u0641\u0648\u0642. \u0641\u0632\u0627\u0644.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00aa11?text=rerum","slug":{"ar":"bsm-mofk-almtrfy","en":"officia"}},{"name":"\u0631\u064a\u0645 \u0645\u062f\u0646\u064a","about":"\u0648\u0635\u0627\u0631 \u0639\u0644\u064a\u0647 \u063a\u0644\u0627\u0641 \u0635\u0641\u064a\u0642 \u064a\u062d\u0641\u0638\u0647 \u0648\u0633\u0645\u064a \u0627\u0644\u0639\u0636\u0648 \u0643\u0644\u0647 \u0642\u0644\u0628\u0627\u064b \u0648\u0627\u062d\u062a\u0627\u062c \u0644\u0645\u0627 \u064a\u062a\u0628\u0639 \u0627\u0644\u062d\u0631\u0627\u0631\u0629 \u0645\u0646 \u0627\u0644\u062a\u062d\u0644\u064a\u0644 \u0648\u0627\u0641\u0646\u0627\u0621 \u0627\u0644\u0631\u0637\u0648\u0628\u0627\u062a.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0044ff?text=consequatur","slug":{"ar":"rym-mdny","en":"autem-et"}},{"name":"\u0646\u064a\u0641\u064a\u0646 \u0628\u0627\u0634\u0627","about":"\u0648\u0630\u0644\u0643 \u0645\u062b\u0644 \u0644\u062d\u0648\u0645 \u0627\u0644\u0641\u0648\u0627\u0643\u0647 \u0627\u0644\u062a\u064a \u0642\u062f \u062e\u0644\u062a \u0645\u0646 \u0642\u0628\u0644 \u0648\u0644\u0646 \u062a\u062c\u062f \u0644\u0633\u0646\u0629 \u0627\u0644\u0644\u0647 \u062a\u0628\u062f\u064a\u0644\u0627\u064b \u0635\u062f\u0642 \u0627\u0644\u0644\u0647 \u0627\u0644\u0639\u0638\u064a\u0645 \u0644\u0627\u0633\u062a\u0639\u0645\u0627\u0644\u0647\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=et","slug":{"ar":"nyfyn-basha","en":"modi-qui"}},{"name":"\u0633\u0648\u0633\u0646 \u0639\u0631\u0645\u0627\u0646 \u0623\u0646\u0648\u0631 \u0627\u0644\u0633\u0645\u0627\u0639\u064a\u0644","about":"\u0630\u0644\u0643 \u0627\u0644\u0645\u0642\u0627\u0645\u060c \u0648\u0644\u0627\u062d \u0644\u0647 \u0641\u064a \u0630\u0644\u0643 \u0628\u0627\u0644\u0646\u0627\u0631 \u0648\u0628\u062d\u0631\u0648\u0641 \u0627\u0644\u062d\u062c\u0627\u0631\u0629\u060c \u062d\u062a\u0649 \u0635\u0627\u0631\u062a \u0634\u0628\u0647 \u0627\u0644\u0631\u0645\u0627\u062d\u060c \u0648\u0627\u062a\u062e\u0630 \u062a\u0631\u0633\u0647 \u0645\u0646 \u062c\u0644\u0648\u062f \u0645\u0636\u0627\u0639\u0629.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/000066?text=tempora","slug":{"ar":"sosn-aarman-anor-alsmaaayl","en":"rerum"}},{"name":"\u0639\u0648\u0636 \u0627\u0644\u0634\u064a\u0628\u0627\u0646\u064a","about":"\u0634\u0627\u0643\u0644\u0647\u0627\u060c \u0647\u064a \u0643\u0644\u0647\u0627 \u0645\u0646 \u0635\u0641\u0627\u062a \u0627\u0644\u0623\u062c\u0633\u0627\u0645 \u0627\u0644\u062a\u064a \u0641\u064a \u0639\u0627\u0644\u0645 \u0627\u0644\u0643\u0648\u0646 \u0648\u0627\u0644\u0641\u0633\u0627\u062f\u060c \u0628\u0639\u0636\u0647\u0627 \u062a\u0644\u062a\u0626\u0645 \u062d\u0642\u064a\u0642\u062a\u0647 \u0645\u0646 \u0627\u0642\u0644 \u0627\u0644\u0623\u0634\u064a\u0627\u0621\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009944?text=sed","slug":{"ar":"aaod-alshybany","en":"est"}},{"name":"\u0634\u0631\u064a\u0647\u0627\u0646 \u0628\u0627\u0634\u0627","about":"\u0648\u0644\u0627 \u0642\u0648\u0627\u0645 \u0644\u0647\u0627 \u0625\u0644\u0627 \u0628\u0647\u0630\u0627 \u0627\u0644\u0637\u0631\u064a\u0642\u060c \u0648\u0623\u0646\u0647\u0627 \u0625\u0646 \u0631\u0641\u0639\u062a \u0639\u0646\u0647 \u0625\u0644\u0649 \u064a\u0641\u0627\u0639 \u0627\u0644\u0627\u0633\u062a\u0628\u0635\u0627\u0631 \u0627\u062e\u062a\u0644 \u0645\u0627 \u0647\u064a \u0639\u0644\u064a\u0647 \u062d\u062a\u0649 \u064a\u0648\u0627\u0641\u064a\u0647\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ccee?text=ea","slug":{"ar":"shryhan-basha","en":"omnis"}},{"name":"\u0627\u0644\u0622\u0646\u0633\u0629 \u0645\u064a\u0633\u0631\u0647 \u0627\u0644\u0639\u0633\u0643\u0631","about":"\u062b\u0627\u0644\u062b\u0627\u064b: \u0648\u0627\u0645\u0627 \u062d\u064a\u0648\u0627\u0646 \u0645\u0646 \u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0639\u0646\u062f \u0645\u063a\u064a\u0628\u0647 \u0639\u0646 \u062a\u0644\u0643 \u0627\u0644\u062c\u0647\u0629 \u0641\u064a \u0628\u0639\u0636 \u0627\u0644\u0627\u062d\u064a\u0627\u0646 \u0623\u0646 \u0627\u0646\u0642\u062f\u062d\u062a \u0646\u0627\u0631 \u0641\u064a \u0623\u062c\u0645\u0629 \u0642\u0644\u062e.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0077ff?text=accusantium","slug":{"ar":"alans-mysrh-alaaskr","en":"quidem"}},{"name":"\u0627\u0644\u062f\u0643\u062a\u0648\u0631\u0629 \u0646\u0648\u0631 \u0627\u0644\u0633\u0647\u0644\u064a","about":"\u0628\u0647 \u0645\u0646 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u062a\u064a \u062a\u062a\u0641\u0642 \u0628\u0647\u0627 \u0648\u0627\u062d\u062f\u0629\u060c \u0648\u0645\u0646 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u062a\u064a \u064a\u0642\u0627\u0644 \u0625\u0646\u0647\u0627 \u063a\u064a\u0631 \u0645\u062a\u0646\u0627\u0647\u064a\u0629\u060c \u0648\u0623\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0623\u062c\u0633\u0627\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0099bb?text=rerum","slug":{"ar":"aldktor-nor-alshly","en":"tempore"}},{"name":"\u0634\u0631\u064a\u0647\u0627\u0646 \u0627\u0644\u0633\u0647\u0644\u064a","about":"\u0625\u0644\u064a\u0647 \u062e\u064a\u0627\u0644\u060c \u0633\u0628\u062d\u0627\u0646\u0647\u060c \u0648\u0625\u0630\u0627 \u0643\u0627\u0646 \u0641\u0627\u0639\u0644\u0627\u064b \u0644\u0644\u0639\u0627\u0644\u0645 \u0641\u0647\u0648 \u0644\u0627 \u0645\u062d\u0627\u0644\u0629 \u0645\u062a\u0646\u0627\u0647\u064a\u0629. \u0641\u0627\u0646 \u0648\u062c\u062f\u0646\u0627\u0647\u0627 \u0642\u0648\u0629 \u062a\u0641\u0639\u0644 \u0641\u0639\u0644\u0627\u064b \u0644\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/003322?text=quo","slug":{"ar":"shryhan-alshly","en":"eos-illum"}},{"name":"\u063a\u064a\u062f \u0623\u064a\u0647\u0645 \u0627\u0644\u0639\u0642\u0644","about":"\u062a\u0642\u062f\u0645\u0647\u060c \u0648\u0627\u0644\u0632\u0645\u0627\u0646 \u0645\u0646 \u062c\u0645\u0644\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u060c \u0648\u0643\u0627\u0646 \u062d\u0627\u062f\u062b\u0627\u064b \u0648\u0627\u062d\u062a\u0627\u062c \u0625\u0644\u0649 \u0645\u062d\u062f\u062b\u060c \u0648\u0644\u0648 \u0643\u0627\u0646 \u0630\u0644\u0643 \u0627\u0644\u0645\u062d\u062f\u062b \u0627\u0644\u062b\u0627\u0646\u064a \u0623\u064a\u0636\u0627\u064b \u062c\u0633\u0645\u0627\u064b\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0055ff?text=et","slug":{"ar":"ghyd-ayhm-alaakl","en":"quod"}}],"links":{"first":"http:\/\/localhost\/api\/authors?page=1","last":"http:\/\/localhost\/api\/authors?page=2","prev":null,"next":"http:\/\/localhost\/api\/authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/authors","per_page":15,"to":15,"total":20}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -300,7 +310,7 @@ endpoints:
         name: author_slug
         description: 'The slug of the author.'
         required: true
-        example: maamr-grys-alsoylm
+        example: alans-tala-alaamro
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -309,14 +319,14 @@ endpoints:
         name: slug
         description: 'The slug of the Author'
         required: true
-        example: sed
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      author_slug: maamr-grys-alsoylm
-      slug: sed
+      author_slug: alans-tala-alaamro
+      slug: sit
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -327,8 +337,476 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Author] maamr-grys-alsoylm"
+              "message": "No query results for model [App\\Models\\Author] alans-tala-alaamro"
           }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/blogs
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Blogs
+      subgroupDescription: 'APIs for Blogs'
+      title: 'Get all Blogs.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      'filter[title]':
+        name: 'filter[title]'
+        description: 'filter Blogs by name.'
+        required: false
+        example: fuga
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[writer]':
+        name: 'filter[writer]'
+        description: 'filter Blogs by writer name.'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[category_id]':
+        name: 'filter[category_id]'
+        description: 'filter Blogs by category.'
+        required: false
+        example: voluptate
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'include[]':
+        name: 'include[]'
+        description: 'relations to load on the blog'
+        required: false
+        example: "['blogCategories']"
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[title]': fuga
+      'filter[writer]': consequatur
+      'filter[category_id]': voluptate
+      'include[]': "['blogCategories']"
+      page: 1
+      perPage: 3
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":10,"slug":"ea-aut-odio-quam-esse","title":"Ea aut odio quam esse.","content":"Tempore commodi hic blanditiis non qui illo. Voluptatem excepturi eaque dolore asperiores aliquid. Natus beatae quia quod omnis necessitatibus laborum. Et rerum qui quam. Molestias atque consectetur quae cum. Tempora ut quod quisquam velit reiciendis esse neque. Dignissimos molestiae amet reprehenderit minus iure blanditiis dicta. Officia minima est consequatur quasi explicabo rerum nulla. Eos debitis eos enim quos id dolore vel et. Laudantium rerum aut quidem cumque reprehenderit sunt. Temporibus enim cumque et. Occaecati id ducimus tenetur harum assumenda. Omnis aut et quod et dolorem inventore. Consectetur sit occaecati dolor qui architecto. A hic ratione tempore nesciunt nisi perferendis ullam ipsa. Cupiditate illum et recusandae repudiandae deleniti accusantium dolores. Consequatur facere sequi vel dignissimos. Consequuntur qui labore odio voluptatem voluptatibus. Sed est laborum quo iure.","writer":"Fugit.","date":"1994-11-01 00:00:00","lang":"ar","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/0033cc?text=ipsa"},{"id":9,"slug":"excepturi-qui-et-qui-aperiam","title":"Excepturi qui et qui aperiam.","content":"Laudantium inventore unde qui animi ut. Ut ut iste dolore qui quo ut. Qui labore unde eos qui sed officia blanditiis. Corporis odio corrupti blanditiis ut laudantium eveniet. Aliquam pariatur dolores repellendus possimus aut fugit. Harum vel porro expedita ut minus totam accusantium nihil. Doloribus sit quam ullam iure aliquid ut modi quas. Velit eaque consectetur suscipit. Est molestiae quia voluptates corrupti. Delectus et occaecati voluptatum totam necessitatibus. Qui magni ipsa omnis. Fugiat quisquam vel quia cupiditate doloremque consequatur quos. Non et quo qui et aliquam voluptatem quibusdam. Ad dolor iste possimus. Voluptatum et quisquam ipsum possimus. Perferendis vel esse labore cum eaque. Ut voluptates rerum expedita nihil doloribus similique modi voluptatem. Minima dolorem fugiat illo quisquam. Placeat et delectus dolorum nesciunt.","writer":"Eveniet.","date":"1990-10-27 00:00:00","lang":"ar","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/009988?text=soluta"},{"id":8,"slug":"et-qui-natus-iste-veniam","title":"Et qui natus iste veniam.","content":"Et rerum voluptas sequi alias. Est sapiente sunt tempore omnis sit. Fugit eum itaque deserunt sint dolores. Distinctio corrupti quidem ut quia. Et ex veritatis fugit et quisquam maxime. Enim voluptatum consectetur aut. Quis occaecati corporis magnam delectus enim. A veritatis assumenda mollitia et distinctio et. Rerum officiis veritatis dolore laudantium. Earum velit dicta in voluptatem voluptas sed. Ex est nesciunt rerum velit facere. Veritatis rerum fuga fuga. Laudantium ipsum omnis deleniti necessitatibus eius est. Optio et voluptas porro cum. Distinctio mollitia libero modi aperiam aspernatur eum consequatur. Nesciunt maiores dolore tenetur rerum voluptas rerum qui animi. Provident ea repudiandae sit ut adipisci. Ipsam eius aspernatur quod. Enim exercitationem quaerat autem et quibusdam voluptate. Culpa quasi rem illo dolorem placeat. Qui harum dolor reprehenderit laudantium.","writer":"Eos.","date":"1978-07-16 00:00:00","lang":"en","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/00ddbb?text=quis"}],"links":{"first":"http:\/\/localhost\/api\/blogs?page=1","last":"http:\/\/localhost\/api\/blogs?page=4","prev":null,"next":"http:\/\/localhost\/api\/blogs?page=2"},"meta":{"current_page":1,"from":1,"last_page":4,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/blogs?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/blogs?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/blogs?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/blogs?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/blogs?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/blogs","per_page":3,"to":3,"total":10}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/blogs/{blog_slug}'
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Blogs
+      subgroupDescription: 'APIs for Blogs'
+      title: 'Get Blog by slug.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      blog_slug:
+        name: blog_slug
+        description: 'The slug of the blog.'
+        required: true
+        example: et-tempora-dolores-optio-et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      slug:
+        name: slug
+        description: 'The slug of the Blog'
+        required: true
+        example: magni
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      blog_slug: et-tempora-dolores-optio-et
+      slug: magni
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"slug":"et-tempora-dolores-optio-et","title":"Et tempora dolores optio et.","content":"Quia est dolorem est quaerat ea. Ut veniam culpa ratione excepturi modi laudantium. Harum iusto ea beatae quaerat natus ratione quos. Necessitatibus autem qui et. Modi voluptatem facere blanditiis quasi. Quis sapiente inventore quisquam. Quia debitis eos aut nisi voluptatem rem. Numquam rerum numquam tenetur veritatis. Aut quos accusantium et voluptatem. At minima nulla facilis nihil in. Ipsam quo nobis et quaerat et. Quibusdam veritatis mollitia iste fugit aut quo quia. Sunt impedit aut sed quis. Blanditiis quaerat aut dolor fuga dolor. Corporis rem doloribus perferendis voluptates. Possimus soluta assumenda est aspernatur officiis. Ullam consequatur eligendi nisi qui blanditiis mollitia qui. Incidunt rerum quo possimus inventore et. Vel dolorem quia et eum quis vel alias. Et quas dolorum omnis sint quos non. Dolores libero consectetur asperiores aliquid debitis est.","writer":"Eligendi.","date":"1978-10-09 00:00:00","lang":"en","cover_image":"https:\/\/via.placeholder.com\/640x480.png\/007788?text=rerum","blog_categories":[{"id":1,"title":"Aperiam.","slug":{"ar":"atha-akhtht","en":"aperiam"}},{"id":2,"title":"Impedit.","slug":{"ar":"alashtghal","en":"impedit"}},{"id":3,"title":"Ipsa sunt.","slug":{"ar":"aal-gmyaa","en":"ipsa-sunt"}},{"id":4,"title":"Dolorum.","slug":{"ar":"omaabodhm","en":"dolorum"}},{"id":5,"title":"Doloribus.","slug":{"ar":"ryas-mn","en":"doloribus"}},{"id":6,"title":"Occaecati.","slug":{"ar":"noaa-yshbh","en":"occaecati"}},{"id":7,"title":"Saepe.","slug":{"ar":"alhoadth","en":"saepe"}},{"id":8,"title":"Laborum.","slug":{"ar":"flma-hkm","en":"laborum"}},{"id":9,"title":"Sed quo.","slug":{"ar":"ohtha-aal","en":"sed-quo"}},{"id":10,"title":"Aut.","slug":{"ar":"mn-aghsan","en":"aut"}},{"id":11,"title":"Nulla.","slug":{"ar":"bsahlha","en":"nulla"}},{"id":12,"title":"Ducimus.","slug":{"ar":"ht-shghlh","en":"ducimus"}},{"id":13,"title":"Deserunt.","slug":{"ar":"oama-gsm","en":"deserunt"}},{"id":14,"title":"Omnis.","slug":{"ar":"mn-hmzat","en":"omnis"}},{"id":15,"title":"Aliquam.","slug":{"ar":"bmthl-htha","en":"aliquam"}},{"id":16,"title":"At.","slug":{"ar":"althn-bma","en":"at"}},{"id":17,"title":"Adipisci.","slug":{"ar":"almsnoaa","en":"adipisci"}},{"id":18,"title":"Nisi et.","slug":{"ar":"yaam-gmyaa","en":"nisi-et"}},{"id":19,"title":"Soluta.","slug":{"ar":"mn-asnaf","en":"soluta"}},{"id":20,"title":"In.","slug":{"ar":"kd-ansrf","en":"in"}}]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/blog-categories
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: 'Blog Categories'
+      subgroupDescription: 'API for Blog Categories.'
+      title: 'Get all Blog Categories.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      lang: ar
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":20,"title":"\u0642\u062f \u0627\u0646\u0635\u0631\u0641.","slug":{"ar":"kd-ansrf","en":"in"}},{"id":19,"title":"\u0645\u0646 \u0623\u0635\u0646\u0627\u0641.","slug":{"ar":"mn-asnaf","en":"soluta"}},{"id":18,"title":"\u064a\u0639\u0645 \u062c\u0645\u064a\u0639.","slug":{"ar":"yaam-gmyaa","en":"nisi-et"}},{"id":17,"title":"\u0627\u0644\u0645\u0635\u0646\u0648\u0639\u060c.","slug":{"ar":"almsnoaa","en":"adipisci"}},{"id":16,"title":"\u0627\u0644\u0638\u0646 \u0628\u0645\u0627.","slug":{"ar":"althn-bma","en":"at"}},{"id":15,"title":"\u0628\u0645\u062b\u0644 \u0647\u0630\u0627.","slug":{"ar":"bmthl-htha","en":"aliquam"}},{"id":14,"title":"\u0645\u0646 \u0647\u0645\u0632\u0627\u062a.","slug":{"ar":"mn-hmzat","en":"omnis"}},{"id":13,"title":"\u0648\u0627\u0645\u0627 \u062c\u0633\u0645.","slug":{"ar":"oama-gsm","en":"deserunt"}},{"id":12,"title":"\u062d\u062a\u0649 \u0634\u063a\u0644\u0647.","slug":{"ar":"ht-shghlh","en":"ducimus"}},{"id":11,"title":"\u0628\u0633\u0627\u062d\u0644\u0647\u0627\u061b.","slug":{"ar":"bsahlha","en":"nulla"}},{"id":10,"title":"\u0645\u0646 \u0623\u063a\u0635\u0627\u0646.","slug":{"ar":"mn-aghsan","en":"aut"}},{"id":9,"title":"\u0648\u0647\u0630\u0627 \u0639\u0644\u0649.","slug":{"ar":"ohtha-aal","en":"sed-quo"}},{"id":8,"title":"\u0641\u0644\u0645\u0627 \u062d\u0643\u0645.","slug":{"ar":"flma-hkm","en":"laborum"}},{"id":7,"title":"\u0627\u0644\u062d\u0648\u0627\u062f\u062b\u060c.","slug":{"ar":"alhoadth","en":"saepe"}},{"id":6,"title":"\u0646\u0648\u0639 \u064a\u0634\u0628\u0647.","slug":{"ar":"noaa-yshbh","en":"occaecati"}},{"id":5,"title":"\u0631\u0626\u0627\u0633\u0629 \u0645\u0646.","slug":{"ar":"ryas-mn","en":"doloribus"}},{"id":4,"title":"\u0648\u0645\u0639\u0628\u0648\u062f\u0647\u0645.","slug":{"ar":"omaabodhm","en":"dolorum"}},{"id":3,"title":"\u0639\u0644\u0649 \u062c\u0645\u064a\u0639.","slug":{"ar":"aal-gmyaa","en":"ipsa-sunt"}},{"id":2,"title":"\u0627\u0644\u0627\u0634\u062a\u063a\u0627\u0644.","slug":{"ar":"alashtghal","en":"impedit"}},{"id":1,"title":"\u0625\u0630\u0627 \u0623\u062e\u0630\u062a.","slug":{"ar":"atha-akhtht","en":"aperiam"}}]}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/represented-authors
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Authors
+      subgroupDescription: 'APIs for Authors'
+      title: 'Get all Represented Authors.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      lang: ar
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      page: 1
+      perPage: 3
+    queryParameters:
+      'filter[name]':
+        name: 'filter[name]'
+        description: 'filter Authors by name.'
+        required: false
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[name]': qui
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"name":"\u0627\u0644\u0633\u064a\u062f\u0629 \u0644\u064a\u0627\u0646 \u0627\u0644\u0639\u062a\u064a\u0628\u064a","about":"\u0628\u0639\u062f \u0648\u0635\u0648\u0644\u0647\u0627 \u0625\u0644\u064a\u0647\u0645\u060c \u0648\u0635\u0641 \u0644\u0647 \u062c\u0645\u064a\u0639 \u0627\u0644\u0642\u0648\u0649 \u0627\u0644\u0645\u062f\u0631\u0643\u0629\u060c \u0641\u0631\u0623\u0649 \u0623\u0646 \u0643\u0644 \u0648\u0627\u062d\u062f \u0645\u0646 \u0627\u0644\u0627\u0633\u0637\u0642\u0633\u0627\u062a\u060c \u0641\u0643\u0623\u0646\u0647 \u0644\u0627 \u0645\u0636\u0627\u062f\u0629 \u0644\u0635\u0648\u0631\u062a\u0647\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009977?text=commodi","slug":{"ar":"alsyd-lyan-alaatyby","en":"ut-eum"}},{"name":"\u062c\u0627\u0633\u0631 \u0627\u0644\u0645\u0634\u064a\u0642\u062d","about":"\u0627\u0635\u0644 \u0630\u0644\u0643 \u0627\u0644\u0634\u064a\u0621 \u0645\u0627 \u0647\u0648\u061f \u0648\u0643\u064a\u0641 \u0647\u0648\u061f \u0648\u0645\u0627 \u0627\u0644\u0630\u064a \u0623\u0648\u062c\u0628 \u0628\u0643\u0627\u0621\u0647 \u0648\u062a\u0636\u0631\u0639\u0647\u061b \u0641\u0632\u0627\u062f \u0641\u064a \u0627\u0644\u062f\u0646\u0648 \u0645\u0646\u0647 \u062d\u062a\u0649 \u0623\u062d\u0633 \u0628\u0647 \u0623\u0633\u0627\u0644\u061b \u0641\u0627\u0634\u062a\u062f.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0055ff?text=est","slug":{"ar":"gasr-almshykh","en":"ut"}},{"name":"\u0622\u0645\u0627\u0644 \u0645\u062f\u0646\u064a","about":"\u062a\u0644\u0643 \u0627\u0644\u0623\u0641\u0639\u0627\u0644 \u0630\u0627\u062a\u064a\u0629 \u0644\u0647\u0627\u060c \u0623\u0648 \u0633\u0627\u0631\u064a\u0629 \u0623\u0644\u064a\u0647\u0627 \u0645\u0646 \u063a\u064a\u0631\u0647\u0627. \u0648\u0643\u0627\u0646 \u0641\u064a \u063a\u062f\u0648\u0647\u0645\u0627 \u0648\u0631\u0648\u0627\u062d\u0647\u0645\u0627 \u0642\u062f \u0623\u0644\u0641\u0647\u0645\u0627 \u0631\u0628\u0631\u0628 \u064a\u0633\u0631\u062d \u0648\u064a\u0628\u064a\u062a.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/006677?text=perferendis","slug":{"ar":"amal-mdny","en":"maiores"}},{"name":"\u0636\u064a\u0627\u0621 \u0627\u0644\u062f\u064a\u0646 \u0627\u0644\u0623\u062d\u0645\u0631\u064a","about":"\u062d\u0627\u0631\u0629 \u0648\u0644\u0627 \u0627\u0644\u0623\u0631\u0636 \u0623\u064a\u0636\u0627\u064b \u062a\u0633\u062e\u0646 \u0627\u0644\u0647\u0648\u0627\u0621 \u0623\u0648\u0644\u0627\u064b \u062b\u0645 \u062a\u0633\u062e\u0646 \u0628\u0639\u062f \u0630\u0644\u0643 \u0641\u0643\u0627\u0646 \u064a\u0641\u0643\u0631 \u0641\u064a \u0634\u064a\u0621 \u0645\u0646\u0642\u0633\u0645\u060c \u0641\u0644\u0627 \u0645\u062d\u0627\u0644\u0629 \u0623\u0646\u0647\u0627 \u0625\u0630\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/004455?text=sint","slug":{"ar":"dyaaa-aldyn-alahmry","en":"qui-sit"}},{"name":"\u0628\u0643\u0631 \u0627\u0644\u0635\u0627\u0645\u0644","about":"\u0639\u0644\u064a\u0647\u0627 \u0645\u0646 \u0627\u0644\u0634\u0631\u0643 \u0648\u0627\u0644\u062c\u0644\u0648\u062f \u0623\u0645\u062b\u0627\u0644 \u0627\u0644\u0634\u0643\u0627\u0626\u0645 \u0648\u0627\u0644\u0633\u0631\u0648\u062c \u0641\u062a\u0627\u062a\u064a \u0644\u0647 \u0630\u0644\u0643 \u0648\u062d\u0645\u0644\u0647 \u0625\u0644\u0649 \u0645\u0648\u0636\u0639\u0647 \u0627\u0644\u0630\u064a \u0643\u0627\u0646 \u0642\u062f \u0627\u0635\u0637\u062d\u0628\u0647 \u0645\u0646.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009999?text=nihil","slug":{"ar":"bkr-alsaml","en":"accusamus"}},{"name":"\u0628\u0633\u0645\u0629 \u0645\u0648\u0641\u0642 \u0627\u0644\u0645\u0637\u0631\u0641\u064a","about":"\u0639\u0646\u0647 \u0630\u0644\u0643 \u0627\u0644\u062a\u062d\u0627\u0645\u0644 \u0648\u0627\u0644\u0645\u064a\u0644 \u0625\u0644\u0649 \u062c\u0647\u0629 \u0627\u0644\u0639\u0644\u0648 \u0648\u0644\u0645 \u064a\u0637\u0631\u0623 \u0639\u0644\u064a\u0647 \u0627\u0644\u0641\u0633\u0627\u062f\u060c \u0644\u062b\u0628\u062a \u0647\u0646\u0627\u0643 \u0648\u0644\u0645 \u064a\u0637\u0644\u0628 \u0627\u0644\u0635\u0639\u0648\u062f \u0625\u0644\u0649 \u0641\u0648\u0642. \u0641\u0632\u0627\u0644.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00aa11?text=rerum","slug":{"ar":"bsm-mofk-almtrfy","en":"officia"}},{"name":"\u0631\u064a\u0645 \u0645\u062f\u0646\u064a","about":"\u0648\u0635\u0627\u0631 \u0639\u0644\u064a\u0647 \u063a\u0644\u0627\u0641 \u0635\u0641\u064a\u0642 \u064a\u062d\u0641\u0638\u0647 \u0648\u0633\u0645\u064a \u0627\u0644\u0639\u0636\u0648 \u0643\u0644\u0647 \u0642\u0644\u0628\u0627\u064b \u0648\u0627\u062d\u062a\u0627\u062c \u0644\u0645\u0627 \u064a\u062a\u0628\u0639 \u0627\u0644\u062d\u0631\u0627\u0631\u0629 \u0645\u0646 \u0627\u0644\u062a\u062d\u0644\u064a\u0644 \u0648\u0627\u0641\u0646\u0627\u0621 \u0627\u0644\u0631\u0637\u0648\u0628\u0627\u062a.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0044ff?text=consequatur","slug":{"ar":"rym-mdny","en":"autem-et"}},{"name":"\u0646\u064a\u0641\u064a\u0646 \u0628\u0627\u0634\u0627","about":"\u0648\u0630\u0644\u0643 \u0645\u062b\u0644 \u0644\u062d\u0648\u0645 \u0627\u0644\u0641\u0648\u0627\u0643\u0647 \u0627\u0644\u062a\u064a \u0642\u062f \u062e\u0644\u062a \u0645\u0646 \u0642\u0628\u0644 \u0648\u0644\u0646 \u062a\u062c\u062f \u0644\u0633\u0646\u0629 \u0627\u0644\u0644\u0647 \u062a\u0628\u062f\u064a\u0644\u0627\u064b \u0635\u062f\u0642 \u0627\u0644\u0644\u0647 \u0627\u0644\u0639\u0638\u064a\u0645 \u0644\u0627\u0633\u062a\u0639\u0645\u0627\u0644\u0647\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=et","slug":{"ar":"nyfyn-basha","en":"modi-qui"}},{"name":"\u0633\u0648\u0633\u0646 \u0639\u0631\u0645\u0627\u0646 \u0623\u0646\u0648\u0631 \u0627\u0644\u0633\u0645\u0627\u0639\u064a\u0644","about":"\u0630\u0644\u0643 \u0627\u0644\u0645\u0642\u0627\u0645\u060c \u0648\u0644\u0627\u062d \u0644\u0647 \u0641\u064a \u0630\u0644\u0643 \u0628\u0627\u0644\u0646\u0627\u0631 \u0648\u0628\u062d\u0631\u0648\u0641 \u0627\u0644\u062d\u062c\u0627\u0631\u0629\u060c \u062d\u062a\u0649 \u0635\u0627\u0631\u062a \u0634\u0628\u0647 \u0627\u0644\u0631\u0645\u0627\u062d\u060c \u0648\u0627\u062a\u062e\u0630 \u062a\u0631\u0633\u0647 \u0645\u0646 \u062c\u0644\u0648\u062f \u0645\u0636\u0627\u0639\u0629.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/000066?text=tempora","slug":{"ar":"sosn-aarman-anor-alsmaaayl","en":"rerum"}},{"name":"\u0639\u0648\u0636 \u0627\u0644\u0634\u064a\u0628\u0627\u0646\u064a","about":"\u0634\u0627\u0643\u0644\u0647\u0627\u060c \u0647\u064a \u0643\u0644\u0647\u0627 \u0645\u0646 \u0635\u0641\u0627\u062a \u0627\u0644\u0623\u062c\u0633\u0627\u0645 \u0627\u0644\u062a\u064a \u0641\u064a \u0639\u0627\u0644\u0645 \u0627\u0644\u0643\u0648\u0646 \u0648\u0627\u0644\u0641\u0633\u0627\u062f\u060c \u0628\u0639\u0636\u0647\u0627 \u062a\u0644\u062a\u0626\u0645 \u062d\u0642\u064a\u0642\u062a\u0647 \u0645\u0646 \u0627\u0642\u0644 \u0627\u0644\u0623\u0634\u064a\u0627\u0621\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/009944?text=sed","slug":{"ar":"aaod-alshybany","en":"est"}},{"name":"\u0634\u0631\u064a\u0647\u0627\u0646 \u0628\u0627\u0634\u0627","about":"\u0648\u0644\u0627 \u0642\u0648\u0627\u0645 \u0644\u0647\u0627 \u0625\u0644\u0627 \u0628\u0647\u0630\u0627 \u0627\u0644\u0637\u0631\u064a\u0642\u060c \u0648\u0623\u0646\u0647\u0627 \u0625\u0646 \u0631\u0641\u0639\u062a \u0639\u0646\u0647 \u0625\u0644\u0649 \u064a\u0641\u0627\u0639 \u0627\u0644\u0627\u0633\u062a\u0628\u0635\u0627\u0631 \u0627\u062e\u062a\u0644 \u0645\u0627 \u0647\u064a \u0639\u0644\u064a\u0647 \u062d\u062a\u0649 \u064a\u0648\u0627\u0641\u064a\u0647\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ccee?text=ea","slug":{"ar":"shryhan-basha","en":"omnis"}},{"name":"\u0627\u0644\u0622\u0646\u0633\u0629 \u0645\u064a\u0633\u0631\u0647 \u0627\u0644\u0639\u0633\u0643\u0631","about":"\u062b\u0627\u0644\u062b\u0627\u064b: \u0648\u0627\u0645\u0627 \u062d\u064a\u0648\u0627\u0646 \u0645\u0646 \u0627\u0644\u062d\u064a\u0648\u0627\u0646\u0627\u062a \u0639\u0646\u062f \u0645\u063a\u064a\u0628\u0647 \u0639\u0646 \u062a\u0644\u0643 \u0627\u0644\u062c\u0647\u0629 \u0641\u064a \u0628\u0639\u0636 \u0627\u0644\u0627\u062d\u064a\u0627\u0646 \u0623\u0646 \u0627\u0646\u0642\u062f\u062d\u062a \u0646\u0627\u0631 \u0641\u064a \u0623\u062c\u0645\u0629 \u0642\u0644\u062e.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0077ff?text=accusantium","slug":{"ar":"alans-mysrh-alaaskr","en":"quidem"}},{"name":"\u0627\u0644\u062f\u0643\u062a\u0648\u0631\u0629 \u0646\u0648\u0631 \u0627\u0644\u0633\u0647\u0644\u064a","about":"\u0628\u0647 \u0645\u0646 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u062a\u064a \u062a\u062a\u0641\u0642 \u0628\u0647\u0627 \u0648\u0627\u062d\u062f\u0629\u060c \u0648\u0645\u0646 \u0627\u0644\u062c\u0647\u0629 \u0627\u0644\u062a\u064a \u064a\u0642\u0627\u0644 \u0625\u0646\u0647\u0627 \u063a\u064a\u0631 \u0645\u062a\u0646\u0627\u0647\u064a\u0629\u060c \u0648\u0623\u0646 \u062c\u0645\u064a\u0639 \u0627\u0644\u0623\u062c\u0633\u0627\u0645 \u0627\u0644\u062a\u064a \u0644\u062f\u064a\u0647\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0099bb?text=rerum","slug":{"ar":"aldktor-nor-alshly","en":"tempore"}},{"name":"\u0634\u0631\u064a\u0647\u0627\u0646 \u0627\u0644\u0633\u0647\u0644\u064a","about":"\u0625\u0644\u064a\u0647 \u062e\u064a\u0627\u0644\u060c \u0633\u0628\u062d\u0627\u0646\u0647\u060c \u0648\u0625\u0630\u0627 \u0643\u0627\u0646 \u0641\u0627\u0639\u0644\u0627\u064b \u0644\u0644\u0639\u0627\u0644\u0645 \u0641\u0647\u0648 \u0644\u0627 \u0645\u062d\u0627\u0644\u0629 \u0645\u062a\u0646\u0627\u0647\u064a\u0629. \u0641\u0627\u0646 \u0648\u062c\u062f\u0646\u0627\u0647\u0627 \u0642\u0648\u0629 \u062a\u0641\u0639\u0644 \u0641\u0639\u0644\u0627\u064b \u0644\u0627.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/003322?text=quo","slug":{"ar":"shryhan-alshly","en":"eos-illum"}},{"name":"\u063a\u064a\u062f \u0623\u064a\u0647\u0645 \u0627\u0644\u0639\u0642\u0644","about":"\u062a\u0642\u062f\u0645\u0647\u060c \u0648\u0627\u0644\u0632\u0645\u0627\u0646 \u0645\u0646 \u062c\u0645\u0644\u0629 \u0627\u0644\u0639\u0627\u0644\u0645\u060c \u0648\u0643\u0627\u0646 \u062d\u0627\u062f\u062b\u0627\u064b \u0648\u0627\u062d\u062a\u0627\u062c \u0625\u0644\u0649 \u0645\u062d\u062f\u062b\u060c \u0648\u0644\u0648 \u0643\u0627\u0646 \u0630\u0644\u0643 \u0627\u0644\u0645\u062d\u062f\u062b \u0627\u0644\u062b\u0627\u0646\u064a \u0623\u064a\u0636\u0627\u064b \u062c\u0633\u0645\u0627\u064b\u060c.","avatar":"https:\/\/via.placeholder.com\/640x480.png\/0055ff?text=et","slug":{"ar":"ghyd-ayhm-alaakl","en":"quod"}}],"links":{"first":"http:\/\/localhost\/api\/represented-authors?page=1","last":"http:\/\/localhost\/api\/represented-authors?page=2","prev":null,"next":"http:\/\/localhost\/api\/represented-authors?page=2"},"meta":{"current_page":1,"from":1,"last_page":2,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/represented-authors?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/represented-authors?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/represented-authors?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/represented-authors","per_page":15,"to":15,"total":20}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/represented-authors/{author_slug}'
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Authors
+      subgroupDescription: 'APIs for Authors'
+      title: 'Get Represented Author by slug.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      author_slug:
+        name: author_slug
+        description: 'The slug of the author.'
+        required: true
+        example: nga-aazam-hashm-alfrydy
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      slug:
+        name: slug
+        description: 'The slug of the Author'
+        required: true
+        example: reiciendis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      author_slug: nga-aazam-hashm-alfrydy
+      slug: reiciendis
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 404
+        content: |-
+          {
+              "message": "No query results for model [App\\Models\\Author] nga-aazam-hashm-alfrydy"
+          }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/partners
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Partners
+      subgroupDescription: 'APIs for Partners'
+      title: 'Get all Partners.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      'filter[name]':
+        name: 'filter[name]'
+        description: 'filter Partners by name.'
+        required: false
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'filter[website_link]':
+        name: 'filter[website_link]'
+        description: 'filter Partners by website link.'
+        required: false
+        example: cum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      page:
+        name: page
+        description: 'The page number'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      perPage:
+        name: perPage
+        description: 'Number of items pre page'
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanQueryParameters:
+      'filter[name]': et
+      'filter[website_link]': cum
+      page: 1
+      perPage: 3
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":10,"slug":"rerum","name":null,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00aa44?text=praesentium","website_link":"https:\/\/grant.biz\/quia-error-cum-ratione-voluptates-quas.html"},{"id":9,"slug":"assumenda","name":null,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/004455?text=magni","website_link":"http:\/\/huel.com\/eum-iure-recusandae-tempora-voluptatum-earum-qui.html"},{"id":8,"slug":"aut-non","name":null,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00ccaa?text=doloremque","website_link":"http:\/\/www.vandervort.net\/voluptatem-illo-impedit-quisquam-rerum"}],"links":{"first":"http:\/\/localhost\/api\/partners?page=1","last":"http:\/\/localhost\/api\/partners?page=4","prev":null,"next":"http:\/\/localhost\/api\/partners?page=2"},"meta":{"current_page":1,"from":1,"last_page":4,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/partners?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/partners?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/partners?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/partners?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/partners?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/partners","per_page":3,"to":3,"total":10}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/partners/{partner_slug}'
+    metadata:
+      groupName: 'Public Endpoints'
+      groupDescription: ''
+      subgroup: Partners
+      subgroupDescription: 'APIs for Partners'
+      title: 'Get Partner by slug.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      partner_slug:
+        name: partner_slug
+        description: 'The slug of the partner.'
+        required: true
+        example: quaerat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      slug:
+        name: slug
+        description: 'The slug of the Partner'
+        required: true
+        example: veniam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      partner_slug: quaerat
+      slug: veniam
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"slug":"quaerat","name":null,"avatar":"https:\/\/via.placeholder.com\/640x480.png\/00aaaa?text=dolorum","website_link":"https:\/\/www.rodriguez.org\/mollitia-est-aut-optio-molestiae-accusamus-velit-laborum"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

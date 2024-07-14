@@ -46,8 +46,8 @@ class BookCategoryController extends Controller
         return $this->collection($bookCategories);
     }
 
-    #[Endpoint('Get Book Category by id.')]
-    #[UrlParam('id', 'integer', 'The ID of the book category', true)]
+    #[Endpoint('Get Book Category by slug.')]
+    #[UrlParam('slug', 'integer', 'The slug of the book category', true)]
     public function show(BookCategory $bookCategory) {
 
         return $this->resource($bookCategory);
@@ -63,7 +63,7 @@ class BookCategoryController extends Controller
     }
 
     #[Endpoint('Update Book Category.')]
-    #[UrlParam('id', 'integer', 'The ID of the book category', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the book category', true)]
     #[BodyParam('title', 'array', 'The title of the Book Category.', example: ['en' => 'Historical', 'ar' => 'تاريخي'])]
     public function update(UpdateBookCategoryRequest $request, BookCategory $bookCategory) {
 
@@ -73,7 +73,7 @@ class BookCategoryController extends Controller
     }
 
     #[Endpoint('Delete Book Category.')]
-    #[UrlParam('id', 'integer', 'The ID of the book category', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the book category', true)]
     public function destroy(BookCategory $bookCategory) {
 
         if($this->hasChildRecords($bookCategory)) {

@@ -10,7 +10,16 @@ use App\Models\Contact;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Spatie\QueryBuilder\QueryBuilder;
+use Knuckles\Scribe\Attributes\Endpoint;
+use Knuckles\Scribe\Attributes\Subgroup;
+use Knuckles\Scribe\Attributes\UrlParam;
+use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\QueryParam;
+use Knuckles\Scribe\Attributes\Group;
 
+
+#[Group('Admin Endpoints')]
+#[Subgroup('Contact Management', 'APIs for managing Contacts')]
 class ContactController extends Controller
 {
 
@@ -19,6 +28,11 @@ class ContactController extends Controller
         $this->setResource(AdminContactResource::class);
     }
 
+    #[Endpoint('Get all Contacts.')]
+    #[QueryParam('filter[value]', 'string', 'filter Contacts by value.', false)]
+    #[QueryParam('include[contactType]', 'string', 'include contact type.', false)]
+    #[UrlParam('page', 'integer', 'The page number', example: 1)]
+    #[UrlParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
 
         $contacts = QueryBuilder::for(Contact::class)
@@ -30,11 +44,16 @@ class ContactController extends Controller
         return $this->collection($contacts);
     }
 
+    #[Endpoint('Get Contact by slug.')]
+    #[UrlParam('slug', 'string', 'The slug of the Contact', true)]
     public function show(Contact $contact) {
 
         return $this->resource($contact->load(Contact::allowedIncludes()));
     }
 
+    #[Endpoint('Store Contact.')]
+    #[BodyParam('contact_type_id', 'integer', 'The id of the Contact type.')]
+    #[BodyParam('value', 'mixed', 'The value of the Contact.')]
     public function store(StoreContactRequest $request) {
 
         $contact = Contact::create($request->validated());
@@ -42,6 +61,9 @@ class ContactController extends Controller
         return $this->resource($contact, method:'POST');
     }
 
+    #[Endpoint('Update Contact.')]
+    #[UrlParam('slug', 'string', 'The slug of the Contact', true)]
+    #[BodyParam('value', 'mixed', 'The value of the Contact.')]
     public function update(UpdateContactRequest $request, Contact $contact) {
 
         $contact->update($request->validated());
@@ -49,6 +71,8 @@ class ContactController extends Controller
         return $this->resource($contact, method:'PUT');
     }
 
+    #[Endpoint('Delete Contact.')]
+    #[UrlParam('slug', 'string', 'The slug of the Contact', true)]
     public function destroy(Contact $contact) {
 
         $contact->delete();

@@ -44,7 +44,7 @@ class User extends Authenticatable
     ];
 
     protected static array $allowedIncludes = ['roles'];
-    protected static array $allowedFilters = ['first_name', 'last_name', 'email', 'username'];
+    protected static array $allowedFilters = ['first_name', 'last_name', 'username'];
 
     /**
      * Get the attributes that should be cast.

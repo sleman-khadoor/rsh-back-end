@@ -35,6 +35,7 @@ class BookAwardController extends Controller
     }
 
     #[Endpoint('Update Book Award.')]
+    #[UrlParam('slug', 'integer', 'The slug of the book award', true)]
     #[BodyParam('title', 'array', 'The title of the Book Award.', example: ['en' => 'Historical', 'ar' => 'تاريخي'])]
     public function update(UpdateBookAwardRequest $request, BookAward $bookAward) {
 
@@ -44,7 +45,7 @@ class BookAwardController extends Controller
     }
 
     #[Endpoint('Delete Book Award.')]
-    #[UrlParam('id', 'integer', 'The ID of the book award', true)]
+    #[UrlParam('slug', 'integer', 'The slug of the book award', true)]
     public function destroy(BookAward $bookAward) {
 
         $bookAward->delete();
