@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\ServiceRequestController as AdminServiceRequestCo
 use App\Http\Controllers\Admin\PartnerController as AdminPartnerController;
 use App\Http\Controllers\Admin\UserManagemenrController;
 use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
+use App\Http\Controllers\Admin\RoleController;
 use App\Models\Role;
 
 
@@ -51,6 +52,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/partners', AdminPartnerController::class);
 
         Route::apiResource('/users', UserManagemenrController::class);
+        Route::get('/roles', RoleController::class);
         Route::apiResource('/achievements', AdminAchievementController::class);
     });
 });

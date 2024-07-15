@@ -39,13 +39,12 @@ class BlogController extends Controller
     #[QueryParam('page', 'integer', 'The page number', example: 1)]
     #[QueryParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
-
         $blogs = QueryBuilder::for(Blog::class)
                             ->allowedIncludes(Blog::allowedIncludes())
                             ->allowedFilters([
                                 ...Blog::allowedFilters(),
-                                AllowedFilter::custom('Blog_category', new FilterBlogByCategory),
-                                ])
+                                AllowedFilter::custom('blog_category', new FilterBlogByCategory),
+                            ])
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
@@ -83,7 +82,7 @@ class BlogController extends Controller
             $blog->blogCategories()->attach(Arr::flatten($data['categories']));
         }
 
-        return $this->resource($blog->load(Blog::allowedIncludes()), method:'POST');
+        return $this->resource($blog, method:'POST');
     }
 
     #[Endpoint('Update Blog.')]
@@ -104,6 +103,10 @@ class BlogController extends Controller
         if($request->hasFile('cover_image')) {
             $blog->cover_image = $this->uploadAttachment($data['cover_image'], 'blog-covers');
             $blog->save();
+        }
+
+        if($data['categories']) {
+            $blog->blogCategories()->sync(Arr::flatten($data['categories']));
         }
 
         return $this->resource($blog, method:'PUT');

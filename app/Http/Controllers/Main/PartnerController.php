@@ -32,8 +32,7 @@ class PartnerController extends Controller
                                 ...Partner::allowedFilters(),
                                 ])
                             ->defaultSort('-id')
-                            ->paginate($request->perPage, ['*'], 'page', $request->page);
-
+                            ->get();
         return PublicPartnerResource::collection($partners);
     }
 
