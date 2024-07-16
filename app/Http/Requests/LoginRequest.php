@@ -25,15 +25,8 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => ['required', 'string', Rule::exists('users')],
+            'username' => ['required', 'string'],
             'password' => ['required', 'string']
-        ];
-    }
-
-    public function messages()
-    {
-        return [
-            'username.exists' => config('response-messages.auth.credentials_not_match'),
         ];
     }
 }
