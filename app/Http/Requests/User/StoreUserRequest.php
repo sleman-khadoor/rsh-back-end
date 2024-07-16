@@ -31,7 +31,7 @@ class StoreUserRequest extends FormRequest
             'username' => ['required', 'string', Rule::unique('users')],
             'password' => ['required', 'string', 'min:8', 'max:255', 'confirmed'],
             'roles' => ['required', 'array'],
-            'roles.*.id' => ['required', 'integer', Rule::in(Role::where('name', '!=', Role::getSuperAdminRole())->pluck('id')->toArray())]
+            'roles.*' => ['required', 'integer', Rule::in(Role::where('name', '!=', Role::getSuperAdminRole())->pluck('id')->toArray())]
         ];
     }
 }
