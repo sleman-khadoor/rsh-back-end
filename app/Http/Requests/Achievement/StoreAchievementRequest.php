@@ -24,7 +24,7 @@ class StoreAchievementRequest extends FormRequest
     {
         return [
             'content' => ['required', 'array'],
-            'content.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('achievements')],
+            'content.*' => ['required', 'string', UniqueTranslationRule::for('achievements')],
         ];
     }
 }
