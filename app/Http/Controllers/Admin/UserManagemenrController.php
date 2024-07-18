@@ -73,13 +73,12 @@ class UserManagemenrController extends Controller
         $user->is_deletable = true;
         $user->save();
 
-        foreach($data['roles'] as $roleObj) {
-
-            $role = Role::findOrFail($roleObj['id']);
+        foreach($data['roles'] as $roleId) {
+            $role = Role::findOrFail($roleId);
             $user->assignRole($role);
         }
 
-        return $this->resource($user);
+        return $this->resource($user, method:'post');
     }
 
     #[Endpoint('Update User.')]
@@ -103,14 +102,14 @@ class UserManagemenrController extends Controller
 
         $user->roles()->sync([]);
 
-        foreach($data['roles'] as $roleObj) {
+        foreach($data['roles'] as $roleId) {
 
-            $role = Role::findOrFail($roleObj['id']);
+            $role = Role::findOrFail($roleId);
 
             $user->assignRole($role);
         }
 
-        return $this->resource($user);
+        return $this->resource($user, method:'PUT');
     }
 
     #[Endpoint('Delete User.')]

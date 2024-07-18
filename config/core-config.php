@@ -4,11 +4,17 @@ return [
 
     'roles' => [
         'super_admin' => 'super admin',
-        'services_admin' => 'services admin',
-        'contacts_admin' => 'contacts admin',
-        'authors_admin' => 'authors admin',
-        'blogs_admin' => 'blogs admin',
-        'books_admin' => 'books admin',
+        'authors_admin' => 'Authors admin',
+        'books_admin' => 'Books admin',
+        'blogs_admin' => 'Blogs admin',
+        'news_admin' => 'News admin',
+        'users_admin' => 'Users admin',
+        'represented_authors_admin' => 'Represented authors admin',
+        'partners_admin' => 'Partners admin',
+        'contacts_admin' => 'Contact us admin',
+        'about_admin' => 'About us admin',
+        'services_admin' => 'Services admin',
+
     ],
     'users' => [
         'super_admin' => [
