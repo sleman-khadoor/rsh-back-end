@@ -24,21 +24,11 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        /*
-        $exceptions->respond(function(Response $response) {
-            if($response->getStatusCode() == 404) {
+        $exceptions->render(function (NotFoundHttpException $e, Request $request) {
+            if ($request->is('api/*')) {
                 return response()->json([
-                    'message' => 'Not found'
-                ], Response::HTTP_NOT_FOUND);
+                    'message' => 'Not found.'
+                ], 404);
             }
-            if($response->getStatusCode() == 500) {
-                return response()->json([
-                    'message' => 'Server error'
-                ], Response::HTTP_INTERNAL_SERVER_ERROR);
-            }
-
-            return $response;
-
         });
-        */
     })->create();
