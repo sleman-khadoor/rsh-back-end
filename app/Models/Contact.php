@@ -15,21 +15,14 @@ class Contact extends Model
     use HasFactory, HasIncludes, HasFilters, HasSlug;
 
     public $timestamps = false;
-    protected $fillable = ['contact_type_id', 'value'];
+    protected $fillable = ['type', 'value'];
 
-    protected static array $allowedIncludes = ['contactType'];
     protected static array $allowedFilters = ['value'];
-
-
-    public function contactType(): BelongsTo {
-
-        return $this->belongsTo(ContactType::class);
-    }
 
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom(fn(Contact $contact): string => $contact?->contactType?->slug.' '.$contact->value)
+            ->generateSlugsFrom('type')
             ->saveSlugsTo('slug');
     }
 
