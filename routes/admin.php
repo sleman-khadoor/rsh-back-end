@@ -30,6 +30,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
         Route::apiResource('/books', BookController::class);
         Route::apiResource('/book-categories', BookCategoryController::class);
+        Route::get('/book-formats', [BookController::class, 'getFormats']);
         Route::apiResource('/authors', AuthorController::class);
         Route::apiResource('/book-awards', BookAwardController::class)->only(['store', 'update', 'destroy']);
         Route::apiResource('/book-reviews', BookReviewController::class)->only(['store', 'update', 'destroy']);

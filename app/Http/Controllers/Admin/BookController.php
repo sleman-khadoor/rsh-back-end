@@ -16,6 +16,8 @@ use Spatie\QueryBuilder\AllowedFilter;
 use App\Http\Requests\Book\StoreBookRequest;
 use App\Http\Requests\Book\UpdateBookRequest;
 use App\Http\Resources\Book\AdminBookResource;
+use App\Http\Resources\BookFormat\AdminBookFormatResource;
+use App\Models\BookFormat;
 use Illuminate\Support\Arr;
 use Symfony\Component\HttpFoundation\Response;
 use Knuckles\Scribe\Attributes\Group;
@@ -24,12 +26,14 @@ use Knuckles\Scribe\Attributes\Endpoint;
 use Knuckles\Scribe\Attributes\UrlParam;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\QueryParam;
+use App\Traits\HasChildRecords;
+
 
 #[Group('Admin Endpoints')]
 #[Subgroup('Book Management', 'APIs for managing Books')]
 class BookController extends Controller
 {
-    use Uploader;
+    use Uploader, HasChildRecords;
 
     public function __construct()
     {
@@ -99,17 +103,17 @@ class BookController extends Controller
             $book->bookCategories()->attach(Arr::flatten($data['categories']));
         }
 
-        if($data['awards']) {
+        if($request->awards) {
 
             $this->storeAwards($data['awards'], $book->id);
         }
 
-        if($data['formats']) {
+        if($request->formats) {
 
             $book->formats()->attach(Arr::flatten($data['formats']));
         }
 
-        if($data['reviews']) {
+        if($request->reviews) {
 
             $this->storeReviews($data['reviews'], $book->id);
         }
@@ -141,17 +145,19 @@ class BookController extends Controller
 
         $book->update($data);
 
-        if($data['cover_image']) {
+        if($request->cover_image) {
             $book->cover_image = $this->uploadAttachment($data['cover_image'], 'book-covers');
             $book->save();
         }
 
-        if($data['formats']) {
-
-            $book->formats()->sync([]);
-            $book->formats()->attach(Arr::flatten($data['formats']));
+        if($data['categories']) {
+            $book->bookCategories()->sync(Arr::flatten($data['categories']));
         }
 
+        if($request->formats) {
+
+            $book->formats()->sync(Arr::flatten($data['formats']));
+        }
         return $this->resource($book, method:'PUT');
     }
 
@@ -159,6 +165,14 @@ class BookController extends Controller
     #[UrlParam('slug', 'string', 'The slug of the Book', true)]
     public function destroy(Book $book) {
 
+        $book->bookCategories()->detach();
+        $book->formats()->detach();
+        if($this->hasChildRecords($book)) {
+            return $this->error(
+                    Response::HTTP_CONFLICT,
+                    config('response-messages.crud.record_has_childs')
+                );
+        }
         $book->delete();
 
         return $this->success([], config('response-messages.crud.delete_success'), Response::HTTP_OK);
@@ -191,5 +205,14 @@ class BookController extends Controller
                 'book_id' => $bookId
             ]);
         }
+    }
+
+    public function getFormats(Request $request)
+    {
+        $formats = QueryBuilder::for(BookFormat::class)
+                            ->defaultSort('id')
+                            ->paginate($request->perPage, ['*'], 'page', $request->page);
+
+        return AdminBookFormatResource::collection($formats);
     }
 }

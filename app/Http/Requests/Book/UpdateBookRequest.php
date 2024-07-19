@@ -36,6 +36,11 @@ class UpdateBookRequest extends FormRequest
             ],
             'abstract' => ['required', 'array'],
             'abstract.*' => ['required', 'string', 'max:255'],
+            'cover_image' => [
+                File::image()
+                ->min('200kb')
+                ->max('2mb')
+            ],
             'ISBN' => [
                 'required',
                 'string',
@@ -49,12 +54,11 @@ class UpdateBookRequest extends FormRequest
                 Rule::unique('books')->ignore($this->book?->id)
             ],
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
-            'cover_image' => [File::image()->min('200kb')->max('2mb')],
             'author_id' => ['required', 'int', Rule::exists('authors', 'id')],
             'formats' => ['required', 'array'],
+            'formats.*' => ['required', 'integer', Rule::exists('book_formats','id')],
             'categories' => ['required', 'array'],
-            'categories.*.id' => ['required', 'integer', Rule::exists('book_categories')],
-            'formats.*.id' => ['required', 'integer', Rule::exists('book_formats')],
+            'categories.*' => ['required', 'integer', Rule::exists('book_categories','id')],
         ];
     }
 }

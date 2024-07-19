@@ -39,19 +39,24 @@ class StoreBookRequest extends FormRequest
             'ISBN' => ['required', 'string', 'numeric', Rule::unique('books')],
             'EISBN' => ['required', 'string', 'numeric', Rule::unique('books')],
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
-            'cover_image' => [File::image()->min('200kb')->max('2mb')],
+            'cover_image' => [
+                File::image()
+                ->min('200kb')
+                ->max('2mb')
+            ],
             'author_id' => ['required','int', Rule::exists('authors', 'id')],
-            'awards' => ['required', 'array'],
-            'awards.*.en' => ['required', 'string'],
-            'awards.*.ar' => ['required', 'string'],
             'formats' => ['required', 'array'],
+            'formats.*' => ['required', 'integer', Rule::exists('book_formats', 'id')],
             'categories' => ['required', 'array'],
-            'categories.*.id' => ['required', 'integer', Rule::exists('book_categories')],
-            'formats.*.id' => ['required', 'integer', Rule::exists('book_formats')],
-            'reviews' => ['required', 'array'],
-            'reviews.*.username' => ['required', 'string', 'max:255'],
-            'reviews.*.review.en' => ['required', 'string'],
-            'reviews.*.review.ar' => ['required', 'string'],
+            'categories.*' => ['required', 'integer', Rule::exists('book_categories','id')],
+
+            'awards' => ['array'],
+            'awards.*.en' => ['string'],
+            'awards.*.ar' => ['string'],
+            'reviews' => ['array'],
+            'reviews.*.username' => ['string', 'max:255'],
+            'reviews.*.review.en' => ['string'],
+            'reviews.*.review.ar' => ['string'],
         ];
     }
 }
