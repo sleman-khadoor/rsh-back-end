@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources\Contact;
 
-use App\Http\Resources\ContactType\PublicContactTypeResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -17,7 +16,7 @@ class PublicContactResource extends JsonResource
     {
         return [
             'value' => $this->value,
-            'contact_type' => PublicContactTypeResource::make($this->whenLoaded('contactType'))
+            'type' => $this->type,
         ];
     }
 }

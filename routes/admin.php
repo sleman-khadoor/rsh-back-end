@@ -10,7 +10,6 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BookReviewController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ContactRequestController;
-use App\Http\Controllers\Admin\ContactTypeController;
 use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\RepresentedAuthorController;
 use App\Http\Controllers\Admin\ServiceRequestController;
@@ -27,7 +26,7 @@ use App\Models\Role;
 Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
     Route::middleware(["role:". Role::getBooksAdminRole()])->group(function() {
- 
+
         Route::apiResource('/books', BookController::class);
         Route::apiResource('/book-categories', BookCategoryController::class);
         Route::get('/book-formats', [BookController::class, 'getFormats']);
@@ -35,8 +34,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/book-awards', BookAwardController::class)->only(['store', 'update', 'destroy']);
         Route::apiResource('/book-reviews', BookReviewController::class)->only(['store', 'update', 'destroy']);
 
-        Route::apiResource('/contact-types', ContactTypeController::class);
-        Route::apiResource('/contacts', ContactController::class);
+        Route::apiResource('/contacts', ContactController::class)->only(['index', 'update']);
 
         Route::get('/notifications', [NotificationController::class, 'index']);
         Route::get('/notifications/{type}', [NotificationController::class, 'getByType']);

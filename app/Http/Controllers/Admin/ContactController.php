@@ -44,22 +44,6 @@ class ContactController extends Controller
         return $this->collection($contacts);
     }
 
-    #[Endpoint('Get Contact by slug.')]
-    #[UrlParam('slug', 'string', 'The slug of the Contact', true)]
-    public function show(Contact $contact) {
-
-        return $this->resource($contact->load(Contact::allowedIncludes()));
-    }
-
-    #[Endpoint('Store Contact.')]
-    #[BodyParam('contact_type_id', 'integer', 'The id of the Contact type.')]
-    #[BodyParam('value', 'mixed', 'The value of the Contact.')]
-    public function store(StoreContactRequest $request) {
-
-        $contact = Contact::create($request->validated());
-
-        return $this->resource($contact, method:'POST');
-    }
 
     #[Endpoint('Update Contact.')]
     #[UrlParam('slug', 'string', 'The slug of the Contact', true)]
@@ -69,14 +53,5 @@ class ContactController extends Controller
         $contact->update($request->validated());
 
         return $this->resource($contact, method:'PUT');
-    }
-
-    #[Endpoint('Delete Contact.')]
-    #[UrlParam('slug', 'string', 'The slug of the Contact', true)]
-    public function destroy(Contact $contact) {
-
-        $contact->delete();
-
-        return $this->success([], config('response-messages.crud.delete_success'), Response::HTTP_OK);
     }
 }

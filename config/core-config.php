@@ -70,9 +70,12 @@ return [
         'word'
     ],
     'contacts' => [
-        'facebook' => 'rashm.facebook',
-        'whatsapp' => '99201011',
-        'email' => 'rashm@gmail.com'
+        'facebook' => '',
+        'whatsapp' => '',
+        'email' => '',
+        'instagram' => '',
+        'twitter' => '',
+        'phone' => ''
     ],
     'number_of_related_blogs' => 5
 ];
