@@ -20,6 +20,10 @@ class AuthTest extends TestCase
         parent::setup();
 
         $this->setupAdmin(role: Role::getSuperAdminRole());
+
+        $this->withHeaders([
+            'Accept' => 'application/json'
+        ]);
     }
 
     public function test_admin_can_login_with_valid_credentials(): void
