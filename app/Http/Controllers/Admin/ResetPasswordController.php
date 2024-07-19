@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ResetPasswordRequest;
+use App\Models\User;
 use Symfony\Component\HttpFoundation\Response;
 
 class ResetPasswordController extends Controller
@@ -16,7 +17,7 @@ class ResetPasswordController extends Controller
      */
     public function __invoke(ResetPasswordRequest $request)
     {
-        $user = Auth::user();
+        $user = User::findOrFail($request->user_id);
 
         if(!Hash::check($request->validated('old_password'), $user->password)) {
 
