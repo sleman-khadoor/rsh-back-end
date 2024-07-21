@@ -16,7 +16,7 @@ class ServiceRequest extends Model
 
     public $timestamps = false;
     protected $fillable = ['fullname', 'mobile', 'email', 'description', 'service_name'];
-    protected static array $allowedFilters = ['fullname', 'mobile', 'email'];
+    protected static array $allowedFilters = ['fullname', 'mobile', 'email', 'service_name'];
     protected static array $allowedIncludes = ['documents'];
 
 

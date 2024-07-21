@@ -150,7 +150,7 @@ class BookController extends Controller
             $book->save();
         }
 
-        if($data['categories']) {
+        if($request->categories) {
             $book->bookCategories()->sync(Arr::flatten($data['categories']));
         }
 

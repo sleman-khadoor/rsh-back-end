@@ -105,7 +105,7 @@ class BlogController extends Controller
             $blog->save();
         }
 
-        if($data['categories']) {
+        if($request->categories) {
             $blog->blogCategories()->sync(Arr::flatten($data['categories']));
         }
 
