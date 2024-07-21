@@ -55,10 +55,10 @@ class UpdateBookRequest extends FormRequest
             ],
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
             'author_id' => ['required', 'int', Rule::exists('authors', 'id')],
-            'formats' => ['required', 'array'],
-            'formats.*' => ['required', 'integer', Rule::exists('book_formats','id')],
-            'categories' => ['required', 'array'],
-            'categories.*' => ['required', 'integer', Rule::exists('book_categories','id')],
+            'formats' => ['array'],
+            'formats.*' => ['integer', Rule::exists('book_formats','id')],
+            'categories' => ['array'],
+            'categories.*' => ['integer', Rule::exists('book_categories','id')],
         ];
     }
 }
