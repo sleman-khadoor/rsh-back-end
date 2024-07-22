@@ -10,14 +10,13 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\BookReviewController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ContactRequestController;
-use App\Http\Controllers\Admin\ContactTypeController;
 use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\RepresentedAuthorController;
 use App\Http\Controllers\Admin\ServiceRequestController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\UserManagemenrController;
+use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
 use App\Http\Controllers\Admin\RoleController;
-use App\Http\Controllers\Admin\AchievementController;
 use App\Http\Controllers\Admin\ResetPasswordController;
 use App\Models\Role;
 
@@ -30,12 +29,12 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
         Route::apiResource('/books', BookController::class);
         Route::apiResource('/book-categories', BookCategoryController::class);
+        Route::get('/book-formats', [BookController::class, 'getFormats']);
         Route::apiResource('/authors', AuthorController::class);
         Route::apiResource('/book-awards', BookAwardController::class)->only(['store', 'update', 'destroy']);
         Route::apiResource('/book-reviews', BookReviewController::class)->only(['store', 'update', 'destroy']);
 
-        Route::apiResource('/contact-types', ContactTypeController::class);
-        Route::apiResource('/contacts', ContactController::class);
+        Route::apiResource('/contacts', ContactController::class)->only(['index', 'update']);
 
         Route::get('/notifications', [NotificationController::class, 'index']);
         Route::get('/notifications/{type}', [NotificationController::class, 'getByType']);
@@ -54,7 +53,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
         Route::apiResource('/users', UserManagemenrController::class);
         Route::get('/roles', RoleController::class);
-        Route::apiResource('/achievements', AchievementController::class);
+        Route::apiResource('/achievements', AdminAchievementController::class);
 
         Route::post('/reset-password', ResetPasswordController::class);
     });

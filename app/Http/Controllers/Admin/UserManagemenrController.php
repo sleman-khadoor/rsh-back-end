@@ -96,17 +96,17 @@ class UserManagemenrController extends Controller
         $user->first_name = $data['first_name'];
         $user->last_name = $data['last_name'];
         $user->username = $data['username'];
-        $user->password = Hash::make($data['password']);
         $user->is_deletable = true;
         $user->save();
 
-        $user->roles()->sync([]);
+        if($request->roles){
+            $user->roles()->sync([]);
+            foreach($data['roles'] as $roleId) {
 
-        foreach($data['roles'] as $roleId) {
+                $role = Role::findOrFail($roleId);
 
-            $role = Role::findOrFail($roleId);
-
-            $user->assignRole($role);
+                $user->assignRole($role);
+            }
         }
 
         return $this->resource($user, method:'PUT');

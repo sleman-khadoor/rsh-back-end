@@ -25,7 +25,7 @@ class UpdateContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'value' => ['required', Rule::unique('contacts')->where('contact_type_id', $this->contact?->contact_type_id)->ignore($this->contact)]
+            'value' => ['required', 'string', 'max:255']
         ];
     }
 }

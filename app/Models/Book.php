@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Abstracts\RelationsAware;
 use App\Traits\HasFilters;
 use App\Traits\HasIncludes;
 use Spatie\Sluggable\SlugOptions;
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Book extends Model
+class Book extends Model implements RelationsAware
 {
     use HasFactory, HasTranslations, HasTranslatableSlug, HasIncludes, HasFilters;
 
@@ -46,6 +47,11 @@ class Book extends Model
     public function reviews(): HasMany {
 
         return $this->hasMany(BookReview::class);
+    }
+
+    public function relations(): array
+    {
+        return ['awards', 'reviews'];
     }
 
     public function getSlugOptions() : SlugOptions

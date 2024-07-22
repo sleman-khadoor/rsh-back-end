@@ -33,8 +33,8 @@ class UpdateBlogRequest extends FormRequest
             'date' => ['required', 'date'],
             'lang' => ['required', Rule::in(array_map(fn($lang) => $lang->value, LanguageEnum::cases()))],
             'cover_image' => [File::image()->min('400kb')->max('4mb')],
-            'categories' => ['required', 'array'],
-            'categories.*' => ['required', 'integer', Rule::exists('blog_categories', 'id')],
+            'categories' => ['array'],
+            'categories.*' => ['integer', Rule::exists('blog_categories', 'id')],
         ];
     }
 }

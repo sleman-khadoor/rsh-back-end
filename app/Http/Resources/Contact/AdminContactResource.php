@@ -16,9 +16,9 @@ class AdminContactResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'type' => $this->type,
             'value' => $this->value,
             'slug' => $this->slug,
-            'contact_type' => $this->whenLoaded('contactType')
         ];
     }
 }
