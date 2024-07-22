@@ -8,6 +8,7 @@ use App\Models\Role;
 use Tests\Feature\Admin\Traits\HasAdmin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Symfony\Component\HttpFoundation\Response;
 
 class AuthTest extends TestCase
 {
@@ -33,7 +34,7 @@ class AuthTest extends TestCase
             'password' => 'password'
         ]);
 
-        $response->assertStatus(200);
+        $response->assertStatus(Response::HTTP_OK);
         $this->assertCount(1, $this->admin->tokens);
     }
 
@@ -44,7 +45,7 @@ class AuthTest extends TestCase
             'password' => 'password_wrong'
         ]);
 
-        $response->assertStatus(401);
+        $response->assertStatus(Response::HTTP_UNAUTHORIZED);
         $this->assertCount(0, $this->admin->tokens);
     }
 
@@ -55,7 +56,7 @@ class AuthTest extends TestCase
             'password' => 'password_wrong'
         ]);
 
-        $response->assertStatus(401);
+        $response->assertStatus(Response::HTTP_UNAUTHORIZED);
         $this->assertCount(0, $this->admin->tokens);
     }
 
@@ -63,7 +64,7 @@ class AuthTest extends TestCase
     {
         $response = $this->actingAs($this->admin)->post(static::$BASE_URL . '/logout');
 
-        $response->assertStatus(200);
+        $response->assertStatus(Response::HTTP_OK);
         $this->assertCount(0, $this->admin->tokens);
     }
 }
