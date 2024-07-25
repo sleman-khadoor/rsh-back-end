@@ -59,7 +59,7 @@ class BookCategoryController extends Controller
 
         $bookCategory = BookCategory::create($request->validated());
 
-        return $this->resource($bookCategory, method:'POST');
+        return $this->resource($bookCategory, status:Response::HTTP_CREATED, method:'POST');
     }
 
     #[Endpoint('Update Book Category.')]
