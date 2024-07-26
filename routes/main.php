@@ -15,6 +15,7 @@ use App\Http\Controllers\Main\ServiceRequestController as MainServiceRequestCont
 use App\Http\Controllers\Main\PartnerController as MainParterController;
 
 use App\Http\Controllers\Main\AchievementController as MainAchievementController;
+use App\Http\Controllers\Main\NewsController as MainNewsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -49,3 +50,7 @@ Route::get('/partners/{partner}', [MainParterController::class, 'show']);
 // Achievements endpoints
 Route::get('/achievements', [MainAchievementController::class, 'index']);
 Route::get('/achievements/{achievement}', [MainAchievementController::class, 'show']);
+
+//News endpoints
+Route::get('/news', [MainNewsController::class, 'index']);
+Route::get('/news/{news}', [MainNewsController::class, 'show']);
