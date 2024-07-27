@@ -77,6 +77,6 @@ return [
         'twitter' => '',
         'phone' => ''
     ],
-    'number_of_related_blogs' => 5
+    'number_of_related_blogs' => 4
 ];
 

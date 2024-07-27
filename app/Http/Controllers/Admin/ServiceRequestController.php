@@ -45,7 +45,9 @@ class ServiceRequestController extends Controller
                                     ->defaultSort('-id')
                                     ->paginate($request->perPage, ['*'], 'page', $request->page);
 
-        $notification = Notification::where('type', '!=', RequestType::CONTACT_REQUEST->value)->first();
+        $requestedService = is_array($request->filter) ? RequestType::tryFrom($request->filter['service_name']) : null;
+
+        $notification = Notification::where('type', $requestedService?->value)->first();
 
         if($notification)  {
 
