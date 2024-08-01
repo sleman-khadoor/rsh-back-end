@@ -41,12 +41,12 @@ class Book extends Model implements RelationsAware
 
     public function awards(): HasMany {
 
-        return $this->hasMany(BookAward::class);
+        return $this->hasMany(BookAward::class)->orderBy('id', 'DESC');
     }
 
     public function reviews(): HasMany {
 
-        return $this->hasMany(BookReview::class);
+        return $this->hasMany(BookReview::class)->orderBy('id', 'DESC');
     }
 
     public function relations(): array

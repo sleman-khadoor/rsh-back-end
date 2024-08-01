@@ -71,11 +71,13 @@ return [
     ],
     'contacts' => [
         'facebook' => '',
-        'whatsapp' => '',
+        'linkedIn' => '',
         'email' => '',
         'instagram' => '',
         'twitter' => '',
-        'phone' => ''
+        'phone' => '',
+        'ar_location' => '',
+        'en_location' => ''
     ],
     'number_of_related_blogs' => 4
 ];
