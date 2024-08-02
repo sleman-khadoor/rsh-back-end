@@ -30,7 +30,7 @@ class ServiceRequestController extends Controller
         $serviceRequest->date = Carbon::now();
         $serviceRequest->save();
 
-        if($data['documents']) {
+        if(array_key_exists('documents', $data)) {
 
             foreach($data['documents'] as $file) {
 
