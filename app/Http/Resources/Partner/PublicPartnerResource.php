@@ -17,7 +17,7 @@ class PublicPartnerResource extends JsonResource
         return [
             'id' => $this->id,
             'slug' => $this->slug,
-            'name' => $this->title,
+            'name' => $this->name,
             'avatar' => $this->avatar,
             'website_link' => $this->website_link,
         ];

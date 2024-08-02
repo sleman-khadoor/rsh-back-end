@@ -26,8 +26,6 @@ use App\Models\Role;
 
 Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
 
-    Route::middleware(["role:". Role::getBooksAdminRole()])->group(function() {
-
         Route::apiResource('/books', BookController::class);
         Route::apiResource('/book-categories', BookCategoryController::class);
         Route::get('/book-formats', [BookController::class, 'getFormats']);
@@ -58,5 +56,4 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/news', AdminNewsController::class);
 
         Route::post('/reset-password', ResetPasswordController::class);
-    });
 });

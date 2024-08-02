@@ -70,14 +70,15 @@ return [
         'word'
     ],
     'contacts' => [
+        'ar_location' => '',
+        'en_location' => '',
         'facebook' => '',
         'linkedIn' => '',
         'email' => '',
         'instagram' => '',
         'twitter' => '',
         'phone' => '',
-        'ar_location' => '',
-        'en_location' => ''
+
     ],
     'number_of_related_blogs' => 4
 ];
