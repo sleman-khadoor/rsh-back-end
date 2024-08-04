@@ -35,7 +35,7 @@ class UpdateBookRequest extends FormRequest
                 UniqueTranslationRule::for('books')->where('author_id', $this->input('author_id'))->ignore($this->book?->id)
             ],
             'abstract' => ['required', 'array'],
-            'abstract.*' => ['required', 'string', 'max:255'],
+            'abstract.*' => ['required', 'string'],
             'cover_image' => [
                 File::image()
                 ->min('200kb')

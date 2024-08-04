@@ -35,7 +35,7 @@ class StoreBookRequest extends FormRequest
                 UniqueTranslationRule::for('books')->where('author_id', $this->input('author_id'))
             ],
             'abstract' => ['required','array'],
-            'abstract.*' => ['required','string','max:255',],
+            'abstract.*' => ['required','string'],
             'ISBN' => ['required', 'string', 'numeric', Rule::unique('books')],
             'EISBN' => ['required', 'string', 'numeric', Rule::unique('books')],
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
