@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\Admin;
 
+use App\Models\BlogCategory;
 use App\Models\BookCategory;
 use Tests\TestCase;
 use App\Models\Role;
@@ -10,11 +11,11 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Symfony\Component\HttpFoundation\Response;
 
-class BookCategoryTest extends TestCase
+class BlogCategoryTest extends TestCase
 {
     use RefreshDatabase, HasAdmin;
 
-    protected static string $BASE_URL = '/api/admin/book-categories';
+    protected static string $BASE_URL = '/api/admin/blog-categories';
 
     protected function setUp(): void
     {
@@ -27,9 +28,9 @@ class BookCategoryTest extends TestCase
         ]);
     }
 
-    public function test_admin_can_get_all_book_categories(): void {
+    public function test_admin_can_get_all_blog_categories(): void {
 
-        BookCategory::factory(10)->create();
+        BlogCategory::factory(10)->create();
 
         $response = $this->actingAs($this->admin)->get(static::$BASE_URL);
 
@@ -37,11 +38,11 @@ class BookCategoryTest extends TestCase
         $response->assertJsonCount(10, 'data');
     }
 
-    public function test_admin_can_get_book_category_by_slug(): void {
+    public function test_admin_can_get_blog_category_by_slug(): void {
 
-        $bookCategory = BookCategory::factory()->create(['title' => $this->getTitle()]);
+        $blogCategory = BlogCategory::factory()->create(['title' => $this->getTitle()]);
 
-        $response = $this->actingAs($this->admin)->get(static::$BASE_URL . '/' . $bookCategory->slug);
+        $response = $this->actingAs($this->admin)->get(static::$BASE_URL . '/' . $blogCategory->slug);
 
         $response->assertStatus(Response::HTTP_OK);
         $response->assertJsonStructure([
@@ -56,7 +57,7 @@ class BookCategoryTest extends TestCase
         ]);
     }
 
-    public function test_admin_can_store_book_category(): void {
+    public function test_admin_can_store_blog_category(): void {
 
         $response = $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $this->getTitle()]);
 
@@ -71,15 +72,15 @@ class BookCategoryTest extends TestCase
                 'slug'
             ]
         ]);
-        $this->assertDatabaseCount('book_categories', 1);
+        $this->assertDatabaseCount('blog_categories', 1);
     }
 
-    public function test_admin_can_update_book_category(): void {
+    public function test_admin_can_update_blog_category(): void {
 
         $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $this->getTitle()]);
-        $bookCategory = BookCategory::find(1);
+        $blogCategory = BlogCategory::find(1);
 
-        $this->actingAs($this->admin)->put(static::$BASE_URL . '/' . $bookCategory->slug,
+        $this->actingAs($this->admin)->put(static::$BASE_URL . '/' . $blogCategory->slug,
             [
                 'title' => [
                     'en' => 'updated',
@@ -87,19 +88,19 @@ class BookCategoryTest extends TestCase
                 ]
             ]
         );
-        $bookCategory->refresh();
+        $blogCategory->refresh();
 
-        $this->assertEquals('updated', $bookCategory->title);
+        $this->assertEquals('updated', $blogCategory->title);
     }
 
-    public function test_admin_can_delete_book_category(): void {
+    public function test_admin_can_delete_blog_category(): void {
 
         $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $this->getTitle()]);
-        $bookCategory = BookCategory::find(1);
+        $blogCategory = BlogCategory::find(1);
 
-        $this->actingAs($this->admin)->delete(static::$BASE_URL . '/' . $bookCategory->slug);
+        $this->actingAs($this->admin)->delete(static::$BASE_URL . '/' . $blogCategory->slug);
 
-        $this->assertDatabaseCount('book_categories', 0);
+        $this->assertDatabaseCount('blog_categories', 0);
     }
 
     protected function getTitle(): array {

@@ -69,7 +69,7 @@ class AuthorController extends Controller
             $author->save();
         }
 
-        return $this->resource($author, method: 'POST');
+        return $this->resource($author, status:Response::HTTP_CREATED,  method: 'POST');
     }
 
     #[Endpoint('Update Author.')]

@@ -57,7 +57,7 @@ class BlogCategoryController extends Controller
 
         $blogCategory = BlogCategory::create($request->validated());
 
-        return $this->resource($blogCategory, method:'POST');
+        return $this->resource($blogCategory, status:Response::HTTP_CREATED,  method:'POST');
     }
 
     #[Endpoint('Update Blog Category.')]
