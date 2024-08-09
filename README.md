@@ -36,5 +36,5 @@ You can now access the server at http://localhost:8000
 
 ## Database seeding
 
-    php artisan app:seed (**For devlopment & deployment environments**)
+    php artisan app:seed (**For development & deployment environments**)
     php artisan db:seed (**Only for development**)
