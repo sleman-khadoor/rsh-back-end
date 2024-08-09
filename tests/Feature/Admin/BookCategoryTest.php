@@ -37,7 +37,7 @@ class BookCategoryTest extends TestCase
         $response->assertJsonCount(10, 'data');
     }
 
-    public function test_admin_can_get_all_book_category_by_slug(): void {
+    public function test_admin_can_get_book_category_by_slug(): void {
 
         $bookCategory = BookCategory::factory()->create(['title' => $this->getTitle()]);
 
