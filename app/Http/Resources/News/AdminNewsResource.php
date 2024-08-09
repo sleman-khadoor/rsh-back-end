@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\Partner;
+namespace App\Http\Resources\News;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PublicPartnerResource extends JsonResource
+class AdminNewsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +16,8 @@ class PublicPartnerResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'slug' => $this->slug,
-            'name' => $this->name,
-            'avatar' => $this->avatar,
-            'website_link' => $this->website_link,
+            ...$this->getTranslations(),
+            'cover_image' => $this->cover_image,
         ];
     }
 }

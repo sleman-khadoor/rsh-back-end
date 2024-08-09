@@ -16,7 +16,7 @@ class RequireJson
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!$request->wantsJson()) {
+        if($request->is('api/*') && !$request->wantsJson()) {
 
             return response()->json([
                 'message' => 'Please request with HTTP header: Accept: application/json'

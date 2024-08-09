@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             RepresentedAuthorSeeder::class,
             PartnerSeeder::class,
             AchievementSeeder::class,
+
+            NewsSeeder::class,
         ]);
     }
 }

@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\ServiceRequestController;
 use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\UserManagemenrController;
 use App\Http\Controllers\Admin\AchievementController as AdminAchievementController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\ResetPasswordController;
 use App\Models\Role;
@@ -24,8 +25,6 @@ use App\Models\Role;
 
 
 Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
-
-    Route::middleware(["role:". Role::getBooksAdminRole()])->group(function() {
 
         Route::apiResource('/books', BookController::class);
         Route::apiResource('/book-categories', BookCategoryController::class);
@@ -54,7 +53,7 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
         Route::apiResource('/users', UserManagemenrController::class);
         Route::get('/roles', RoleController::class);
         Route::apiResource('/achievements', AdminAchievementController::class);
+        Route::apiResource('/news', AdminNewsController::class);
 
         Route::post('/reset-password', ResetPasswordController::class);
-    });
 });

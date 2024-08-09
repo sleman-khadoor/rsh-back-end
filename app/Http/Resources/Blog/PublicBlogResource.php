@@ -25,6 +25,12 @@ class PublicBlogResource extends JsonResource
             'lang' => $this->lang,
             'cover_image' => $this->cover_image,
             'blog_categories' => PublicBlogCategoryResource::collection($this->whenLoaded('blogCategories')),
+            'blog_categories' => array_map(function($category) {
+                return [
+                    'title' => $category['title'][$this->lang],
+                    'slug' => $category['slug'][$this->lang],
+                ];
+            }, $this->blogCategories->toArray())
         ];
     }
 }

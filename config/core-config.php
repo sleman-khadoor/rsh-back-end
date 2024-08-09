@@ -65,18 +65,42 @@ return [
         'english' => 'en'
     ],
     'book_formats' => [
-        'E-Book',
-        'PDF',
-        'word'
+        [
+            'en' => 'PAPERBACK',
+            'ar' => 'كتاب ورقي'
+        ],
+        [
+            'en' => 'Softcover',
+            'ar' => 'غلاف لين'
+        ],
+        [
+            'en' => 'Hardcover',
+            'ar' => 'غلاف فني'
+        ],
+        [
+            'en' => 'eBooks',
+            'ar' => 'كتاب إلكتروني'
+        ],
+        [
+            'en' => 'AuidoBook',
+            'ar' => 'كتاب صوتي'
+        ],
+        [
+            'en' => 'interactive book',
+            'ar' => 'كتاب تفاعلي'
+        ]
     ],
     'contacts' => [
+        'ar_location' => '',
+        'en_location' => '',
         'facebook' => '',
-        'whatsapp' => '',
+        'linkedIn' => '',
         'email' => '',
         'instagram' => '',
         'twitter' => '',
-        'phone' => ''
+        'phone' => '',
+        'shop_url' => ''
     ],
-    'number_of_related_blogs' => 5
+    'number_of_related_blogs' => 4
 ];
 
