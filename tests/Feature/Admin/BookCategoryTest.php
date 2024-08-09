@@ -34,36 +34,79 @@ class BookCategoryTest extends TestCase
         $response = $this->actingAs($this->admin)->get(static::$BASE_URL);
 
         $response->assertStatus(Response::HTTP_OK);
-
-        // todo assert json structure
+        $response->assertJsonCount(10, 'data');
     }
 
     public function test_admin_can_get_all_book_category_by_slug(): void {
 
-        $title = [
-            'en' => 'test',
-            'ar' => 'تست'
-        ];
-
-        $bookCategory = BookCategory::factory()->create(['title' => $title]);
+        $bookCategory = BookCategory::factory()->create(['title' => $this->getTitle()]);
 
         $response = $this->actingAs($this->admin)->get(static::$BASE_URL . '/' . $bookCategory->slug);
 
         $response->assertStatus(Response::HTTP_OK);
-
-        // todo assert json structure
+        $response->assertJsonStructure([
+            'data' => [
+                'id',
+                'title' => [
+                    'ar',
+                    'en'
+                ],
+                'slug'
+            ]
+        ]);
     }
 
     public function test_admin_can_store_book_category(): void {
 
-        $title = [
+        $response = $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $this->getTitle()]);
+
+        $response->assertStatus(Response::HTTP_CREATED);
+        $response->assertJsonStructure([
+            'data' => [
+                'id',
+                'title' => [
+                    'ar',
+                    'en'
+                ],
+                'slug'
+            ]
+        ]);
+        $this->assertDatabaseCount('book_categories', 1);
+    }
+
+    public function test_admin_can_update_book_category(): void {
+
+        $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $this->getTitle()]);
+        $bookCategory = BookCategory::find(1);
+
+        $this->actingAs($this->admin)->put(static::$BASE_URL . '/' . $bookCategory->slug,
+            [
+                'title' => [
+                    'en' => 'updated',
+                    'ar' => 'معدل'
+                ]
+            ]
+        );
+        $bookCategory->refresh();
+
+        $this->assertEquals('updated', $bookCategory->title);
+    }
+
+    public function test_admin_can_update_delete_category(): void {
+
+        $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $this->getTitle()]);
+        $bookCategory = BookCategory::find(1);
+
+        $this->actingAs($this->admin)->delete(static::$BASE_URL . '/' . $bookCategory->slug);
+
+        $this->assertDatabaseCount('book_categories', 0);
+    }
+
+    protected function getTitle(): array {
+
+        return  [
             'en' => 'test',
             'ar' => 'تست'
         ];
-
-        $response = $this->actingAs($this->admin)->post(static::$BASE_URL, ['title' => $title]);
-
-        $response->assertStatus(Response::HTTP_CREATED);
-        $this->assertDatabaseCount('book_categories', 1);
     }
 }
