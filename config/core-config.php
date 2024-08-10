@@ -3,18 +3,12 @@
 return [
 
     'roles' => [
-        'super_admin' => 'super admin',
-        'authors_admin' => 'Authors admin',
-        'books_admin' => 'Books admin',
-        'blogs_admin' => 'Blogs admin',
-        'news_admin' => 'News admin',
-        'users_admin' => 'Users admin',
-        'represented_authors_admin' => 'Represented authors admin',
-        'partners_admin' => 'Partners admin',
-        'contacts_admin' => 'Contact us admin',
-        'about_admin' => 'About us admin',
-        'services_admin' => 'Services admin',
-
+        'super_admin' => 'super-admin-role',
+        'book_admin' => 'book-admin-role',
+        'blog_admin' => 'blog-admin-role',
+        'user_management_admin' => 'usermanagement-admin-role',
+        'contact_admin' => 'contact-admin-role',
+        'service_admin' => 'service-admin-role',
     ],
     'users' => [
         'super_admin' => [
@@ -22,40 +16,40 @@ return [
             'last_name' => 'super admin',
             'username' => 'super_admin',
             'password' => 'password',
-            'is_deletable' => false
+            'is_deletable' => false,
         ],
-        'services_admin' => [
+        'service_admin' => [
             'first_name' => 'services admin',
             'last_name' => 'services admin',
             'username' => 'services_admin',
             'password' => 'password',
             'is_deletable' => true
         ],
-        'contacts_admin' => [
+        'contact_admin' => [
             'first_name' => 'contacts admin',
             'last_name' => 'contacts admin',
             'username' => 'contacts_admin',
             'password' => 'password',
             'is_deletable' => true
         ],
-        'authors_admin' => [
-            'first_name' => 'authors admin',
-            'last_name' => 'authors admin',
-            'username' => 'authors_admin',
-            'password' => 'password',
-            'is_deletable' => true
-        ],
-        'blogs_admin' => [
+        'blog_admin' => [
             'first_name' => 'blogs admin',
             'last_name' => 'blogs admin',
             'username' => 'blogs_admin',
             'password' => 'password',
             'is_deletable' => true
         ],
-        'books_admin' => [
+        'book_admin' => [
             'first_name' => 'books admin',
             'last_name' => 'books admin',
             'username' => 'books admin',
+            'password' => 'password',
+            'is_deletable' => true
+        ],
+        'user_management_admin' => [
+            'first_name' => 'user management admin',
+            'last_name' => 'user management admin',
+            'username' => 'user_management_admin',
             'password' => 'password',
             'is_deletable' => true
         ],

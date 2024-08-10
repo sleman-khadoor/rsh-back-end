@@ -19,11 +19,26 @@ class Role extends Model
 
     public static function getServicesAdminRole(): string {
 
-        return config('core-config.roles.services_admin');
+        return config('core-config.roles.service_admin');
     }
 
     public static function getBooksAdminRole(): string {
 
-        return config('core-config.roles.books_admin');
+        return config('core-config.roles.book_admin');
+    }
+
+    public static function getBlogsAdminRole(): string {
+
+        return config('core-config.roles.blog_admin');
+    }
+
+    public static function getUserManagementAdminRole(): string {
+
+        return config('core-config.roles.user_management_admin');
+    }
+
+    public static function getContactAdminRole(): string {
+
+        return config('core-config.roles.contact_admin');
     }
 }

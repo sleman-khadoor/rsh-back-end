@@ -11,6 +11,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 use App\Http\Resources\User\UserResource;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Endpoint;
@@ -38,6 +39,7 @@ class UserManagemenrController extends Controller
     public function index(Request $request) {
 
         $users = QueryBuilder::for(User::class)
+                            ->where('id', '!=', Auth::id())
                             ->onlyAdmins()
                             ->allowedIncludes(User::allowedIncludes())
                             ->allowedFilters(User::allowedFilters())
