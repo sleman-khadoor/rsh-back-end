@@ -42,7 +42,7 @@ class StoreBookRequest extends FormRequest
             'cover_image' => [
                 File::image()
                 ->min('200kb')
-                ->max('2mb')
+                ->max('5mb')
             ],
             'author_id' => ['required','int', Rule::exists('authors', 'id')],
             'formats' => ['required', 'array'],

@@ -21,16 +21,6 @@ class UserSeeder extends Seeder
         $superAdmin = User::factory()->create($superAdminData);
         $superAdmin->assignRole($roles['super_admin']); // assign all roles to the super admin user
 
-
-        unset($roles['super_admin']); // remove super admin array from the roles list.
-
-        foreach($roles as $key => $val) {
-            $userData = config("core-config.users.$key");
-            $user = User::factory()->create($userData);
-            $user->assignRole($val);
-        }
-
-
         // Generate a user to simulate authenticated routes for scribe docs.
         if(app()->isLocal()) {
 

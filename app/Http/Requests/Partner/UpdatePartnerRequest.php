@@ -35,7 +35,7 @@ class UpdatePartnerRequest extends FormRequest
                 'max:255',
                 UniqueTranslationRule::for('partners')->ignore($this->partner?->id)
             ],
-            'avatar' => [File::image()],
+            'avatar' => [File::image()->min('200kb')->max('5mb')],
             'website_link' => ['required','string', 'url'],
         ];
     }

@@ -32,6 +32,11 @@ class Role extends Model
         return config('core-config.roles.blog_admin');
     }
 
+    public static function getNewsAdminRole(): string {
+
+        return config('core-config.roles.news_admin');
+    }
+
     public static function getUserManagementAdminRole(): string {
 
         return config('core-config.roles.user_management_admin');

@@ -33,7 +33,7 @@ class UpdateRepresentedAuthorRequest extends FormRequest
             'avatar' => [
                 File::image()
                     ->min('200kb')
-                    ->max('2mb')
+                    ->max('5mb')
             ],
         ];
     }

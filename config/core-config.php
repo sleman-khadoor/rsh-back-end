@@ -6,6 +6,7 @@ return [
         'super_admin' => 'super-admin-role',
         'book_admin' => 'book-admin-role',
         'blog_admin' => 'blog-admin-role',
+        'news_admin' => 'news-admin-role',
         'user_management_admin' => 'usermanagement-admin-role',
         'contact_admin' => 'contact-admin-role',
         'service_admin' => 'service-admin-role',
@@ -17,41 +18,6 @@ return [
             'username' => 'super_admin',
             'password' => 'password',
             'is_deletable' => false,
-        ],
-        'service_admin' => [
-            'first_name' => 'services admin',
-            'last_name' => 'services admin',
-            'username' => 'services_admin',
-            'password' => 'password',
-            'is_deletable' => true
-        ],
-        'contact_admin' => [
-            'first_name' => 'contacts admin',
-            'last_name' => 'contacts admin',
-            'username' => 'contacts_admin',
-            'password' => 'password',
-            'is_deletable' => true
-        ],
-        'blog_admin' => [
-            'first_name' => 'blogs admin',
-            'last_name' => 'blogs admin',
-            'username' => 'blogs_admin',
-            'password' => 'password',
-            'is_deletable' => true
-        ],
-        'book_admin' => [
-            'first_name' => 'books admin',
-            'last_name' => 'books admin',
-            'username' => 'books admin',
-            'password' => 'password',
-            'is_deletable' => true
-        ],
-        'user_management_admin' => [
-            'first_name' => 'user management admin',
-            'last_name' => 'user management admin',
-            'username' => 'user_management_admin',
-            'password' => 'password',
-            'is_deletable' => true
         ],
     ],
     'langs' => [

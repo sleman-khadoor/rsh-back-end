@@ -34,7 +34,11 @@ class StoreServiceRequestRequest extends FormRequest
             'description' => ['required', 'string', 'max:1000'],
             'service_name' => ['required', 'string', Rule::in(array_map(fn($service) => $service->value, RequestType::cases()))],
             'documents' => ['array', 'max:5'],
-            'documents.*' => [File::default()->min('2kb')->max('2mb')]
+            'documents.*' => [
+                File::types(['pdf', 'docx', 'png', 'jpg', 'jpeg'])
+                    ->min('2kb')
+                    ->max('10mb')
+            ]
         ];
     }
 }

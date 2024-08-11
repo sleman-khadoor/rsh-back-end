@@ -45,6 +45,9 @@ Route::prefix('admin')->middleware(['auth:sanctum'])->group(function() {
     Route::middleware('role:'.Role::getBlogsAdminRole())->group(function() {
         Route::apiResource('/blogs', BlogController::class);
         Route::apiResource('/blog-categories', BlogCategoryController::class);
+    });
+
+    Route::middleware('role:'.Role::getNewsAdminRole())->group(function() {
         Route::apiResource('/news', AdminNewsController::class);
     });
 
