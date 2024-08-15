@@ -18,15 +18,6 @@ class ResetPasswordController extends Controller
     public function __invoke(ResetPasswordRequest $request)
     {
         $user = User::findOrFail($request->user_id);
-
-        if(!Hash::check($request->validated('old_password'), $user->password)) {
-
-            return $this->error(
-                Response::HTTP_CONFLICT,
-                config('response-messages.password_reset.fail')
-            );
-        }
-
         $user->password = Hash::make($request->validated('new_password'));
         $user->save();
 

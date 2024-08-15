@@ -167,12 +167,8 @@ class BookController extends Controller
 
         $book->bookCategories()->detach();
         $book->formats()->detach();
-        if($this->hasChildRecords($book)) {
-            return $this->error(
-                    Response::HTTP_CONFLICT,
-                    config('response-messages.crud.record_has_childs')
-                );
-        }
+        $book->awards()->delete();
+        $book->reviews()->delete();
         $book->delete();
 
         return $this->success([], config('response-messages.crud.delete_success'), Response::HTTP_OK);
