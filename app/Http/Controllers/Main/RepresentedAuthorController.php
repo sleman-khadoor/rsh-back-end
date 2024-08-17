@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Main;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\RepresentedAuthor\PublicRepresentedAuthorResource;
 use App\Models\Author;
+use App\Models\RepresentedAuthor;
 use Illuminate\Http\Request;
 use Spatie\QueryBuilder\QueryBuilder;
 use Knuckles\Scribe\Attributes\Group;
@@ -27,8 +28,8 @@ class RepresentedAuthorController extends Controller
     #[UrlParam('perPage', 'integer', 'Number of items pre page', example: 3)]
     public function index(Request $request) {
 
-        $authors = QueryBuilder::for(Author::class)
-                            ->allowedFilters(Author::allowedFilters())
+        $authors = QueryBuilder::for(RepresentedAuthor::class)
+                            ->allowedFilters(RepresentedAuthor::allowedFilters())
                             ->defaultSort('-id')
                             ->paginate($request->perPage, ['*'], 'page', $request->page);
 
@@ -38,8 +39,8 @@ class RepresentedAuthorController extends Controller
 
     #[Endpoint('Get Represented Author by slug.')]
     #[UrlParam('slug', 'string', 'The slug of the Author', true)]
-    public function show(Author $author) {
+    public function show(RepresentedAuthor $author) {
 
-        return PublicRepresentedAuthorResource::make($author->load(Author::allowedIncludes()));
+        return PublicRepresentedAuthorResource::make($author->load(RepresentedAuthor::allowedIncludes()));
     }
 }

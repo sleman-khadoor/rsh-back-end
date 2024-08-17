@@ -93,12 +93,12 @@ class BookController extends Controller
 
         $book = Book::create($data);
 
-        if($data['cover_image']) {
+        if(array_key_exists('cover_image', $data)) {
             $book->cover_image = $this->uploadAttachment($data['cover_image'], 'book-covers');
             $book->save();
         }
 
-        if($data['categories']) {
+        if(array_key_exists('categories', $data)) {
 
             $book->bookCategories()->attach(Arr::flatten($data['categories']));
         }
