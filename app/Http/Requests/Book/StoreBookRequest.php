@@ -41,7 +41,6 @@ class StoreBookRequest extends FormRequest
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
             'cover_image' => [
                 File::image()
-                ->min('200kb')
                 ->max('5mb')
             ],
             'author_id' => ['required','int', Rule::exists('authors', 'id')],

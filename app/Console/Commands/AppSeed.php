@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Database\Seeders\BookFormatSeeder;
+use Database\Seeders\ContactSeeder;
 use Database\Seeders\RoleSeeder;
 use Database\Seeders\UserSeeder;
 use Illuminate\Console\Command;
@@ -26,14 +27,25 @@ class AppSeed extends Command
     /**
      * Execute the console command.
      */
-    public function handle(RoleSeeder $roleSeeder, UserSeeder $userSeeder, BookFormatSeeder $bookFormatSeeder)
+    public function handle(
+        RoleSeeder $roleSeeder,
+        UserSeeder $userSeeder,
+        BookFormatSeeder $bookFormatSeeder,
+        ContactSeeder $contactSeeder
+    )
     {
         $this->info('Seeding roles...');
         $roleSeeder->run();
         $this->info('Roles seeded successfully...');
+
         $this->info('Seeding users...');
         $userSeeder->run();
         $this->info('Users seeded successfully...');
+
+        $this->info('Seeding contacts...');
+        $contactSeeder->run();
+        $this->info('contacts seeded successfully...');
+
         $this->info('Seeding book formats...');
         $bookFormatSeeder->run();
         $this->info('Book formats seeded successfully...');

@@ -32,7 +32,6 @@ class StoreAuthorRequest extends FormRequest
             'about.*' => ['required', 'string'],
             'avatar' => [
                 File::image()
-                    ->min('200kb')
                     ->max('5mb')
             ],
         ];

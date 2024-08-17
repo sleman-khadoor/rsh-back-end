@@ -32,7 +32,10 @@ class StoreBlogRequest extends FormRequest
             'writer' => ['required','string', 'max:30'],
             'date' => ['required', 'date'],
             'lang' => ['required', Rule::in(array_map(fn($lang) => $lang->value, LanguageEnum::cases()))],
-            'cover_image' => [File::image()->min('200kb')->max('5mb')],
+            'cover_image' => [
+                File::image()
+                    ->max('5mb')
+            ],
             'categories' => ['required', 'array'],
             'categories.*' => ['required', 'integer', Rule::exists('blog_categories', 'id')],
         ];

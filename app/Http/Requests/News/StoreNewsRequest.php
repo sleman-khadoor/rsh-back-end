@@ -32,7 +32,6 @@ class StoreNewsRequest extends FormRequest
             'content.*' => ['required', 'string'],
             'cover_image' => [
                 File::image()
-                    ->min('200kb')
                     ->max('2mb')
             ],
         ];

@@ -38,7 +38,6 @@ class UpdateBookRequest extends FormRequest
             'abstract.*' => ['required', 'string'],
             'cover_image' => [
                 File::image()
-                ->min('200kb')
                 ->max('5mb')
             ],
             'ISBN' => [
