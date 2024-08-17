@@ -38,16 +38,16 @@ class StoreBookRequest extends FormRequest
             'abstract.*' => ['required','string'],
             'ISBN' => ['required', 'string', Rule::unique('books')],
             'EISBN' => ['required', 'string', Rule::unique('books')],
-            'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
+            'printing_year' => ['required', 'digits:4'],
             'cover_image' => [
                 File::image()
                 ->max('5mb')
             ],
             'author_id' => ['required','int', Rule::exists('authors', 'id')],
             'formats' => ['required', 'array'],
-            'formats.*' => ['required', 'integer', Rule::exists('book_formats', 'id')],
+            'formats.*' => ['required', Rule::exists('book_formats', 'id')],
             'categories' => ['required', 'array'],
-            'categories.*' => ['required', 'integer', Rule::exists('book_categories','id')],
+            'categories.*' => ['required', Rule::exists('book_categories','id')],
 
             'awards' => ['array'],
             'awards.*.en' => ['string'],
