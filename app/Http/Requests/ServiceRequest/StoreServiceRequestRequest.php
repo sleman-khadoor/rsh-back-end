@@ -3,6 +3,7 @@
 namespace App\Http\Requests\ServiceRequest;
 
 use App\Enums\RequestType;
+use App\Rules\RecaptchaRule;
 use App\Traits\JsonErrors;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -38,7 +39,8 @@ class StoreServiceRequestRequest extends FormRequest
                 File::types(['pdf', 'docx', 'png', 'jpg', 'jpeg'])
                     ->min('2kb')
                     ->max('10mb')
-            ]
+            ],
+            'recaptcha' => ['required', new RecaptchaRule],
         ];
     }
 }
