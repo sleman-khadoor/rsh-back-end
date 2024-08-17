@@ -43,13 +43,11 @@ class UpdateBookRequest extends FormRequest
             'ISBN' => [
                 'required',
                 'string',
-                'numeric',
                 Rule::unique('books')->ignore($this->book?->id)
             ],
             'EISBN' => [
                 'required',
                 'string',
-                'numeric',
                 Rule::unique('books')->ignore($this->book?->id)
             ],
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],

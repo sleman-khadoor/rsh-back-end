@@ -36,8 +36,8 @@ class StoreBookRequest extends FormRequest
             ],
             'abstract' => ['required','array'],
             'abstract.*' => ['required','string'],
-            'ISBN' => ['required', 'string', 'numeric', Rule::unique('books')],
-            'EISBN' => ['required', 'string', 'numeric', Rule::unique('books')],
+            'ISBN' => ['required', 'string', Rule::unique('books')],
+            'EISBN' => ['required', 'string', Rule::unique('books')],
             'printing_year' => ['required', 'integer', 'digits:4', 'min:1800', 'max:'.(date('Y') + 1)],
             'cover_image' => [
                 File::image()
