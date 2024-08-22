@@ -27,7 +27,7 @@ class StoreBookAwardRequest extends FormRequest
     {
         return [
             'title' => ['required', 'array'],
-            'title.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('book_awards')],
+            'title.*' => ['required', 'string', 'max:255'],
             'book_id' => ['required', Rule::exists('books', 'id')]
         ];
     }

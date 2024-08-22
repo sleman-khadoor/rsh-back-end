@@ -26,7 +26,7 @@ class UpdateBookAwardRequest extends FormRequest
     {
         return [
             'title' => ['required', 'array'],
-            'title.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('book_awards')->ignore($this->book_award?->id)],
+            'title.*' => ['required', 'string', 'max:255'],
         ];
     }
 }

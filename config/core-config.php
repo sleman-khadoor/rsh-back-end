@@ -46,7 +46,7 @@ return [
         'ar_location' => '',
         'en_location' => '',
         'facebook' => '',
-        'linkedIn' => '',
+        'linkedin' => '',
         'email' => '',
         'instagram' => '',
         'twitter' => '',
