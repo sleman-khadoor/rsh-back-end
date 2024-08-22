@@ -3,7 +3,6 @@
 namespace App\Http\Requests\ContactRequest;
 
 use App\Traits\JsonErrors;
-use App\Rules\RecaptchaRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreContactRequestRequest extends FormRequest
@@ -29,7 +28,6 @@ class StoreContactRequestRequest extends FormRequest
             'mobile' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'message' => ['required', 'string', 'max:1000'],
-            'recaptcha' => ['required', new RecaptchaRule],
         ];
     }
 }
