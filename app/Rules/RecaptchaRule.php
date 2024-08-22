@@ -17,14 +17,19 @@ class RecaptchaRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $recaptcha = new \ReCaptcha\ReCaptcha(config('services.recaptcha.secret'));
+        try {
 
-        $resp = $recaptcha->setExpectedHostname('recaptcha-demo.appspot.com')
-                    ->setExpectedAction('homepage')
-                    ->setScoreThreshold(0.5)
-                    ->verify($value, request()->ip());
+            $response = Http::asForm()->post(static::URL, [
+                'secret' => config('services.recaptcha.RECAPTCHA_SECRET'),
+                'response' => $value,
+                'remoteip' => \request()->ip()
+            ]);
 
-        if(! $resp->isSuccess()) {
+            if(! $response->json('success')) {
+
+                $fail('Recaptcha verification fails.');
+            }
+        }catch(\Throwable) {
 
             $fail('Recaptcha verification fails.');
         }
