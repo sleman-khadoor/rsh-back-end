@@ -5,6 +5,7 @@ namespace App\Rules;
 use Closure;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class RecaptchaRule implements ValidationRule
 {
@@ -26,6 +27,8 @@ class RecaptchaRule implements ValidationRule
             ]);
 
             if(! $response->json('success')) {
+
+                Log::warning($response);
 
                 $fail('Recaptcha verification fails.');
             }
