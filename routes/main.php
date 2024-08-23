@@ -34,14 +34,14 @@ Route::get('/blogs/{blog}', [MainBlogController::class, 'show']);
 Route::get('/blog-categories', MainBlogCategoryController::class);
 
 Route::get('/contacts', MainContactController::class);
-Route::post('/contact-requests', MainContactRequestController::class)->middleware('throttle:2,1');
+Route::post('/contact-requests', MainContactRequestController::class);
 
 // Represented Authors endpoints
 Route::get('/represented-authors', [MainRepresentedAuthorController::class, 'index']);
 Route::get('/represented-authors/{author}', [MainRepresentedAuthorController::class, 'show']);
 
 // Service Requests endpoints
-Route::post('/service-requests', MainServiceRequestController::class)->middleware('throttle:5,1');
+Route::post('/service-requests', MainServiceRequestController::class);
 
 // Partners endpoints
 Route::get('/partners', [MainParterController::class, 'index']);

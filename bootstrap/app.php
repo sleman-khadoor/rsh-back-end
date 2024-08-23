@@ -32,12 +32,4 @@ return Application::configure(basePath: dirname(__DIR__))
                 ], 404);
             }
         });
-
-        $exceptions->render(function (ThrottleRequestsException $e, Request $request) {
-            if ($request->is('api/*')) {
-                return response()->json([
-                    'message' => 'too many requests.'
-                ], 403);
-            }
-        });
     })->create();
