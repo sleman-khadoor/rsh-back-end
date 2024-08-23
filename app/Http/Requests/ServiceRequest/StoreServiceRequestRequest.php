@@ -4,9 +4,10 @@ namespace App\Http\Requests\ServiceRequest;
 
 use App\Enums\RequestType;
 use App\Traits\JsonErrors;
+use App\Rules\RecaptchaRule;
 use Illuminate\Validation\Rule;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\File;
+use Illuminate\Foundation\Http\FormRequest;
 
 
 class StoreServiceRequestRequest extends FormRequest
@@ -39,6 +40,7 @@ class StoreServiceRequestRequest extends FormRequest
                     ->min('2kb')
                     ->max('10mb')
             ],
+            'recaptcha' => ['required', new RecaptchaRule]
         ];
     }
 }

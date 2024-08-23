@@ -33,5 +33,10 @@ return [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
+    ],
+
+    'recaptcha' => [
+        'RECAPTCHA_SECRET' => env('RECAPTCHA_SECRET'),
+        'RECAPTCHA_SITE_KEY' => env('RECAPTCHA_SITE_KEY')
     ]
 ];
