@@ -32,7 +32,6 @@ class UpdateBookRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                UniqueTranslationRule::for('books')->where('author_id', $this->input('author_id'))->ignore($this->book?->id)
             ],
             'abstract' => ['required', 'array'],
             'abstract.*' => ['required', 'string'],

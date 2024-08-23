@@ -27,7 +27,7 @@ class UpdateNewsRequest extends FormRequest
     {
         return [
             'title' => ['required', 'array'],
-            'title.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('news')->ignore($this->news?->id)],
+            'title.*' => ['required', 'string', 'max:255'],
             'content' => ['required', 'array'],
             'content.*' => ['required', 'string'],
             'cover_image' => [

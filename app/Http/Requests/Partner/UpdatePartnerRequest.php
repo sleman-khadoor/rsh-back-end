@@ -33,7 +33,6 @@ class UpdatePartnerRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                UniqueTranslationRule::for('partners')->ignore($this->partner?->id)
             ],
             'avatar' => [File::image()->max('5mb')],
             'website_link' => ['required','string', 'url'],

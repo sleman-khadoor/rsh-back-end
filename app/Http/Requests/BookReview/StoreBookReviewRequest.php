@@ -27,7 +27,7 @@ class StoreBookReviewRequest extends FormRequest
     {
         return [
             'username' => ['required', 'array'],
-            'username.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('book_reviews')],
+            'username.*' => ['required', 'string', 'max:255'],
             'review' => ['required', 'array'],
             'review.*' => ['required', 'string'],
             'book_id' => ['required', Rule::exists('books', 'id')]

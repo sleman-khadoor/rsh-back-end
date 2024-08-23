@@ -27,7 +27,7 @@ class UpdateRepresentedAuthorRequest extends FormRequest
     {
         return [
             'name' => ['required', 'array'],
-            'name.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('represented_authors')->ignore($this->represented_author?->id)],
+            'name.*' => ['required', 'string', 'max:255'],
             'about' => ['required', 'array'],
             'about.*' => ['required', 'string'],
             'avatar' => [

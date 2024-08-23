@@ -32,7 +32,6 @@ class StorePartnerRequest extends FormRequest
                 'required',
                 'string',
                 'max:255',
-                UniqueTranslationRule::for('partners')
             ],
             'avatar' => [File::image()->max('5mb')],
             'website_link' => ['required','string', 'url'],

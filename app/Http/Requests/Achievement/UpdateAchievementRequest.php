@@ -24,7 +24,7 @@ class UpdateAchievementRequest extends FormRequest
     {
         return [
             'content' => ['required', 'array'],
-            'content.*' => ['required', 'string', UniqueTranslationRule::for('achievements')->ignore($this->achievement?->id)],
+            'content.*' => ['required', 'string'],
         ];
     }
 }

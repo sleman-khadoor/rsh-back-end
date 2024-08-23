@@ -27,7 +27,7 @@ class UpdateAuthorRequest extends FormRequest
     {
         return [
             'name' => ['required', 'array'],
-            'name.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('authors')->ignore($this->author?->id)],
+            'name.*' => ['required', 'string', 'max:255'],
             'about' => ['required', 'array'],
             'about.*' => ['required', 'string'],
             'avatar' => [

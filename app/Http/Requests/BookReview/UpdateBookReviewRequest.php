@@ -26,7 +26,11 @@ class UpdateBookReviewRequest extends FormRequest
     {
         return [
             'username' => ['required', 'array'],
-            'username.*' => ['required', 'string', 'max:255', UniqueTranslationRule::for('book_reviews')->ignore($this->book_review?->id)],
+            'username.*' => [
+                'required',
+                'string',
+                'max:255',
+            ],
             'review' => ['required', 'array'],
             'review.*' => ['required', 'string'],
         ];
